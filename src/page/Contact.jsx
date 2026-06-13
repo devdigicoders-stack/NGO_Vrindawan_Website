@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import PageHero from "../Component/PageHero";
 import Swal from 'sweetalert2';
-import { MapPin, PhoneCall, Clock } from "lucide-react";
+import { MapPin, PhoneCall, Clock, Bed, Heart, Handshake, Building, Wrench } from "lucide-react";
+import ContactCard3D from "../Component/ContactCard3D";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ function Contact() {
     email: "",
     message: ""
   });
+
+  const [hoveredCard, setHoveredCard] = useState(null);
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
@@ -56,9 +59,13 @@ function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12 mt-12 mb-8">
           
           {/* Address */}
-          <div className="relative group bg-white px-6 pb-8 pt-12 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#2E7D32]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center mt-6 lg:mt-0">
-            <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-green-50 border-2 border-[#2E7D32] group-hover:bg-[#2E7D32] flex items-center justify-center text-[#2E7D32] group-hover:text-white shadow-md transition-all duration-300">
-              <MapPin className="w-6 h-6" />
+          <div 
+            className="relative group bg-white px-6 pb-8 pt-16 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#2E7D32]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center mt-6 lg:mt-0"
+            onMouseEnter={() => setHoveredCard('address')}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
+            <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-white border border-gray-100 shadow-md flex items-center justify-center overflow-hidden">
+              <ContactCard3D shape="address" isHovered={hoveredCard === 'address'} />
             </div>
             <h3 className="font-serif font-bold text-xl text-[#0a231a] mb-4">Our Address</h3>
             <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
@@ -66,14 +73,18 @@ function Contact() {
             </p>
             <div className="w-full h-px bg-gray-100 mb-6 group-hover:bg-[#2E7D32]/20 transition-colors duration-300"></div>
             <p className="text-[#0a231a] font-bold text-sm leading-relaxed">
-              Pole No-25, 513/11, Karala Village, Delhi – 110081
+              Pole No-25, 513/11, Karala Village, Delhi - 110081
             </p>
           </div>
 
           {/* Contact Details */}
-          <div className="relative group bg-white px-6 pb-8 pt-12 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#2E7D32]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center mt-6 lg:mt-0">
-            <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-green-50 border-2 border-[#2E7D32] group-hover:bg-[#2E7D32] flex items-center justify-center text-[#2E7D32] group-hover:text-white shadow-md transition-all duration-300">
-              <PhoneCall className="w-6 h-6" />
+          <div 
+            className="relative group bg-white px-6 pb-8 pt-16 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#2E7D32]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center mt-6 lg:mt-0"
+            onMouseEnter={() => setHoveredCard('contact')}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
+            <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-white border border-gray-100 shadow-md flex items-center justify-center overflow-hidden">
+              <ContactCard3D shape="contact" isHovered={hoveredCard === 'contact'} />
             </div>
             <h3 className="font-serif font-bold text-xl text-[#0a231a] mb-4">Contact Info</h3>
             <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
@@ -87,9 +98,13 @@ function Contact() {
           </div>
 
           {/* Visiting Hours */}
-          <div className="relative group bg-white px-6 pb-8 pt-12 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#2E7D32]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center mt-6 lg:mt-0">
-            <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-green-50 border-2 border-[#2E7D32] group-hover:bg-[#2E7D32] flex items-center justify-center text-[#2E7D32] group-hover:text-white shadow-md transition-all duration-300">
-              <Clock className="w-6 h-6" />
+          <div 
+            className="relative group bg-white px-6 pb-8 pt-16 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#2E7D32]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center mt-6 lg:mt-0"
+            onMouseEnter={() => setHoveredCard('hours')}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
+            <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-white border border-gray-100 shadow-md flex items-center justify-center overflow-hidden">
+              <ContactCard3D shape="hours" isHovered={hoveredCard === 'hours'} />
             </div>
             <h3 className="font-serif font-bold text-xl text-[#0a231a] mb-4">Working Hours</h3>
             <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
@@ -108,24 +123,24 @@ function Contact() {
         <div className="space-y-6">
           <h3 className="font-serif font-bold text-2xl text-center text-primary">How can we help you today?</h3>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
-            <button onClick={() => scrollToForm('Admission Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition">
-              <span className="text-2xl block mb-2 group-hover:scale-110 transition">🛏️</span>
+            <button onClick={() => scrollToForm('Admission Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition flex flex-col items-center">
+              <Bed className="w-8 h-8 mb-2 text-[#0a231a] group-hover:text-white transition-colors group-hover:scale-110" />
               <span className="font-bold text-sm">Admission</span>
             </button>
-            <button onClick={() => scrollToForm('Donation Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition">
-              <span className="text-2xl block mb-2 group-hover:scale-110 transition">💝</span>
+            <button onClick={() => scrollToForm('Donation Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition flex flex-col items-center">
+              <Heart className="w-8 h-8 mb-2 text-[#0a231a] group-hover:text-white transition-colors group-hover:scale-110" />
               <span className="font-bold text-sm">Donate</span>
             </button>
-            <button onClick={() => scrollToForm('Volunteer Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition">
-              <span className="text-2xl block mb-2 group-hover:scale-110 transition">🤝</span>
+            <button onClick={() => scrollToForm('Volunteer Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition flex flex-col items-center">
+              <Handshake className="w-8 h-8 mb-2 text-[#0a231a] group-hover:text-white transition-colors group-hover:scale-110" />
               <span className="font-bold text-sm">Volunteer</span>
             </button>
-            <button onClick={() => scrollToForm('CSR Partnership Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition">
-              <span className="text-2xl block mb-2 group-hover:scale-110 transition">🏢</span>
+            <button onClick={() => scrollToForm('CSR Partnership Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition flex flex-col items-center">
+              <Building className="w-8 h-8 mb-2 text-[#0a231a] group-hover:text-white transition-colors group-hover:scale-110" />
               <span className="font-bold text-sm">CSR</span>
             </button>
-            <button onClick={() => scrollToForm('Land & Infrastructure Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition col-span-2 md:col-span-1">
-              <span className="text-2xl block mb-2 group-hover:scale-110 transition">🏗️</span>
+            <button onClick={() => scrollToForm('Land & Infrastructure Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition col-span-2 md:col-span-1 flex flex-col items-center">
+              <Wrench className="w-8 h-8 mb-2 text-[#0a231a] group-hover:text-white transition-colors group-hover:scale-110" />
               <span className="font-bold text-sm">Land Donation</span>
             </button>
           </div>
@@ -135,11 +150,13 @@ function Contact() {
         <div id="enquiry-form" className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row mt-16 border border-gray-100">
           
           {/* Left Side: Image */}
-          <div className="w-full lg:w-5/12 h-[350px] sm:h-[450px] lg:h-auto relative flex-shrink-0 bg-gray-100">
+          <div className="w-full lg:w-5/12 h-[350px] sm:h-[450px] lg:h-auto relative flex-shrink-0 bg-gray-100 overflow-hidden group cursor-pointer">
+            {/* Center to Sides Hover Animation with Fade-out */}
+            <div className="absolute inset-0 bg-white/30 scale-x-0 opacity-100 group-hover:scale-x-100 group-hover:opacity-0 transition-all duration-1000 ease-out origin-center z-10 pointer-events-none"></div>
             <img 
               src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80" 
               alt="Volunteers and community" 
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
           </div>
 
@@ -152,7 +169,7 @@ function Contact() {
               <span className="text-xs font-bold text-gray-700 tracking-wide uppercase">Get In Touch</span>
             </div>
 
-            <h2 className="font-serif font-black text-4xl sm:text-5xl text-[#0a231a] mb-6">
+            <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#0a231a] mb-6">
               Contact Us Today
             </h2>
             

@@ -6,13 +6,17 @@ import "./App.css";
 import Navbar from "./Component/navbar";
 import Footer from "./Component/Footer";
 import CustomCursor from "./Component/CustomCursor";
-import PageLoader from "./Component/PageLoader";
 import ScrollToTop from "./Component/ScrollToTop";
+import BackToTopButton from "./Component/BackToTopButton";
+import SocialSidebar from "./Component/SocialSidebar";
+import PageLoader from "./Component/PageLoader";
 
 // Page components
 import Home from "./page/Home";
 import About from "./page/About";
 import Founder from "./page/Founder";
+import AboutNirajGera from "./page/AboutNirajGera";
+import WhyAanandam from "./page/WhyAanandam";
 import LifeAtAanandam from "./page/LifeAtAanandam";
 import Facilities from "./page/Facilities";
 import DreamCampus from "./page/DreamCampus";
@@ -34,10 +38,11 @@ import Contact from "./page/Contact";
 function App() {
   return (
     <Router>
+      <PageLoader />
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-[#FAFAF5]">
-        <PageLoader />
         <CustomCursor />
+        <SocialSidebar />
         {/* Sticky Header Navbar */}
         <Navbar />
 
@@ -46,7 +51,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about-aanandam" element={<About />} />
+            <Route path="/why-aanandam" element={<WhyAanandam />} />
             <Route path="/about-founder" element={<Founder />} />
+            <Route path="/about-niraj-gera" element={<AboutNirajGera />} />
             <Route path="/life-at-aanandam" element={<LifeAtAanandam />} />
             <Route path="/facilities" element={<Facilities />} />
             <Route path="/dream-campus" element={<DreamCampus />} />
@@ -69,6 +76,9 @@ function App() {
 
         {/* Global Footer */}
         <Footer />
+        
+        {/* Floating Back to Top Button */}
+        <BackToTopButton />
       </div>
     </Router>
   );

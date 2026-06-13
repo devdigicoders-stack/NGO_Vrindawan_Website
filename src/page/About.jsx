@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PageHero from "../Component/PageHero";
+import OriginStory from "../Component/OriginStory";
 import TeamSection from "../Component/TeamSection";
+import AboutSeoSection from "../Component/AboutSeoSection";
 
 function About() {
   return (
@@ -11,44 +13,9 @@ function About() {
         description="We are not just an NGO. We are a family for those who have been forgotten."
       />
 
-      <section className="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-2">
+      <OriginStory />
 
-        {/* Story Section */}
-        <div className="space-y-6 mb-16">
-          <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#0a231a] mb-6">
-            It Began With a Question Nobody Was Asking.
-          </h2>
-
-          <div className="space-y-6 text-gray-700 leading-relaxed text-[15px] sm:text-[16px] font-medium">
-            <p>
-              The year was 2020. On a quiet evening in Delhi, our founder Niraj Gera was sitting outside a tea stall when he noticed an old man — thin, frail, eyes distant — sitting on the pavement. Not begging. Not sleeping. Just sitting. Watching the world move without him.
-            </p>
-            <p>
-              Niraj stopped. He sat beside him. He asked: <em className="text-[#0a231a] font-semibold">"Ghar kahan hai aapka?"</em>
-            </p>
-            <p>
-              The old man smiled — the kind of smile that carries years of pain — and said simply: <em className="text-[#0a231a] font-semibold">"Pata nahi beta. Ghar tha kabhi."</em> (I don't know, son. There was a home, once.)
-            </p>
-            <p>
-              That evening, Aanandam was born. Not as a plan or a project — but as a <strong className="text-[#0a231a]">promise</strong>. That no elder should ever have to say those words again.
-            </p>
-          </div>
-        </div>
-
-        {/* Quote Block */}
-        <div className="bg-[#FFFDE7]/60 border border-[#FDD835]/40 rounded-xl p-8 sm:p-12 mb-20 shadow-sm relative overflow-hidden">
-          {/* Decorative element */}
-          <div className="absolute top-0 left-0 w-2 h-full bg-[#FDD835]"></div>
-
-          <blockquote className="relative z-10 pl-2">
-            <p className="font-serif italic text-[18px] sm:text-[21px] text-[#2E7D32] leading-relaxed mb-6 font-medium">
-              "Aanandam is not an NGO programme. It is an apology — from a society that forgot its parents — and a promise that it will never happen again."
-            </p>
-            <footer className="text-gray-500 font-semibold text-[14px] sm:text-[15px]">
-              — Niraj Gera, Founder, Humanify Foundation
-            </footer>
-          </blockquote>
-        </div>
+      <section className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-2">
 
         {/* Name Mission Section */}
         <div className="space-y-6 mb-20">
@@ -157,6 +124,9 @@ function About() {
 
       {/* Team Section */}
       <TeamSection />
+
+      {/* SEO Section for About Page */}
+      <AboutSeoSection />
 
     </div>
   );

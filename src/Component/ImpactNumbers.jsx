@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
+import { Star } from 'lucide-react';
 
 // Custom Animated Counter Component
 const AnimatedCounter = ({ end, duration = 2.5, suffix = "+" }) => {
@@ -52,11 +53,11 @@ export default function ImpactNumbers() {
 
         {/* Green Box */}
         <div className="bg-[#2E7D32] rounded-xl p-8 sm:p-12 shadow-xl mb-16 border-l-8 border-[#FDD835]">
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl text-white mb-6">
-            Our Promise in Numbers
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl text-white mb-6 flex items-center gap-3">
+            <Star className="w-8 h-8 text-[#FDD835] flex-shrink-0" /> On Our Way to Becoming One of India's Happiest Old Age Homes
           </h2>
           <p className="text-white/90 text-[16px] sm:text-[18px] leading-[1.8] max-w-5xl font-medium">
-            Every number here represents a life touched, a meal shared, a smile restored. These are not just statistics — these are the reasons we wake up every morning and do what we do. <span className="italic font-bold text-[#FDD835]">Join us in making these numbers grow.</span>
+            We don't just aspire to be the best in facilities — we aspire to be the happiest. Aanandam's vision is to become India's most joyful, dignified and loved senior care home, where elders don't just live — they thrive. Every day is a step towards that vision. <span className="italic font-bold text-[#FDD835]">Will you walk with us?</span>
           </p>
         </div>
 

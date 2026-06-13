@@ -1,41 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import PageHero from '../Component/PageHero';
+import { GraduationCap, Stethoscope, Heart, Music, BookOpen, Building } from 'lucide-react';
 
 function Volunteer() {
   const whoWeNeed = [
     {
-      icon: "🎓",
+      icon: <GraduationCap size={32} />,
       title: "Students & Interns",
       desc: "NSS, NCC, social work students, management interns — Aanandam provides meaningful internship certificates and impactful social hours. You will learn things no classroom teaches.",
       borderColor: "border-[#F59E0B]" // Orange
     },
     {
-      icon: "🩺",
+      icon: <Stethoscope size={32} />,
       title: "Doctors & Health Professionals",
       desc: "Visit monthly for health check-ups, advice, and guidance. Dentists, physiotherapists, dieticians, ophthalmologists — every specialty is welcome and deeply needed.",
       borderColor: "border-[#2E7D32]" // Green
     },
     {
-      icon: "🧘",
+      icon: <Heart size={32} />,
       title: "Yoga & Meditation Teachers",
       desc: "Lead morning sessions for our elders. Your hour-long class will set the tone for an elder's entire day. This is the most direct form of preventive healthcare.",
       borderColor: "border-[#C62828]" // Red
     },
     {
-      icon: "🎵",
+      icon: <Music size={32} />,
       title: "Musicians & Performers",
       desc: "Sing. Play. Perform. Our elders love classical music, bhajans and folk songs. A live performance at Aanandam is an emotional experience neither performer nor audience forgets.",
       borderColor: "border-[#9C27B0]" // Purple
     },
     {
-      icon: "📚",
+      icon: <BookOpen size={32} />,
       title: "Educators & Counsellors",
       desc: "Run activity sessions, storytelling circles, life history interviews, or gentle counselling. Help elders process their journeys and find meaning in the present.",
       borderColor: "border-[#0288D1]" // Blue
     },
     {
-      icon: "🏢",
+      icon: <Building size={32} />,
       title: "Corporate Teams",
       desc: "CSR volunteering day at Aanandam. Your entire team spends a day with elders — serving meals, conducting activities, sharing stories. The most powerful team-building exercise you will ever do.",
       borderColor: "border-[#00796B]" // Teal

@@ -20,15 +20,15 @@ export default function AboutSection() {
 
               {/* Large Circle */}
               <div className="group absolute top-0 left-0 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden border-8 border-white shadow-2xl z-10 cursor-pointer">
-                {/* Center to Sides Hover Animation */}
-                <div className="absolute inset-0 bg-white/25 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out origin-center z-10 pointer-events-none"></div>
+                {/* Center to Sides Hover Animation with Fade-out */}
+                <div className="absolute inset-0 bg-white/30 scale-x-0 opacity-100 group-hover:scale-x-100 group-hover:opacity-0 transition-all duration-1000 ease-out origin-center z-10 pointer-events-none"></div>
                 <img src={aboutLarge} alt="Elders smiling" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
 
               {/* Small Circle */}
               <div className="group absolute bottom-0 right-[-10px] sm:right-[-30px] lg:right-[-40px] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[340px] lg:h-[340px] rounded-full overflow-hidden border-8 border-white shadow-2xl z-20 cursor-pointer">
-                {/* Center to Sides Hover Animation */}
-                <div className="absolute inset-0 bg-white/25 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out origin-center z-10 pointer-events-none"></div>
+                {/* Center to Sides Hover Animation with Fade-out */}
+                <div className="absolute inset-0 bg-white/30 scale-x-0 opacity-100 group-hover:scale-x-100 group-hover:opacity-0 transition-all duration-1000 ease-out origin-center z-10 pointer-events-none"></div>
                 <img src={aboutSmall} alt="Volunteer helping elder" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
 
@@ -82,32 +82,23 @@ export default function AboutSection() {
                 </div>
               </div>
               <div className="group relative w-full sm:w-56 h-48 sm:h-auto rounded-xl overflow-hidden shadow-sm flex-shrink-0 cursor-pointer">
-                {/* Center to Sides Hover Animation */}
-                <div className="absolute inset-0 bg-white/25 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out origin-center z-10 pointer-events-none"></div>
+                {/* Center to Sides Hover Animation with Fade-out */}
+                <div className="absolute inset-0 bg-white/30 scale-x-0 opacity-100 group-hover:scale-x-100 group-hover:opacity-0 transition-all duration-1000 ease-out origin-center z-10 pointer-events-none"></div>
                 <img src={aboutCard} alt="Happy elders" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
 
             {/* Buttons */}
             <div className="flex flex-wrap items-center gap-8 pt-6">
-              <Link
-                to="/about-aanandam"
-                className="inline-flex items-center justify-center px-8 py-3.5 text-[15px] font-bold text-[#0a231a] bg-[#FDD835] hover:bg-[#0a231a] hover:text-[#FDD835] transition-colors duration-300 rounded shadow-lg"
-              >
-                More About Us
-                <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
 
-              <button className="inline-flex items-center gap-4 group">
+              <Link to="/video-gallery" className="inline-flex items-center gap-4 group">
                 <div className="w-12 h-12 bg-[#FDD835]/20 rounded-full flex items-center justify-center text-[#FDD835] group-hover:bg-[#FDD835] group-hover:text-[#0a231a] transition-all duration-300 shadow-sm">
                   <svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
                 <span className="font-bold text-[#0a231a] text-[15px] group-hover:underline decoration-2 underline-offset-4">Watch Our Video</span>
-              </button>
+              </Link>
             </div>
 
           </div>

@@ -10,6 +10,7 @@ import ImpactNumbers from "../Component/ImpactNumbers";
 import ElderBlessings from "../Component/ElderBlessings";
 import WaysToHelp from "../Component/WaysToHelp";
 import FinalCTA from "../Component/FinalCTA";
+import SeoHindiSection from "../Component/SeoHindiSection";
 
 function Home() {
 
@@ -45,11 +46,13 @@ function Home() {
       {/* Ways To Help */}
       <WaysToHelp />
 
-      {/* Final CTA */}
-      <FinalCTA />
+      {/* SEO Hindi Content */}
+      <SeoHindiSection />
 
       {/* 4. Founder Spotlight */}
 
+      {/* Final CTA */}
+      <FinalCTA />
     </div>
   );
 }

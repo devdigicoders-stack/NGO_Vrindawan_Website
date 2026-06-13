@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import PageHero from '../Component/PageHero';
+import { FaUtensils, FaCalendarAlt, FaHome, FaPhoneAlt } from "react-icons/fa";
+import { Sun, Utensils, Coffee, Moon } from "lucide-react";
 
 function SponsorAMeal() {
   const mealOptions = [
@@ -8,28 +10,28 @@ function SponsorAMeal() {
       id: 1,
       price: "₹1,500",
       title: "Breakfast Sponsorship",
-      icon: "🌅",
+      icon: <Sun size={64} className="text-[#0a231a]" />,
       desc: "Poha / Upma / Daliya / Parathas + Chai. Fresh-made. Warm. Enough to nourish every elder and start their day with energy and love."
     },
     {
       id: 2,
       price: "₹2,500",
       title: "Lunch Sponsorship",
-      icon: "🍛",
+      icon: <Utensils size={64} className="text-[#0a231a]" />,
       desc: "Dal, rice, sabzi, roti, salad, pickle and seasonal specials. A complete, balanced, satisfying midday meal — the centrepiece of the Aanandam day."
     },
     {
       id: 3,
       price: "₹750",
       title: "Evening Tea & Snacks",
-      icon: "☕",
+      icon: <Coffee size={64} className="text-[#0a231a]" />,
       desc: "Hot chai with biscuits, pakodas or seasonal snacks. Small in cost, enormous in comfort — especially on a cold Delhi evening."
     },
     {
       id: 4,
       price: "₹2,500",
       title: "Dinner Sponsorship",
-      icon: "🌙",
+      icon: <Moon size={64} className="text-[#0a231a]" />,
       desc: "Warm, filling and nourishing. No elder goes to bed hungry when you sponsor dinner. A full stomach at night — the most peaceful gift you can give."
     }
   ];
@@ -63,17 +65,17 @@ function SponsorAMeal() {
         hideBreadcrumb={true}
       />
 
-      <section className="py-20 px-4 sm:px-6 lg:px-2 max-w-6xl mx-auto space-y-24">
+      <section className="py-20 px-4 sm:px-6 lg:px-2 max-w-7xl mx-auto space-y-24">
 
         {/* Intro Section */}
         <motion.div
-          className="space-y-8 max-w-4xl mx-auto"
+          className="space-y-8 max-w-7xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#0a231a] leading-tight text-center">
+          <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#0a231a] leading-tight text-center">
             One Meal. Thirty Smiles. <span className="text-[#C62828] block sm:inline mt-2">One Memory You Will Carry Forever.</span>
           </h2>
           <div className="space-y-6 text-gray-700 text-lg leading-relaxed font-medium mt-8">
@@ -106,14 +108,14 @@ function SponsorAMeal() {
               {/* The Sliding Dark Green Background */}
               <div className="absolute bottom-0 left-0 w-full h-0 bg-[#0a231a] transition-all duration-500 ease-out group-hover:h-full z-0"></div>
 
-              <div className="absolute -right-6 -top-6 text-9xl opacity-5 group-hover:opacity-10 group-hover:scale-110 transition-all duration-500 group-hover:rotate-12 z-0">
+              <div className="absolute -right-10 -top-10 opacity-5 group-hover:opacity-10 group-hover:scale-110 transition-all duration-500 group-hover:rotate-12 z-0">
                 {meal.icon}
               </div>
 
               <div className="relative z-10 text-center space-y-4">
                 <div className="text-4xl font-black text-[#C62828] group-hover:text-[#FDD835] transition-colors duration-300 font-serif tracking-tight">{meal.price}</div>
                 <h3 className="text-xl font-bold text-[#0a231a] group-hover:text-white transition-colors duration-300 flex items-center justify-center gap-2">
-                  <span>{meal.icon}</span> {meal.title}
+                  <div className="scale-50">{meal.icon}</div> {meal.title}
                 </h3>
                 <div className="h-1 w-12 bg-[#FDD835] mx-auto rounded-full group-hover:bg-white transition-colors duration-300"></div>
                 <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-300 font-medium leading-relaxed">
@@ -134,7 +136,7 @@ function SponsorAMeal() {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#FDD835]/10 rounded-bl-full -z-0"></div>
           <div className="relative z-10">
-            <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#0a231a] mb-10">
+            <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#0a231a] mb-10">
               What Happens After You Sponsor?
             </h2>
             <div className="space-y-6">
@@ -178,21 +180,136 @@ function SponsorAMeal() {
           </div>
         </motion.div>
 
-        {/* Action Buttons */}
+        {/* Annadan New Section */}
         <motion.div
-          className="flex flex-col sm:flex-row justify-center items-center gap-6 pb-10"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
+          className="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-gray-100"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
         >
-          <a href="/donate" className="w-full sm:w-auto bg-[#C62828] hover:bg-[#B71C1C] text-white font-bold py-4 px-10 rounded-2xl shadow-xl transition transform hover:-translate-y-1 hover:shadow-2xl text-lg text-center">
-            Sponsor a Meal Today
-          </a>
-          <a href="https://wa.me/919310105630" target="_blank" rel="noreferrer" className="w-full sm:w-auto bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold py-4 px-10 rounded-2xl shadow-xl transition transform hover:-translate-y-1 hover:shadow-2xl text-lg text-center flex items-center justify-center gap-3">
-            <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>
-            WhatsApp to Arrange
-          </a>
+          {/* Annadan Header */}
+          <div className="mb-12">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="text-[#E58F00] font-bold tracking-widest text-[13px] uppercase whitespace-nowrap">
+                Annadan — Feed an Elder Today
+              </span>
+              <div className="flex-grow h-[1px] bg-[#E58F00]/30"></div>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#E58F00] font-bold mb-6">
+              For ₹51, You Can Feed an Elder Today.
+            </h2>
+            <p className="text-gray-700 text-[16px] leading-[1.8] font-medium max-w-4xl">
+              At Aanandam Vridhashram (Karala Village, near Rohini Sector-38, Pitampura, Delhi NCR), every meal matters. For just ₹51 — less than the cost of a cup of coffee — you can sponsor one full, nutritious meal for one of our elder residents.
+            </p>
+          </div>
+
+          {/* How It Works Header */}
+          <div className="mb-10">
+            <div className="flex items-center gap-4 mb-8">
+              <span className="text-[#E58F00] font-bold tracking-widest text-[13px] uppercase whitespace-nowrap">
+                How It Works
+              </span>
+              <div className="flex-grow h-[1px] bg-[#E58F00]/30"></div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex items-start gap-5">
+                <div className="w-10 h-10 flex-shrink-0 bg-[#F59E0B] text-white rounded-full flex items-center justify-center font-black text-lg shadow-sm">1</div>
+                <p className="text-gray-700 text-[15.5px] pt-1.5 font-medium border-b border-gray-100 pb-5 w-full">
+                  Choose how many meals you'd like to sponsor — one meal, one day's meals for one elder, or meals for the entire home for a day.
+                </p>
+              </div>
+              <div className="flex items-start gap-5">
+                <div className="w-10 h-10 flex-shrink-0 bg-[#F59E0B] text-white rounded-full flex items-center justify-center font-black text-lg shadow-sm">2</div>
+                <p className="text-gray-700 text-[15.5px] pt-1.5 font-medium border-b border-gray-100 pb-5 w-full">
+                  Make your contribution online via UPI/bank transfer, or in person at Aanandam.
+                </p>
+              </div>
+              <div className="flex items-start gap-5">
+                <div className="w-10 h-10 flex-shrink-0 bg-[#F59E0B] text-white rounded-full flex items-center justify-center font-black text-lg shadow-sm">3</div>
+                <p className="text-gray-700 text-[15.5px] pt-1.5 font-medium border-b border-gray-100 pb-5 w-full">
+                  We use your contribution directly for ingredients, cooking and serving — with full transparency.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 3 Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-[#E58F00] p-6 flex flex-col hover:shadow-md transition-shadow">
+              <h3 className="font-serif text-xl font-bold text-[#0a231a] mb-4 flex items-center gap-3">
+                <span className="text-[#a882e3] text-2xl"><FaUtensils /></span> One Meal
+              </h3>
+              <p className="text-gray-600 text-[14.5px] leading-relaxed font-medium">
+                <span className="font-bold text-gray-800">₹51</span> — feeds one elder one full meal (breakfast, lunch or dinner).
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-[#2E7D32] p-6 flex flex-col hover:shadow-md transition-shadow">
+              <h3 className="font-serif text-xl font-bold text-[#0a231a] mb-4 flex items-center gap-3">
+                <span className="text-[#4b9cdb] text-2xl"><FaCalendarAlt /></span> One Day, One Elder
+              </h3>
+              <p className="text-gray-600 text-[14.5px] leading-relaxed font-medium">
+                <span className="font-bold text-gray-800">₹150</span> — covers all three meals for one elder for a full day.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-[#E58F00] p-6 flex flex-col hover:shadow-md transition-shadow">
+              <h3 className="font-serif text-xl font-bold text-[#0a231a] mb-4 flex items-center gap-3">
+                <span className="text-[#e35957] text-2xl"><FaHome /></span> Full Home, One Day
+              </h3>
+              <p className="text-gray-600 text-[14.5px] leading-relaxed font-medium">
+                Contact us for the current cost to sponsor meals for the entire Aanandam family for a day — a wonderful way to mark a special occasion.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+
+
+        {/* Hindi SEO / Summary Section */}
+        <motion.div
+          className="mt-16 bg-[#FFFDF5] rounded-xl border-l-[6px] border-l-[#E58F00] p-8 md:p-10 shadow-sm relative"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+        >
+          <div className="absolute top-6 right-6 text-[#E58F00] text-sm font-bold">हिंदी</div>
+          <h3 className="font-serif font-bold text-2xl md:text-[26px] mb-6 text-[#9a3412]">
+            एक भोजन प्रायोजित करें — अन्नदान
+          </h3>
+          <div className="space-y-4 text-gray-700 text-[15.5px] leading-[1.8] font-medium">
+            <p>
+              सिर्फ ₹51 में एक बुजुर्ग को आज भोजन दें। आनंदम् वृद्धाश्रम (करला, रोहिणी सेक्टर-38 के पास, दिल्ली) में हर भोजन एक सम्मान है।
+            </p>
+            <p>
+              जन्मदिन, सालगिरह या अपने प्रियजनों की याद में 'अन्नदान' करें — यह सबसे सरल और सीधा सहयोग है।
+            </p>
+          </div>
+          
+          <div className="mt-8 flex flex-wrap gap-3">
+            <span className="bg-[#E58F00] text-white text-[13px] font-bold px-5 py-2 rounded-full shadow-sm">अन्नदान वृद्धाश्रम</span>
+            <span className="bg-[#E58F00] text-white text-[13px] font-bold px-5 py-2 rounded-full shadow-sm">भोजन दान ₹51</span>
+            <span className="bg-[#E58F00] text-white text-[13px] font-bold px-5 py-2 rounded-full shadow-sm">बुजुर्ग को भोजन दें</span>
+          </div>
+        </motion.div>
+
+        {/* Contact Banner */}
+        <motion.div
+          className="mt-10 bg-[#1f2937] rounded-xl p-8 md:p-10 shadow-md"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+        >
+          <h3 className="font-serif font-bold text-2xl text-white mb-6 flex items-center gap-3">
+            <span className="text-[#e81cff] text-2xl"><FaPhoneAlt /></span> Sponsor a Meal Now
+          </h3>
+          <p className="text-white/90 text-[14.5px] leading-[2]">
+            <span className="font-bold">Phone / WhatsApp:</span> +91-9310105630 (24×7) | <span className="font-bold">Website:</span> www.vridhashram.in/sponsor-a-meal
+          </p>
         </motion.div>
 
       </section>

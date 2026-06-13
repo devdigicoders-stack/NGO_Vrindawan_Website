@@ -69,9 +69,8 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <p className="text-[15px] leading-relaxed">
-                  513/11, Utsav Vihar, Karala Village,<br />
-                  Opposite Rohini Sector-38,<br />
-                  Delhi 110081
+                  Pole No-25, 513/11, Karala Village,<br />
+                  Delhi - 110081
                 </p>
               </div>
             </div>

@@ -72,29 +72,22 @@ export default function WhyChooseUs() {
               </p>
             </div>
 
-            {/* Divider & Button */}
-            <div className="pt-6 border-t border-gray-200">
-              <Link
-                to="/about-aanandam"
-                className="inline-flex items-center justify-center px-8 py-3.5 text-[15px] font-bold text-[#0a231a] bg-[#FDD835] hover:bg-[#0a231a] hover:text-[#FDD835] transition-colors duration-300 rounded shadow-lg"
-              >
-                Learn More
-                <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
-            </div>
+
           </div>
 
           {/* Right Side: Images */}
           <div className="relative flex justify-center lg:justify-end pt-10 sm:pt-0 group cursor-pointer">
             {/* Main Image */}
             <div className="relative w-full max-w-[400px] h-[550px] rounded-3xl overflow-hidden shadow-2xl transition-all duration-700 ease-out group-hover:shadow-[0_20px_50px_rgba(10,35,26,0.3)] group-hover:translate-x-4 group-hover:-translate-y-4">
+              {/* Center to Sides Hover Animation with Fade-out */}
+              <div className="absolute inset-0 bg-white/30 scale-x-0 opacity-100 group-hover:scale-x-100 group-hover:opacity-0 transition-all duration-1000 ease-out origin-center z-10 pointer-events-none"></div>
               <img src={impact1} alt="Elders at Aanandam" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             </div>
 
             {/* Overlapping Small Image */}
             <div className="absolute -left-4 sm:-left-12 bottom-10 w-[240px] sm:w-[280px] h-[240px] sm:h-[280px] rounded-2xl overflow-hidden shadow-2xl border-8 border-white transition-all duration-700 ease-out group-hover:-translate-x-6 group-hover:translate-y-4 group-hover:scale-105 z-10">
+              {/* Center to Sides Hover Animation with Fade-out */}
+              <div className="absolute inset-0 bg-white/30 scale-x-0 opacity-100 group-hover:scale-x-100 group-hover:opacity-0 transition-all duration-1000 ease-out origin-center z-10 pointer-events-none"></div>
               <img src={impact2} alt="Volunteer helping elder" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             </div>
 

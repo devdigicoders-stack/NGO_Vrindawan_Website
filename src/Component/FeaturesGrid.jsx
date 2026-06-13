@@ -1,46 +1,47 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Home, Utensils, Heart, PartyPopper, Stethoscope, Handshake } from 'lucide-react';
 
 export default function FeaturesGrid() {
   const features = [
     {
       id: 1,
-      icon: "🏠",
+      icon: <Home className="w-6 h-6 text-[#0a231a]" />,
       title: "100% Free. Always.",
       desc: "No admission fee. No monthly charge. No hidden costs. Every elder at Aanandam receives complete care at absolutely no cost — because dignity should never come with a price tag.",
       bottomText: "No hidden charges ever."
     },
     {
       id: 2,
-      icon: "🍛",
+      icon: <Utensils className="w-6 h-6 text-[#0a231a]" />,
       title: "Three Meals, Every Day",
       desc: "A nutritious breakfast, a hearty lunch, evening tea & snacks, and a warm dinner — prepared fresh every day by our kitchen team. Because a full stomach is the first step to a happy heart.",
       bottomText: "Fresh, healthy, and vegetarian."
     },
     {
       id: 3,
-      icon: "🧘",
+      icon: <Heart className="w-6 h-6 text-[#0a231a]" />,
       title: "Yoga, Bhajans & Soul Care",
       desc: "Every morning begins with yoga, meditation and prayer. Every evening ends with bhajans and community gathering. At Aanandam, we care for the body — and the soul equally.",
       bottomText: "Daily meditation and prayers."
     },
     {
       id: 4,
-      icon: "🎉",
+      icon: <PartyPopper className="w-6 h-6 text-[#0a231a]" />,
       title: "Festivals & Celebrations",
       desc: "Holi with colours. Diwali with diyas. Navratri with dandiya. Birthdays with cake and blessings. Life at Aanandam is never ordinary — it is always worth celebrating.",
       bottomText: "Celebrating every joy together."
     },
     {
       id: 5,
-      icon: "🩺",
+      icon: <Stethoscope className="w-6 h-6 text-[#0a231a]" />,
       title: "Medical Support",
       desc: "Regular medical guidance, basic health check-ups, and access to doctors through our volunteer network. The health of our elders is our daily priority and responsibility.",
       bottomText: "Regular health check-ups."
     },
     {
       id: 6,
-      icon: "🤝",
+      icon: <Handshake className="w-6 h-6 text-[#0a231a]" />,
       title: "Volunteers Welcome",
       desc: "Students, professionals, doctors, musicians — everyone is welcome here. Spending time with our elders heals them. And quietly, it heals you too.",
       bottomText: "Anyone can join and help."
@@ -76,7 +77,7 @@ export default function FeaturesGrid() {
             <span className="w-2 h-2 rounded-full bg-[#FDD835]"></span>
             <span className="text-[13px] font-bold text-gray-700 uppercase tracking-wide">Our Services</span>
           </div>
-          <h2 className="font-serif font-black text-4xl sm:text-5xl text-[#0a231a] leading-[1.2]">
+          <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#0a231a] leading-[1.2]">
             Everything We Do for Our Elders
           </h2>
           <p className="text-gray-600 text-[16px] sm:text-[18px] leading-[1.7] font-medium">

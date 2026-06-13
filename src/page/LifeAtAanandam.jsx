@@ -1,15 +1,18 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MapPin, Phone, MessageCircle, Globe, Compass } from 'lucide-react';
 import PageHero from '../Component/PageHero';
 
 function LifeAtAanandam() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const images = [
-    "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1576765974102-b756026ecee3?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1516302752946-f93f8eb6c429?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1544027993-37db48d8e0e6?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1593113554316-22a36af1c238?auto=format&fit=crop&q=80"
+    "/20260215_140949 (1).jpg",
+    "/20260215_152343.jpg",
+    "/20260304_134952.jpg",
+    "/20260304_135319.jpg",
+    "/20260304_145835.jpg",
+    "/20260304_150711.jpg"
   ];
 
   const providedFree = [
@@ -36,6 +39,22 @@ function LifeAtAanandam() {
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
+
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    const currentIndex = images.indexOf(selectedImage);
+    if (currentIndex > -1) {
+      setSelectedImage(images[(currentIndex - 1 + images.length) % images.length]);
+    }
+  };
+
+  const handleNext = (e) => {
+    e.stopPropagation();
+    const currentIndex = images.indexOf(selectedImage);
+    if (currentIndex > -1) {
+      setSelectedImage(images[(currentIndex + 1) % images.length]);
+    }
   };
 
   return (
@@ -81,8 +100,17 @@ function LifeAtAanandam() {
           variants={fadeInUp}
         >
           {images.map((img, index) => (
-            <div key={index} className="relative rounded-2xl overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
-              <img src={img} alt="Life at Aanandam" className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700 ease-out" />
+            <div 
+              key={index} 
+              className="relative rounded-2xl overflow-hidden aspect-square shadow-sm cursor-pointer group"
+              onClick={() => setSelectedImage(img)}
+            >
+              <img src={img} alt="Life at Aanandam" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <svg className="w-10 h-10 text-white drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+              </div>
             </div>
           ))}
         </motion.div>
@@ -173,26 +201,32 @@ function LifeAtAanandam() {
 
           <div className="relative z-10 space-y-6">
             <h2 className="font-serif font-bold text-xl sm:text-2xl text-white mb-4 flex items-center gap-3">
-              <span className="text-3xl">📍</span> Our Address
+              <MapPin className="w-8 h-8" /> Our Address
             </h2>
 
             <p className="text-white/90 text-sm sm:text-base leading-relaxed font-medium">
-              Pole No-25, 513/11, Near Karala Stadium, Opposite ISO Solid Gym, Karala Village (Opposite Rohini Sector-38), Delhi – 110081
+              Pole No-25, 513/11, Karala Village, Delhi - 110081
             </p>
 
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2 text-sm sm:text-base font-medium">
               <div className="flex items-center gap-2">
-                <span className="text-xl">📞</span>
+                <Phone className="w-5 h-5" />
                 <a href="tel:+919310105630" className="hover:text-white/80 transition-colors">+91-9310105630</a>
               </div>
               <span className="hidden sm:inline text-white/40">|</span>
-              <div className="flex items-center gap-2">
-                <span className="text-xl">🌐</span>
-                <a href="https://www.HUMANIFY.in" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.HUMANIFY.in</a>
+              <div className="flex items-center gap-2 flex-wrap">
+                <Globe className="w-5 h-5 flex-shrink-0" />
+                <div className="flex gap-2 flex-wrap">
+                  <a href="https://www.vridhashram.in" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.vridhashram.in</a>
+                  <span className="text-white/40">|</span>
+                  <a href="https://www.humanify.in" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.humanify.in</a>
+                  <span className="text-white/40">|</span>
+                  <a href="https://www.nirajgera.com" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.nirajgera.com</a>
+                </div>
               </div>
               <span className="hidden sm:inline text-white/40">|</span>
               <div className="flex items-center gap-2">
-                <span className="text-xl">💬</span>
+                <MessageCircle className="w-5 h-5" />
                 <span>WhatsApp: Same number</span>
               </div>
             </div>
@@ -212,17 +246,73 @@ function LifeAtAanandam() {
           viewport={{ once: true }}
         >
           <a href="tel:+919310105630" className="w-full sm:w-auto bg-[#C62828] hover:bg-[#B71C1C] text-white font-bold py-3 px-8 rounded-xl shadow-md transition transform hover:-translate-y-0.5 hover:shadow-lg text-sm text-center flex items-center justify-center gap-2">
-            <span>📞</span> Call Now for Admission
+            <Phone className="w-5 h-5" /> Call Now for Admission
           </a>
           <a href="https://wa.me/919310105630" target="_blank" rel="noreferrer" className="w-full sm:w-auto bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold py-3 px-8 rounded-xl shadow-md transition transform hover:-translate-y-0.5 hover:shadow-lg text-sm text-center flex items-center justify-center gap-2">
-            <span>💬</span> WhatsApp Us
+            <MessageCircle className="w-5 h-5" /> WhatsApp Us
           </a>
           <a href="#" className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#0a231a] font-bold py-3 px-8 rounded-xl shadow-sm border-2 border-[#0a231a] transition transform hover:-translate-y-0.5 hover:shadow-md text-sm text-center flex items-center justify-center gap-2">
-            <span>🧭</span> Get Directions
+            <Compass className="w-5 h-5" /> Get Directions
           </a>
         </motion.div>
 
       </section>
+
+      {/* Fullscreen Image Modal (Lightbox) */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#0a231a]/95 backdrop-blur-md p-4 sm:p-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.button
+              className="absolute top-6 right-6 text-white bg-white/10 hover:bg-[#C62828] rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-md transition-colors z-50"
+              onClick={() => setSelectedImage(null)}
+              initial={{ opacity: 0, scale: 0.5, rotate: -90 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ delay: 0.2, type: "spring" }}
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </motion.button>
+
+            {/* Left/Prev Button */}
+            <button
+              className="absolute left-2 sm:left-6 text-white bg-black/20 hover:bg-[#FDD835] hover:text-[#0a231a] rounded-full w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center backdrop-blur-md transition-colors z-50"
+              onClick={handlePrev}
+            >
+              <svg className="w-6 h-6 sm:w-8 sm:h-8 pr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Right/Next Button */}
+            <button
+              className="absolute right-2 sm:right-6 text-white bg-black/20 hover:bg-[#FDD835] hover:text-[#0a231a] rounded-full w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center backdrop-blur-md transition-colors z-50"
+              onClick={handleNext}
+            >
+              <svg className="w-6 h-6 sm:w-8 sm:h-8 pl-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <motion.img
+              src={selectedImage}
+              alt="Expanded view"
+              className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -4,18 +4,26 @@ import PageHero from '../Component/PageHero';
 
 function VideoGallery() {
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [hoveredVideo, setHoveredVideo] = useState(null);
 
-  // Example videos using YouTube IDs. The thumbnail is fetched automatically from YouTube.
   const videos = [
-    { id: "dQw4w9WgXcQ", title: "A Day at Aanandam" },
-    { id: "jNQXAC9IVRw", title: "Diwali Celebration 2023" },
-    { id: "tgbNymZ7vqY", title: "Medical Camp Highlights" },
-    { id: "y6120QOlsfU", title: "Corporate Volunteering" },
-    { id: "9bZkp7q19f0", title: "Elders Singing Bhajan" },
-    { id: "ZaX1gD54u28", title: "Birthday Celebration" },
-    { id: "V-_O7nl0Ii0", title: "Yoga & Meditation" },
-    { id: "M7lc1UVf-VE", title: "Founder's Message" },
-    { id: "Wch3gJG2IG4", title: "New Year Event" },
+    { id: "8ujLQ49fEAk", title: "Aanandam Video 1" },
+    { id: "ZwE4pmZP5yk", title: "Aanandam Video 2" },
+    { id: "80wF_whL_qU", title: "Aanandam Video 3" },
+    { id: "TKMp61TjpcM", title: "Aanandam Video 4" },
+    { id: "8toc_A3L6KQ", title: "Aanandam Video 5" },
+    { id: "jAujEwM6zdY", title: "Aanandam Video 6" },
+    { id: "EqQISZTMwTs", title: "Aanandam Video 7" },
+    { id: "TnmDUy34Edw", title: "Aanandam Video 8" },
+    { id: "P4sgXhKpm3k", title: "Aanandam Video 9" },
+    { id: "gx983DviBYc", title: "Aanandam Video 10" },
+    { id: "2TOSmaG5nLY", title: "Aanandam Video 11" },
+    { id: "8ah5AMY_eTQ", title: "Aanandam Video 12" },
+    { id: "tObjYc5D-Oc", title: "Aanandam Video 13" },
+    { id: "PzZyB2-FFXg", title: "Aanandam Video 14" },
+    { id: "qrb0EL_hv1U", title: "Aanandam Video 15" },
+    { id: "OZcJAdvSGAQ", title: "Aanandam Video 16" },
+    { id: "6GlPTVGS8fg", title: "Aanandam Video 17" }
   ];
 
   return (
@@ -27,43 +35,48 @@ function VideoGallery() {
       />
 
       <section className="py-20 px-4 sm:px-6 lg:px-2 max-w-7xl mx-auto">
-        {/* Instructions Box for Admin */}
-        <motion.div
-          className="mb-12 bg-white p-6 sm:p-8 rounded-2xl shadow-md border-l-4 border-[#C62828]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <h3 className="text-[#0a231a] font-black text-xl mb-3 flex items-center gap-2">
-            <span>🎥</span> How to add your YouTube videos:
-          </h3>
-          <p className="text-gray-700 font-medium text-sm sm:text-base leading-relaxed mb-2">
-            Simply find the YouTube video you want to add. Look at the link (e.g. <code className="bg-gray-100 px-2 py-1 rounded text-[#C62828]">https://www.youtube.com/watch?v=<b>YOUR_ID_HERE</b></code>).
+        {/* Section Heading & Description */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0a231a] mb-4">
+            A Glimpse into Aanandam
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Experience the everyday joy, celebrations, and heartwarming moments we share with our elders. Each video is a testament to the love, care, and family-like bond that makes our NGO a true home.
           </p>
-          <p className="text-gray-700 font-medium text-sm sm:text-base leading-relaxed">
-            Copy the ID part and add it to the <code>videos</code> array in the code. Our system will automatically fetch the thumbnail and play the video in a beautiful popup!
-          </p>
-        </motion.div>
+        </div>
 
         {/* Video Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {videos.map((video, index) => (
             <motion.div
               key={index}
-              className="relative rounded-2xl overflow-hidden shadow-md cursor-pointer group hover:shadow-2xl transition-all duration-300 bg-black aspect-video"
+              className="relative rounded-2xl overflow-hidden shadow-md cursor-pointer group hover:shadow-2xl transition-all duration-300 bg-black aspect-[9/16]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: (index % 3) * 0.1, duration: 0.5 }}
               viewport={{ once: true, margin: "-50px" }}
               onClick={() => setSelectedVideo(video.id)}
+              onMouseEnter={() => setHoveredVideo(video.id)}
+              onMouseLeave={() => setHoveredVideo(null)}
             >
-              {/* Thumbnail Image from YouTube */}
-              <img
-                src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
-                onError={(e) => { e.target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`; }}
-                alt={video.title}
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out opacity-80 group-hover:opacity-50"
-                loading="lazy"
-              />
+              {/* Video Player on Hover or Thumbnail Image */}
+              {hoveredVideo === video.id ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&playsinline=1`}
+                  title={video.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
+                ></iframe>
+              ) : (
+                <img
+                  src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                  onError={(e) => { e.target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`; }}
+                  alt={video.title}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out opacity-80 group-hover:opacity-50"
+                  loading="lazy"
+                />
+              )}
 
               {/* Title Overlay */}
               <div className="absolute top-0 left-0 w-full p-4 bg-gradient-to-b from-black/80 to-transparent z-10 transition-opacity duration-300">
@@ -72,14 +85,6 @@ function VideoGallery() {
                 </h3>
               </div>
 
-              {/* Play Button Icon */}
-              <div className="absolute inset-0 flex items-center justify-center z-20">
-                <div className="w-16 h-16 bg-[#C62828] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
             </motion.div>
           ))}
         </div>

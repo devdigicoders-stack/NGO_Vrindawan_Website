@@ -1,4 +1,5 @@
 import React from 'react';
+import { Star } from 'lucide-react';
 
 const items = [
   "Community Support",
@@ -41,8 +42,8 @@ export default function Ticker() {
                 <span className="text-[#0a231a] font-bold text-[15px] sm:text-[17px] tracking-[0.15em] uppercase">
                   {item}
                 </span>
-                <span className="mx-6 sm:mx-12 text-[#0a231a] text-lg sm:text-xl font-black">
-                  ✱
+                <span className="mx-6 sm:mx-12 text-[#0a231a]">
+                  <Star className="w-5 h-5 fill-current" />
                 </span>
               </div>
             ))}

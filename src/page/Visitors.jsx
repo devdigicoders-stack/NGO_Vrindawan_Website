@@ -1,28 +1,29 @@
 import React from "react";
 import PageHero from "../Component/PageHero";
+import { Camera, Building, Handshake, Flag, HeartHandshake, Sparkles } from "lucide-react";
 
 function Visitors() {
   const visitorsList = [
     {
       badge: "Corporate Visitor",
-      name: "🐄 Amul",
+      name: <span className="flex items-center gap-2"><HeartHandshake className="w-5 h-5" /> Amul</span>,
       subtitle: "India's Most Trusted Food Brand",
       description: "The team from Amul visited Aanandam to connect with our elders. Their visit brought warmth, nutrition, and delightful group activities, leaving our grandparents with genuine joy and national pride.",
-      photoHint: "📸 Photo: Amul team with elders, product distribution, and smiling group shots."
+      photoHint: <><Camera className="w-4 h-4 inline-block mr-1" /> Photo: Amul team with elders, product distribution, and smiling group shots.</>
     },
     {
       badge: "CSR Partner",
-      name: "🏦 Axis Max Life Insurance",
+      name: <span className="flex items-center gap-2"><Building className="w-5 h-5" /> Axis Max Life Insurance</span>,
       subtitle: "Largest Private Life Insurer",
       description: "Axis Max Life Insurance visited Aanandam as part of their CSR programs. The team engaged in interactive games, physical exercises, and spiritual sessions, conveying their values of elder protection.",
-      photoHint: "📸 Photo: Axis Max Life representatives participating in elder activities."
+      photoHint: <><Camera className="w-4 h-4 inline-block mr-1" /> Photo: Axis Max Life representatives participating in elder activities.</>
     },
     {
       badge: "Wellness Partner",
-      name: "💅 Yes Madam",
+      name: <span className="flex items-center gap-2"><Sparkles className="w-5 h-5" /> Yes Madam</span>,
       subtitle: "Beauty & Wellness Platform",
       description: "Yes Madam brought grooming and care services directly to our elderly grandmothers. A warm grooming session made them feel cherished and built their confidence and self-respect.",
-      photoHint: "📸 Photo: Grandmothers during grooming and wellness session."
+      photoHint: <><Camera className="w-4 h-4 inline-block mr-1" /> Photo: Grandmothers during grooming and wellness session.</>
     }
   ];
 
@@ -84,7 +85,7 @@ function Visitors() {
               NGO Association
             </span>
             <h3 className="font-serif font-bold text-xl text-dark">
-              🤝 HelpAge India Partnership
+              <Handshake className="w-5 h-5 inline-block mr-2 text-dark" /> HelpAge India Partnership
             </h3>
             <span className="text-xs text-accent-dark font-bold block -mt-2">
               India's Premier Organization for Elderly Care Since 1978
@@ -98,7 +99,7 @@ function Visitors() {
               HelpAge India | 12A &amp; 80G Certified | Serves 10 Lakh+ Elders Annually
             </div>
             <div className="bg-white/80 p-3 rounded-lg border border-gold/10 text-xxs text-grey italic">
-              📸 Photo: HelpAge India representatives coordinating with Niraj Gera Ji and residents.
+              <Camera className="w-4 h-4 inline-block mr-1" /> Photo: HelpAge India representatives coordinating with Niraj Gera Ji and residents.
             </div>
           </div>
 
@@ -121,7 +122,7 @@ function Visitors() {
                 National Icon Visit
               </span>
               <h3 className="font-serif font-black text-2xl text-primary mt-2">
-                🇮🇳 Dr. Kiran Bedi Ji
+                <Flag className="w-6 h-6 inline-block mr-2 text-primary" /> Dr. Kiran Bedi Ji
               </h3>
               <p className="text-xs text-accent-dark font-bold uppercase tracking-wider">
                 IPS (Retd.) | Former Lt. Governor of Puducherry | Ramon Magsaysay Award Winner
@@ -143,7 +144,7 @@ function Visitors() {
               </p>
             </div>
             <div className="bg-white/80 p-4 rounded-xl border border-gold/10">
-              <span className="block font-bold text-primary mb-1">📸 Photo Records Required</span>
+              <span className="flex items-center gap-2 font-bold text-primary mb-1"><Camera className="w-4 h-4" /> Photo Records Required</span>
               <ul className="list-disc pl-4 text-grey space-y-1">
                 <li>Candid interactions with elders</li>
                 <li>Niraj Gera Ji welcoming Dr. Kiran Bedi</li>

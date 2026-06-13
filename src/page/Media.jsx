@@ -1,5 +1,6 @@
 import React from "react";
 import PageHero from "../Component/PageHero";
+import { Globe, Newspaper, Mic } from "lucide-react";
 
 function Media() {
   const internationalMedia = [
@@ -47,7 +48,7 @@ function Media() {
                 key={idx}
                 className="bg-primary/5 border border-primary/15 text-primary text-xs font-bold px-4 py-2 rounded-xl"
               >
-                🌍 {media}
+                <Globe className="w-4 h-4 inline-block mr-1" /> {media}
               </span>
             ))}
           </div>
@@ -64,7 +65,7 @@ function Media() {
                 key={idx}
                 className="bg-accent/5 border border-accent/25 text-accent-dark text-xs font-bold px-4 py-2 rounded-xl"
               >
-                📰 {media}
+                <Newspaper className="w-4 h-4 inline-block mr-1" /> {media}
               </span>
             ))}
           </div>
@@ -81,7 +82,7 @@ function Media() {
                 key={idx}
                 className="bg-dark text-white text-xs font-bold px-4 py-2 rounded-xl"
               >
-                🎙️ {media}
+                <Mic className="w-4 h-4 inline-block mr-1" /> {media}
               </span>
             ))}
           </div>

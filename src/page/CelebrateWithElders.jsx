@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Cake, Heart, PartyPopper } from 'lucide-react';
 import PageHero from '../Component/PageHero';
 
 function CelebrateWithElders() {
@@ -32,19 +33,19 @@ function CelebrateWithElders() {
 
   const perfectFor = [
     {
-      icon: "🎂",
+      icon: <Cake size={40} className="text-[#0a231a]" />,
       title: "Birthdays",
       desc: "Adults and children both. A child who celebrates their birthday at Aanandam learns the meaning of empathy and gratitude in one afternoon — a lesson no school teaches.",
       borderColor: "border-[#F59E0B]" // Orange
     },
     {
-      icon: "💍",
+      icon: <Heart size={40} className="text-[#0a231a]" />,
       title: "Anniversaries",
       desc: "What better way to honour love than by sharing it? Bring your partner to Aanandam and receive blessings from those who have loved for decades.",
       borderColor: "border-[#2E7D32]" // Green
     },
     {
-      icon: "🎊",
+      icon: <PartyPopper size={40} className="text-[#0a231a]" />,
       title: "Promotions & Achievements",
       desc: "Mark your professional milestones by giving back. Start your new chapter with the most powerful good wishes you can receive — from those who have nothing to gain and everything to give.",
       borderColor: "border-[#C62828]" // Red
@@ -149,7 +150,7 @@ function CelebrateWithElders() {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300 origin-left">{item.icon}</div>
+                  <div className="mb-6 group-hover:scale-110 transition-transform duration-300 origin-left">{item.icon}</div>
                   <h3 className="text-xl font-bold text-[#0a231a] group-hover:text-white transition-colors duration-300 mb-4">{item.title}</h3>
                   <p className="text-gray-600 group-hover:text-white/90 leading-relaxed text-sm transition-colors duration-300">
                     {item.desc}

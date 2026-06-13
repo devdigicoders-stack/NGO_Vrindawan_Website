@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MapPin, Phone, Globe, MessageCircle } from 'lucide-react';
 import PageHero from '../Component/PageHero';
 
 function Facilities() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1576765974102-b756026ecee3?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1516302752946-f93f8eb6c429?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1544027993-37db48d8e0e6?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1593113554316-22a36af1c238?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80"
+    "/20260304_150913.jpg",
+    "/20260304_151034.jpg",
+    "/20260304_151141.jpg",
+    "/20260304_151401.jpg",
+    "/20260304_151935.jpg",
+    "/20260304_152202 (1).jpg",
+    "/20260306_131933.jpg",
+    "/20260308_170324.jpg"
   ];
 
   const facilitiesList = [
@@ -94,7 +95,7 @@ function Facilities() {
 
         {/* What Is Provided Free */}
         <motion.div
-          className="max-w-5xl mx-auto"
+          className="max-w-7xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -121,7 +122,7 @@ function Facilities() {
 
         {/* Who Can Come */}
         <motion.div
-          className="max-w-5xl mx-auto"
+          className="max-w-7xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -157,7 +158,7 @@ function Facilities() {
 
         {/* Support Request */}
         <motion.div
-          className="max-w-5xl mx-auto"
+          className="max-w-7xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -173,7 +174,7 @@ function Facilities() {
 
         {/* Contact Box */}
         <motion.div
-          className="bg-[#2E7D32] rounded-3xl p-8 sm:p-10 shadow-xl text-white w-full mx-auto overflow-hidden relative max-w-5xl"
+          className="bg-[#2E7D32] rounded-3xl p-8 sm:p-10 shadow-xl text-white w-full mx-auto overflow-hidden relative max-w-7xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -183,7 +184,7 @@ function Facilities() {
 
           <div className="relative z-10 space-y-6">
             <h2 className="font-serif font-bold text-xl sm:text-2xl text-white mb-4 flex items-center gap-3">
-              <span className="text-3xl">📍</span> पता और संपर्क
+              <MapPin className="w-8 h-8" /> पता और संपर्क
             </h2>
 
             <p className="text-white/90 text-sm sm:text-base leading-relaxed font-medium">
@@ -192,17 +193,23 @@ function Facilities() {
 
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2 text-sm sm:text-base font-medium">
               <div className="flex items-center gap-2">
-                <span className="text-xl">📞</span>
+                <Phone className="w-5 h-5" />
                 <a href="tel:+919310105630" className="hover:text-white/80 transition-colors">+91-9310105630</a>
               </div>
               <span className="hidden sm:inline text-white/40">|</span>
-              <div className="flex items-center gap-2">
-                <span className="text-xl">🌐</span>
-                <a href="https://www.HUMANIFY.in" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.HUMANIFY.in</a>
+              <div className="flex items-center gap-2 flex-wrap">
+                <Globe className="w-5 h-5 flex-shrink-0" />
+                <div className="flex gap-2 flex-wrap">
+                  <a href="https://www.vridhashram.in" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.vridhashram.in</a>
+                  <span className="text-white/40">|</span>
+                  <a href="https://www.humanify.in" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.humanify.in</a>
+                  <span className="text-white/40">|</span>
+                  <a href="https://www.nirajgera.com" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.nirajgera.com</a>
+                </div>
               </div>
               <span className="hidden sm:inline text-white/40">|</span>
               <div className="flex items-center gap-2">
-                <span className="text-xl">💬</span>
+                <MessageCircle className="w-5 h-5" />
                 <span>WhatsApp: इसी नंबर पर</span>
               </div>
             </div>

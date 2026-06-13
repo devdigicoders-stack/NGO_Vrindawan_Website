@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PageHero from "../Component/PageHero";
 import DonationTables from "../Component/DonationTables";
+import { FaCreditCard, FaBoxOpen, FaHeart, FaMobileAlt, FaPhoneAlt } from "react-icons/fa";
 
 function Donate() {
   const [amountType, setAmountType] = useState("meal");
@@ -66,108 +67,207 @@ function Donate() {
       </section>
 
 
+      {/* Every Rupee Counts Section */}
+      <section className="bg-[#FFFDF5] py-16 sm:py-16 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-12 sm:w-24 h-[1px] bg-[#E58F00]/30"></div>
+              <span className="text-[#E58F00] font-bold tracking-widest text-[13px] uppercase whitespace-nowrap">
+                Every Rupee Counts
+              </span>
+              <div className="w-12 sm:w-24 h-[1px] bg-[#E58F00]/30"></div>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#9a3412] font-bold mb-6 leading-tight">
+              Donate to Aanandam Vridhashram — <br className="hidden lg:block" />Every Rupee Becomes a Meal, a Medicine, a Moment of Dignity.
+            </h2>
+            <p className="text-gray-700 text-[16px] leading-[1.8] font-medium max-w-4xl mx-auto">
+              Aanandam Vridhashram, a 100% free old age home in Karala Village near Rohini Sector-38 and Pitampura, Delhi NCR, runs entirely on the generosity of donors like you. As an initiative under Humanify Foundation, all donations are eligible for tax exemption under Section 80G of the Income Tax Act.
+            </p>
+          </div>
+
+          <div className="mb-12">
+            <div className="flex items-center justify-center gap-4 mb-10">
+              <div className="w-12 sm:w-24 h-[1px] bg-[#E58F00]/30"></div>
+              <span className="text-[#E58F00] font-bold tracking-widest text-[13px] uppercase whitespace-nowrap">
+                Choose Your Way To Give
+              </span>
+              <div className="w-12 sm:w-24 h-[1px] bg-[#E58F00]/30"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Card 1 */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col overflow-hidden hover:shadow-md transition-shadow">
+                <div className="bg-[#E58F00] p-6 text-white text-center">
+                  <h3 className="font-serif text-lg font-bold mb-2">One-Time Donation</h3>
+                  <p className="font-serif text-[28px] font-bold">Any Amount</p>
+                </div>
+                <div className="p-8 flex-grow flex items-center justify-center text-center">
+                  <p className="text-gray-600 text-[14.5px] leading-relaxed">
+                    Used immediately for urgent needs — food, medicines, bedding, repairs. Every contribution, big or small, is deployed where it's needed most.
+                  </p>
+                </div>
+                <button className="bg-[#E58F00] hover:bg-[#d97706] text-white font-bold py-4 px-4 w-full uppercase tracking-wider text-[13px] transition-colors">
+                  Donate Now
+                </button>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col overflow-hidden hover:shadow-md transition-shadow">
+                <div className="bg-[#2E7D32] p-6 text-white text-center">
+                  <h3 className="font-serif text-lg font-bold mb-2">Monthly Giving</h3>
+                  <p className="font-serif text-[28px] font-bold">Recurring</p>
+                </div>
+                <div className="p-8 flex-grow flex items-center justify-center text-center">
+                  <p className="text-gray-600 text-[14.5px] leading-relaxed">
+                    Predictable monthly support lets us plan better care, food supplies and medical arrangements for our elders — the most sustainable way to help.
+                  </p>
+                </div>
+                <button className="bg-[#E58F00] hover:bg-[#d97706] text-white font-bold py-4 px-4 w-full uppercase tracking-wider text-[13px] transition-colors">
+                  Become a Monthly Donor
+                </button>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col overflow-hidden hover:shadow-md transition-shadow">
+                <div className="bg-[#2d3748] p-6 text-white text-center">
+                  <h3 className="font-serif text-lg font-bold mb-2">Sponsor a Meal</h3>
+                  <p className="font-serif text-[28px] font-bold">₹51</p>
+                </div>
+                <div className="p-8 flex-grow flex items-center justify-center text-center">
+                  <p className="text-gray-600 text-[14.5px] leading-relaxed">
+                    ₹51 covers one full, nutritious meal for one elder. A simple, low-cost way to feed someone today. Perfect for "Annadan" on special occasions.
+                  </p>
+                </div>
+                <button className="bg-[#E58F00] hover:bg-[#d97706] text-white font-bold py-4 px-4 w-full uppercase tracking-wider text-[13px] transition-colors">
+                  Sponsor a Meal
+                </button>
+              </div>
+
+              {/* Card 4 */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col overflow-hidden hover:shadow-md transition-shadow">
+                <div className="bg-[#991b1b] p-6 text-white text-center">
+                  <h3 className="font-serif text-lg font-bold mb-2">Sponsor an Elder</h3>
+                  <p className="font-serif text-[28px] font-bold">₹1,500/mo</p>
+                </div>
+                <div className="p-8 flex-grow flex items-center justify-center text-center">
+                  <p className="text-gray-600 text-[14.5px] leading-relaxed">
+                    Covers the complete monthly care of one elder — meals, shelter, medicines, wellbeing. Receive updates & photos.
+                  </p>
+                </div>
+                <button className="bg-[#E58F00] hover:bg-[#d97706] text-white font-bold py-4 px-4 w-full uppercase tracking-wider text-[13px] transition-colors">
+                  Sponsor an Elder
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Main Content Area */}
-      <section className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-2 space-y-12 text-sm sm:text-base text-grey leading-relaxed">
+      <section className="bg-[#FFFDF5] pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-12 text-sm sm:text-base text-grey leading-relaxed">
 
+          {/* Ways to Donate Section */}
+          <div className="space-y-8">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="w-12 sm:w-24 h-[1px] bg-[#E58F00]/30"></div>
+              <span className="text-[#E58F00] font-bold tracking-widest text-[13px] uppercase whitespace-nowrap">
+                Other Ways To Give
+              </span>
+              <div className="w-12 sm:w-24 h-[1px] bg-[#E58F00]/30"></div>
+            </div>
 
-        {/* Ways to Donate Section */}
-        <div className="space-y-8">
-          <h2 className="font-serif font-black text-3xl text-accent-dark">Ways to Donate</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Card 1: UPI / Online Transfer */}
+              <div className="relative bg-white p-8 rounded-2xl shadow-sm border border-gold/20 overflow-hidden group cursor-pointer transition-shadow duration-300 hover:shadow-2xl hover:border-transparent">
+                {/* The Sliding Dark Green Background */}
+                <div className="absolute bottom-0 left-0 w-full h-0 bg-[#0a231a] transition-all duration-500 ease-out group-hover:h-full z-0"></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Card 1: UPI / Online Transfer */}
-            <div className="relative bg-white p-8 rounded-2xl shadow-sm border border-gold/20 overflow-hidden group cursor-pointer transition-shadow duration-300 hover:shadow-2xl hover:border-transparent">
-              {/* The Sliding Dark Green Background */}
-              <div className="absolute bottom-0 left-0 w-full h-0 bg-[#0a231a] transition-all duration-500 ease-out group-hover:h-full z-0"></div>
+                {/* Content Container */}
+                <div className="relative z-10">
+                  <h3 className="font-serif font-bold text-xl text-dark group-hover:text-white transition-colors duration-300 flex items-center mb-4">
+                    <span className="mr-3 text-2xl text-[#E58F00] group-hover:text-white"><FaCreditCard /></span> UPI / Online Transfer
+                  </h3>
+                  <p className="text-grey group-hover:text-white/80 transition-colors duration-300 text-sm mb-6 leading-relaxed">
+                    The fastest way to donate. Use any UPI app — GPay, PhonePe, Paytm — or direct bank transfer.
+                  </p>
 
-              {/* Content Container */}
-              <div className="relative z-10">
-                <h3 className="font-serif font-bold text-xl text-dark group-hover:text-white transition-colors duration-300 flex items-center mb-4">
-                  <span className="mr-3 text-2xl">💳</span> UPI / Online Transfer
-                </h3>
-                <p className="text-grey group-hover:text-white/80 transition-colors duration-300 text-sm mb-6 leading-relaxed">
-                  The fastest way to donate. Use any UPI app — GPay, PhonePe, Paytm — or direct bank transfer.
-                </p>
+                  <div className="space-y-2 text-sm text-dark group-hover:text-white/90 transition-colors duration-300">
+                    <p><span className="font-bold text-grey group-hover:text-white transition-colors duration-300">UPI ID:</span> vridhashram@upi</p>
+                    <p><span className="font-bold text-grey group-hover:text-white transition-colors duration-300">Bank:</span> HDFC Bank Ltd</p>
+                    <p><span className="font-bold text-grey group-hover:text-white transition-colors duration-300">Account No:</span> 50200057291753</p>
+                    <p><span className="font-bold text-grey group-hover:text-white transition-colors duration-300">IFSC:</span> HDFC0000284</p>
+                    <p><span className="font-bold text-grey group-hover:text-white transition-colors duration-300">Account Name:</span> Humanify Foundation</p>
+                  </div>
+                </div>
+              </div>
 
-                <div className="space-y-2 text-sm text-dark group-hover:text-white/90 transition-colors duration-300">
-                  <p><span className="font-bold text-grey group-hover:text-white transition-colors duration-300">UPI ID:</span> vridhashram@upi</p>
-                  <p><span className="font-bold text-grey group-hover:text-white transition-colors duration-300">Bank:</span> HDFC Bank Ltd</p>
-                  <p><span className="font-bold text-grey group-hover:text-white transition-colors duration-300">Account No:</span> 50200057291753</p>
-                  <p><span className="font-bold text-grey group-hover:text-white transition-colors duration-300">IFSC:</span> HDFC0000284</p>
-                  <p><span className="font-bold text-grey group-hover:text-white transition-colors duration-300">Account Name:</span> Humanify Foundation</p>
+              {/* Card 2: Donate in Kind */}
+              <div className="relative bg-white p-8 rounded-2xl shadow-sm border border-gold/20 overflow-hidden group cursor-pointer transition-shadow duration-300 hover:shadow-2xl hover:border-transparent">
+                {/* The Sliding Dark Green Background */}
+                <div className="absolute bottom-0 left-0 w-full h-0 bg-[#0a231a] transition-all duration-500 ease-out group-hover:h-full z-0"></div>
+
+                {/* Content Container */}
+                <div className="relative z-10">
+                  <h3 className="font-serif font-bold text-xl text-dark group-hover:text-white transition-colors duration-300 flex items-center mb-4">
+                    <span className="mr-3 text-2xl text-[#E58F00] group-hover:text-white"><FaBoxOpen /></span> Donate in Kind
+                  </h3>
+                  <p className="text-grey group-hover:text-white/80 transition-colors duration-300 text-sm mb-4">
+                    You can donate items we need every month:
+                  </p>
+
+                  <ul className="text-sm text-dark group-hover:text-white/90 transition-colors duration-300 space-y-1.5 mb-6">
+                    <li>• Dal, rice, atta, cooking oil, sugar, tea</li>
+                    <li>• Seasonal vegetables and fruits</li>
+                    <li>• Milk and dairy products</li>
+                    <li>• Gas cylinders</li>
+                    <li>• Medicines and first-aid supplies</li>
+                    <li>• Bedsheets, blankets, towels</li>
+                    <li>• Cleaning and hygiene supplies</li>
+                  </ul>
+
+                  <p className="text-sm text-grey group-hover:text-[#FDD835] font-bold transition-colors duration-300">
+                    Call us to arrange drop-off or pick-up.
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Card 2: Donate in Kind */}
-            <div className="relative bg-white p-8 rounded-2xl shadow-sm border border-gold/20 overflow-hidden group cursor-pointer transition-shadow duration-300 hover:shadow-2xl hover:border-transparent">
-              {/* The Sliding Dark Green Background */}
-              <div className="absolute bottom-0 left-0 w-full h-0 bg-[#0a231a] transition-all duration-500 ease-out group-hover:h-full z-0"></div>
-
-              {/* Content Container */}
-              <div className="relative z-10">
-                <h3 className="font-serif font-bold text-xl text-dark group-hover:text-white transition-colors duration-300 flex items-center mb-4">
-                  <span className="mr-3 text-2xl">📦</span> Donate in Kind
-                </h3>
-                <p className="text-grey group-hover:text-white/80 transition-colors duration-300 text-sm mb-4">
-                  You can donate items we need every month:
+            {/* Hindi SEO / Summary Section */}
+            <div className="mt-8 bg-[#FFFDF5] rounded-xl border-l-[6px] border-l-[#E58F00] p-8 md:p-10 shadow-sm relative">
+              <div className="absolute top-6 right-6 text-[#E58F00] text-sm font-bold">हिंदी</div>
+              <h3 className="font-serif font-bold text-2xl md:text-[26px] mb-6 text-[#9a3412]">
+                आनंदम् वृद्धाश्रम को दान दें
+              </h3>
+              <div className="space-y-4 text-gray-700 text-[15.5px] leading-[1.8] font-medium">
+                <p>
+                  आनंदम् वृद्धाश्रम (करला, रोहिणी सेक्टर-38 के पास, दिल्ली) को दान दें — आपका हर रुपया एक बुजुर्ग के लिए भोजन, दवा या सम्मान बनता है।
                 </p>
-
-                <ul className="text-sm text-dark group-hover:text-white/90 transition-colors duration-300 space-y-1.5 mb-6">
-                  <li>• Dal, rice, atta, cooking oil, sugar, tea</li>
-                  <li>• Seasonal vegetables and fruits</li>
-                  <li>• Milk and dairy products</li>
-                  <li>• Gas cylinders</li>
-                  <li>• Medicines and first-aid supplies</li>
-                  <li>• Bedsheets, blankets, towels</li>
-                  <li>• Cleaning and hygiene supplies</li>
-                </ul>
-
-                <p className="text-sm text-grey group-hover:text-[#FDD835] font-bold transition-colors duration-300">
-                  Call us to arrange drop-off or pick-up.
+                <p>
+                  एक बार का दान, मासिक दान, भोजन प्रायोजन (₹51), या बुजुर्ग प्रायोजन (₹1,500/माह) — सभी विकल्प उपलब्ध हैं। हुमानिफाई फाउंडेशन के तहत सभी दान <span className="font-bold text-[#9a3412]">80G</span> के अंतर्गत कर-मुक्त हैं।
                 </p>
               </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <span className="bg-[#E58F00] text-white text-[13px] font-bold px-5 py-2 rounded-full shadow-sm">वृद्धाश्रम दान दिल्ली</span>
+                <span className="bg-[#E58F00] text-white text-[13px] font-bold px-5 py-2 rounded-full shadow-sm">मासिक दान वृद्धाश्रम</span>
+                <span className="bg-[#E58F00] text-white text-[13px] font-bold px-5 py-2 rounded-full shadow-sm">80G दान रसीद</span>
+                <span className="bg-[#E58F00] text-white text-[13px] font-bold px-5 py-2 rounded-full shadow-sm">CSR दान वृद्धाश्रम</span>
+              </div>
+            </div>
+
+            {/* Contact Banner */}
+            <div className="mt-10 bg-[#1f2937] rounded-xl p-8 md:p-10 shadow-md">
+              <h3 className="font-serif font-bold text-2xl text-white mb-6 flex items-center gap-3">
+                <span className="text-[#e81cff] text-2xl"><FaPhoneAlt /></span> Donate Now
+              </h3>
+              <p className="text-white/90 text-[14.5px] leading-[2]">
+                <span className="font-bold">Phone / WhatsApp:</span> +91-9310105630 (24×7) | <span className="font-bold">Email:</span> nirajgera@gmail.com | <span className="font-bold">Website:</span> www.vridhashram.in | www.humanify.in | www.nirajgera.com | <span className="font-bold">Address:</span> Pole No-25, 513/11, Karala Village, Delhi - 110081
+              </p>
             </div>
           </div>
-
-          {/* Tax Benefit Banner */}
-          <div className="bg-[#F59E0B] text-white p-8 sm:p-10 rounded-2xl shadow-md">
-            <h3 className="font-serif font-bold text-2xl mb-4">Tax Benefit — 80G Deduction</h3>
-            <p className="text-white/90 leading-relaxed text-sm sm:text-base">
-              Donations to Humanify Foundation qualify for 80G income tax deduction. We provide official receipts for all donations. Please share your PAN number and contact details when donating to receive your 80G certificate. <em className="font-bold opacity-100">Do good. Save tax. Change a life.</em>
-            </p>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex flex-wrap gap-4 pt-4">
-            <button className="bg-[#C62828] hover:bg-[#B71C1C] text-white font-bold py-3 px-6 rounded-lg shadow-sm transition flex items-center transform hover:scale-105">
-              <span className="mr-2">💖</span> Donate Now via Razorpay
-            </button>
-            <button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold py-3 px-6 rounded-lg shadow-sm transition flex items-center transform hover:scale-105">
-              <span className="mr-2">📱</span> Pay via UPI
-            </button>
-            <button className="bg-white border-2 border-dark text-dark font-bold hover:bg-warm py-3 px-6 rounded-lg shadow-sm transition flex items-center transform hover:scale-105">
-              <span className="mr-2">📦</span> Donate in Kind
-            </button>
-          </div>
         </div>
-
-        {/* Hindi Highlight Section */}
-        <div className="bg-orange-50/40 border-l-4 border-orange-500 rounded-r-2xl p-6 space-y-3">
-          <h3 className="font-kalam text-xl font-bold text-red-brand">दान एवं सहयोग — पुण्य का भागीदार बनें</h3>
-          <p className="font-kalam text-sm sm:text-base text-dark/95 leading-relaxed">
-            आनंदम् वृद्धाश्रम आपके सहयोग से ही चलता है। आप हमारे बुजुर्गों के भोजन (₹1,500), प्रति बुजुर्ग मासिक सहायता (₹6,000),
-            या किसी यात्रा को प्रायोजित (₹15,000) कर सकते हैं। दान की गई राशि आयकर अधिनियम की धारा <strong>80G</strong> के तहत
-            करमुक्त है। आप सीधे हमारे बैंक खाते में Net Banking द्वारा या <strong>vridhashram@upi</strong> पर UPI द्वारा भुगतान कर सकते हैं।
-            स्थानांतरण के पश्चात रसीद प्राप्त करने के लिए स्क्रीनशॉट <strong>+91-9310105630</strong> पर WhatsApp अवश्य भेजें।
-          </p>
-          <div className="flex flex-wrap gap-2 text-xxs font-bold">
-            <span className="bg-orange-500 text-white px-2.5 py-1 rounded-full">वृद्धाश्रम बैंक खाता</span>
-            <span className="bg-orange-500 text-white px-2.5 py-1 rounded-full">वृद्धाश्रम दान UPI</span>
-            <span className="bg-orange-500 text-white px-2.5 py-1 rounded-full">vridhashram.in दान</span>
-          </div>
-        </div>
-
       </section>
     </div>
   );

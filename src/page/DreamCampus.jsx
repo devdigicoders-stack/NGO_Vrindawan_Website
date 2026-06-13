@@ -73,20 +73,12 @@ export default function DreamCampus() {
         hideBreadcrumb={true}
       />
 
-      <section className="max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-2">
+      <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-2">
 
         {/* Intro Section */}
         <div className="space-y-6 mb-16 text-gray-700 text-[15px] sm:text-[16px] leading-relaxed font-medium">
 
-          {/* Added Image with Hover Animation */}
-          <div className="w-full h-[400px] sm:h-[500px] mb-12 overflow-hidden rounded-2xl shadow-lg group relative cursor-pointer">
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10"></div>
-            <img
-              src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=1200&q=80"
-              alt="Elders laughing and enjoying life"
-              className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
-            />
-          </div>
+
 
           <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#2E7D32] mb-6">
             Here, Every Day Is a Celebration of Being Alive.
@@ -135,6 +127,44 @@ export default function DreamCampus() {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Image Gallery */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#2E7D32] mb-4">
+              Glimpses of Aanandam
+            </h2>
+            <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto font-medium">
+              Take a walk through our home. Every smile, every shared meal, and every quiet moment of prayer is a testament to the love that fills these walls. This isn't just a shelter; it's a family captured in moments.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
+              <img src="/20260308_170422.jpg" alt="Elders smiling" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+            </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
+              <img src="/20260308_170446.jpg" alt="Elder care" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+            </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
+              <img src="/20260308_170516.jpg" alt="Community gathering" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+            </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
+              <img src="/20260308_170544.jpg" alt="Happy elder" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+            </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
+              <img src="/20260308_170555.jpg" alt="Elders enjoying time" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+            </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
+              <img src="/20260308_170623.jpg" alt="Elderly care center" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+            </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group hidden md:block">
+              <img src="/20260308_171406.jpg" alt="Elders activities" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+            </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group hidden lg:block">
+              <img src="/20260308_171445.jpg" alt="Aanandam Campus" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+            </div>
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Calendar } from 'lucide-react';
 import PageHero from '../Component/PageHero';
 
 function NewsAndEvents() {
@@ -71,6 +72,15 @@ function NewsAndEvents() {
       />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2 mt-16 space-y-12">
+        {/* Section Heading & Description */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0a231a] mb-4">
+            Latest Updates & Stories
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Discover our recent initiatives, community celebrations, and the beautiful milestones we've achieved together at Aanandam. Every event is a step towards bringing more smiles to our elders.
+          </p>
+        </div>
 
         {/* Grid Layout for Articles */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -99,7 +109,7 @@ function NewsAndEvents() {
               {/* Content Container */}
               <div className="p-6 flex flex-col flex-grow">
                 <p className="text-[#2E7D32] text-sm font-semibold mb-2 flex items-center gap-2">
-                  <span>📅</span> {article.date}
+                  <Calendar className="w-4 h-4" /> {article.date}
                 </p>
                 <h3 className="text-xl font-bold text-[#0a231a] mb-3 group-hover:text-[#C62828] transition-colors duration-300 line-clamp-2 leading-tight">
                   {article.title}
@@ -166,7 +176,7 @@ function NewsAndEvents() {
                           {selectedArticle.category}
                         </span>
                         <span className="text-sm font-medium opacity-90 text-white flex items-center gap-1 drop-shadow-md">
-                          📅 {selectedArticle.date}
+                          <Calendar className="w-4 h-4" /> {selectedArticle.date}
                         </span>
                       </div>
                       <h2 className="text-2xl sm:text-4xl font-black font-serif leading-tight drop-shadow-md">

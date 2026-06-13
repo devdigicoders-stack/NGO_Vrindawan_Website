@@ -5,33 +5,55 @@ import PageHero from '../Component/PageHero';
 function PhotoGallery() {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // ==========================================
-  // HOW TO ADD GOOGLE DRIVE IMAGES
-  // ==========================================
-  // 1. Upload images to Google Drive.
-  // 2. Right click -> Share -> Change general access to "Anyone with the link".
-  // 3. The link looks like: https://drive.google.com/file/d/1A2B3C.../view
-  // 4. Copy ONLY the ID (e.g. 1A2B3C...) and add it below as 'url'.
-  // Our code automatically converts the ID into a direct image link!
-  const galleryImages = [
-    { id: 1, url: "/image.png", title: "Smile of Hope" },
-    { id: 2, url: "/image.png", title: "Evening Prayers" },
-    { id: 3, url: "/image.png", title: "Health Camp" },
-    { id: 4, url: "/image.png", title: "Festival Celebration" },
-    { id: 5, url: "/image.png", title: "Morning Yoga" },
-    { id: 6, url: "/image.png", title: "Community Lunch" },
-    { id: 7, url: "/image.png", title: "Elders Bonding" },
-    { id: 8, url: "/image.png", title: "Peaceful Environment" },
+  const images = [
+    "/20260215_140949 (1).jpg",
+    "/20260215_152343.jpg",
+    "/20260304_134952.jpg",
+    "/20260304_135319.jpg",
+    "/20260304_145835.jpg",
+    "/20260304_150711.jpg",
+    "/20260304_150913.jpg",
+    "/20260304_151034.jpg",
+    "/20260304_151141.jpg",
+    "/20260304_151401.jpg",
+    "/20260304_151935.jpg",
+    "/20260304_152202 (1).jpg",
+    "/20260304_152202.jpg",
+    "/20260306_131933.jpg",
+    "/20260308_170324.jpg",
+    "/20260308_170422.jpg",
+    "/20260308_170446.jpg",
+    "/20260308_170516.jpg",
+    "/20260308_170544.jpg",
+    "/20260308_170555.jpg",
+    "/20260308_170623.jpg",
+    "/20260308_171406.jpg",
+    "/20260308_171445.jpg",
+    "/20260319_130549.jpg",
+    "/20260319_130601.jpg",
+    "/20260319_130703.jpg",
+    "/20260319_130719.jpg",
+    "/20260319_130725.jpg",
+    "/20260319_130801.jpg",
+    "/20260319_130811 (1).jpg",
+    "/20260319_130811.jpg",
+    "/20260319_130821.jpg"
   ];
 
-  // Helper function to handle both regular URLs, Google Drive IDs, and local public paths
-  const getImageUrl = (source) => {
-    // If it's a full URL or a local path starting with '/', return it directly
-    if (source.startsWith("http") || source.startsWith("/")) {
-      return source;
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    const currentIndex = images.indexOf(selectedImage);
+    if (currentIndex > -1) {
+      setSelectedImage(images[(currentIndex - 1 + images.length) % images.length]);
     }
-    // Otherwise, treat it as a Google Drive ID
-    return `https://drive.google.com/uc?export=view&id=${source}`;
+  };
+
+  const handleNext = (e) => {
+    e.stopPropagation();
+    const currentIndex = images.indexOf(selectedImage);
+    if (currentIndex > -1) {
+      setSelectedImage(images[(currentIndex + 1) % images.length]);
+    }
   };
 
   return (
@@ -43,38 +65,24 @@ function PhotoGallery() {
       />
 
       <section className="py-20 px-4 sm:px-6 lg:px-2 max-w-7xl mx-auto">
-
-
-
-        {/* Gallery Grid - Masonry style (Columns) */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
-          {galleryImages.map((img, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {images.map((img, index) => (
             <motion.div
-              key={img.id}
-              className="relative overflow-hidden rounded-2xl cursor-pointer group break-inside-avoid shadow-sm hover:shadow-2xl transition-all duration-300"
+              key={index}
+              className="relative aspect-square rounded-2xl overflow-hidden shadow-sm cursor-pointer group"
+              onClick={() => setSelectedImage(img)}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: (index % 4) * 0.1, duration: 0.5 }}
-              viewport={{ once: true, margin: "-50px" }}
-              onClick={() => setSelectedImage(getImageUrl(img.url))}
+              transition={{ delay: (index % 10) * 0.1 }}
+              viewport={{ once: true }}
             >
-              <img
-                src={getImageUrl(img.url)}
-                alt={img.title}
-                className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                loading="lazy"
+              <img 
+                src={img} 
+                alt={`Gallery ${index + 1}`} 
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" 
               />
-
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a231a]/90 via-[#0a231a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <p className="text-white font-bold p-6 text-lg sm:text-xl w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 font-serif">
-                  {img.title}
-                </p>
-              </div>
-
-              {/* View Icon on Hover */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-50 group-hover:scale-100">
-                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <svg className="w-10 h-10 text-white drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                 </svg>
               </div>
@@ -93,7 +101,6 @@ function PhotoGallery() {
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
           >
-            {/* Close Button */}
             <motion.button
               className="absolute top-6 right-6 text-white bg-white/10 hover:bg-[#C62828] rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-md transition-colors z-50"
               onClick={() => setSelectedImage(null)}
@@ -106,7 +113,26 @@ function PhotoGallery() {
               </svg>
             </motion.button>
 
-            {/* Expanded Image */}
+            {/* Left/Prev Button */}
+            <button
+              className="absolute left-2 sm:left-6 text-white bg-black/20 hover:bg-[#FDD835] hover:text-[#0a231a] rounded-full w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center backdrop-blur-md transition-colors z-50"
+              onClick={handlePrev}
+            >
+              <svg className="w-6 h-6 sm:w-8 sm:h-8 pr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Right/Next Button */}
+            <button
+              className="absolute right-2 sm:right-6 text-white bg-black/20 hover:bg-[#FDD835] hover:text-[#0a231a] rounded-full w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center backdrop-blur-md transition-colors z-50"
+              onClick={handleNext}
+            >
+              <svg className="w-6 h-6 sm:w-8 sm:h-8 pl-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
             <motion.img
               src={selectedImage}
               alt="Expanded view"
@@ -115,7 +141,7 @@ function PhotoGallery() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              onClick={(e) => e.stopPropagation()} // Prevent clicking image from closing modal
+              onClick={(e) => e.stopPropagation()}
             />
           </motion.div>
         )}

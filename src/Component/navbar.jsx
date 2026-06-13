@@ -11,8 +11,7 @@ function Navbar() {
   const [galleryDropdown, setGalleryDropdown] = useState(false);
 
   const activeStyle = ({ isActive }) =>
-    `text-[17px] font-bold tracking-wide transition-all duration-300 pb-1 border-b-2 ${
-      isActive ? "text-[#0a231a] border-[#FDD835]" : "text-gray-700 border-transparent hover:text-[#0a231a]"
+    `text-[17px] font-bold tracking-wide transition-all duration-300 pb-1 border-b-2 ${isActive ? "text-[#0a231a] border-[#FDD835]" : "text-gray-700 border-transparent hover:text-[#0a231a]"
     }`;
 
   return (
@@ -20,16 +19,9 @@ function Navbar() {
       <div className="w-full mx-auto px-4 sm:px-8 lg:px-16 xl:px-20">
         <div className="flex justify-between items-center h-20">
           {/* Logo Section */}
-          <div className="flex items-center">
+          <div className="flex items-center justify-center">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-[#FDD835] flex items-center justify-center text-[#0a231a] shadow-lg group-hover:scale-105 transition-transform">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-              </div>
-              <span className="font-sans font-bold text-2xl text-[#0a231a] tracking-wide">
-                Aanandam<span className="text-[#FDD835]">.</span>
-              </span>
+              <img src="/image.png" alt="Logo" className="h-25 md:h-30 w-auto object-contain mt-4" />
             </Link>
           </div>
 
@@ -54,8 +46,14 @@ function Navbar() {
                   <Link to="/about-aanandam" className="block px-4 py-2.5 text-[14px] font-bold text-[#0a231a] hover:bg-gray-50 hover:text-[#FDD835]">
                     About Aanandam
                   </Link>
+                  <Link to="/why-aanandam" className="block px-4 py-2.5 text-[14px] font-bold text-[#0a231a] hover:bg-gray-50 hover:text-[#FDD835]">
+                    Why Aanandam
+                  </Link>
                   <Link to="/about-founder" className="block px-4 py-2.5 text-[14px] font-bold text-[#0a231a] hover:bg-gray-50 hover:text-[#FDD835]">
                     About Founder
+                  </Link>
+                  <Link to="/about-niraj-gera" className="block px-4 py-2.5 text-[14px] font-bold text-[#0a231a] hover:bg-gray-50 hover:text-[#FDD835]">
+                    About Niraj Gera
                   </Link>
                   <Link to="/life-at-aanandam" className="block px-4 py-2.5 text-[14px] font-bold text-[#0a231a] hover:bg-gray-50 hover:text-[#FDD835]">
                     Life At Aanandam
@@ -153,6 +151,13 @@ function Navbar() {
 
           {/* Contact Us Button & Mobile menu button */}
           <div className="flex items-center space-x-4">
+            <a
+              href="tel:+919310105630"
+              className="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-[14px] font-bold tracking-wide text-white bg-green-600 hover:bg-green-700 transition-colors duration-300 rounded-sm shadow-sm"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              Call Now
+            </a>
             <Link
               to="/contact"
               className="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-[14px] font-bold tracking-wide text-[#0a231a] bg-[#FDD835] hover:bg-[#0a231a] hover:text-[#FDD835] transition-colors duration-300 rounded-sm"
@@ -185,29 +190,30 @@ function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div 
-        className={`lg:hidden absolute top-20 left-0 w-full bg-white border-t border-gray-100 shadow-2xl transition-all duration-300 ease-in-out overflow-y-auto ${
-          isOpen ? "max-h-[calc(100vh-80px)] opacity-100" : "max-h-0 opacity-0 pointer-events-none border-t-0"
-        }`}
+      <div
+        className={`lg:hidden absolute top-20 left-0 w-full bg-white border-t border-gray-100 shadow-2xl transition-all duration-300 ease-in-out overflow-y-auto ${isOpen ? "max-h-[calc(100vh-80px)] opacity-100" : "max-h-0 opacity-0 pointer-events-none border-t-0"
+          }`}
       >
         <div className="py-4 px-6 space-y-2 pb-8">
           <NavLink to="/" onClick={() => setIsOpen(false)} className="block py-3 text-[16px] font-bold text-[#0a231a] hover:text-[#FDD835] border-b border-gray-100">
             Home
           </NavLink>
-          
+
           {/* About Us Accordion */}
           <div className="border-b border-gray-100">
-            <button 
-              onClick={() => setMobileSection(mobileSection === 'about' ? null : 'about')} 
+            <button
+              onClick={() => setMobileSection(mobileSection === 'about' ? null : 'about')}
               className="flex justify-between items-center w-full py-3 text-[16px] font-bold text-[#0a231a] hover:text-[#FDD835]"
             >
               <span>About Us</span>
               <svg className={`w-4 h-4 transform transition-transform ${mobileSection === 'about' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
-            
+
             <div className={`space-y-1 pl-4 overflow-hidden transition-all duration-300 ${mobileSection === 'about' ? 'max-h-64 pb-3' : 'max-h-0'}`}>
               <Link to="/about-aanandam" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">About Aanandam</Link>
+              <Link to="/why-aanandam" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Why Aanandam</Link>
               <Link to="/about-founder" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">About Founder</Link>
+              <Link to="/about-niraj-gera" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">About Niraj Gera</Link>
               <Link to="/life-at-aanandam" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Life At Aanandam</Link>
               <Link to="/facilities" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Facilities</Link>
               <Link to="/dream-campus" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Dream Campus</Link>
@@ -216,14 +222,14 @@ function Navbar() {
 
           {/* Get Involved Accordion */}
           <div className="border-b border-gray-100">
-            <button 
-              onClick={() => setMobileSection(mobileSection === 'involved' ? null : 'involved')} 
+            <button
+              onClick={() => setMobileSection(mobileSection === 'involved' ? null : 'involved')}
               className="flex justify-between items-center w-full py-3 text-[16px] font-bold text-[#0a231a] hover:text-[#FDD835]"
             >
               <span>Get Involved</span>
               <svg className={`w-4 h-4 transform transition-transform ${mobileSection === 'involved' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
-            
+
             <div className={`space-y-1 pl-4 overflow-hidden transition-all duration-300 ${mobileSection === 'involved' ? 'max-h-64 pb-3' : 'max-h-0'}`}>
               <Link to="/admission" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Admission Rules</Link>
               <Link to="/volunteer" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Volunteer With Us</Link>
@@ -234,14 +240,14 @@ function Navbar() {
 
           {/* Donate Accordion */}
           <div className="border-b border-gray-100">
-            <button 
-              onClick={() => setMobileSection(mobileSection === 'donate' ? null : 'donate')} 
+            <button
+              onClick={() => setMobileSection(mobileSection === 'donate' ? null : 'donate')}
               className="flex justify-between items-center w-full py-3 text-[16px] font-bold text-[#0a231a] hover:text-[#FDD835]"
             >
               <span>Donate</span>
               <svg className={`w-4 h-4 transform transition-transform ${mobileSection === 'donate' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
-            
+
             <div className={`space-y-1 pl-4 overflow-hidden transition-all duration-300 ${mobileSection === 'donate' ? 'max-h-64 pb-3' : 'max-h-0'}`}>
               <Link to="/donate" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Donate Now</Link>
               <Link to="/sponsor-a-meal" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Sponsor A Meal</Link>
@@ -251,14 +257,14 @@ function Navbar() {
 
           {/* Gallery Accordion */}
           <div className="border-b border-gray-100">
-            <button 
-              onClick={() => setMobileSection(mobileSection === 'gallery' ? null : 'gallery')} 
+            <button
+              onClick={() => setMobileSection(mobileSection === 'gallery' ? null : 'gallery')}
               className="flex justify-between items-center w-full py-3 text-[16px] font-bold text-[#0a231a] hover:text-[#FDD835]"
             >
               <span>Gallery</span>
               <svg className={`w-4 h-4 transform transition-transform ${mobileSection === 'gallery' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
-            
+
             <div className={`space-y-1 pl-4 overflow-hidden transition-all duration-300 ${mobileSection === 'gallery' ? 'max-h-64 pb-3' : 'max-h-0'}`}>
               <Link to="/photo-gallery" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Photo Gallery</Link>
               <Link to="/video-gallery" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Video Gallery</Link>
@@ -266,7 +272,11 @@ function Navbar() {
             </div>
           </div>
 
-          <Link to="/contact" onClick={() => setIsOpen(false)} className="mt-6 flex items-center justify-center w-full px-6 py-4 text-[16px] font-bold rounded text-[#0a231a] bg-[#FDD835] shadow-lg">
+          <a href="tel:+919310105630" className="mt-6 flex items-center justify-center w-full px-6 py-4 text-[16px] font-bold rounded text-white bg-green-600 hover:bg-green-700 shadow-lg transition-colors">
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            Call Now
+          </a>
+          <Link to="/contact" onClick={() => setIsOpen(false)} className="mt-4 flex items-center justify-center w-full px-6 py-4 text-[16px] font-bold rounded text-[#0a231a] bg-[#FDD835] shadow-lg transition-colors">
             Contact Us
           </Link>
         </div>

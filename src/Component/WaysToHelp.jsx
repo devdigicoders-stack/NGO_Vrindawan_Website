@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Heart, Utensils, Cake, Handshake, Building2, Home } from 'lucide-react';
 
 export default function WaysToHelp() {
   const ways = [
     {
       id: 1,
-      icon: "❤️",
+      icon: <Heart className="w-10 h-10 text-[#D32F2F] group-hover:text-white transition-colors duration-300" />,
       title: "Donate",
       desc: "₹500 feeds an elder for a day. ₹6,500 sponsors an elder for an entire month. No amount is too small. Every rupee reaches them directly.",
       btnText: "Donate Now",
@@ -16,23 +17,53 @@ export default function WaysToHelp() {
     },
     {
       id: 2,
-      icon: "🍽️",
+      icon: <Utensils className="w-10 h-10 text-[#FDD835] group-hover:text-white transition-colors duration-300" />,
       title: "Sponsor a Meal",
       desc: "Celebrate your birthday or anniversary by feeding our elders. From just ₹750, you can bring a warm meal — and a warm smile — to everyone at Aanandam.",
       btnText: "Choose a Meal",
-      btnLink: "/sponsor-meal",
+      btnLink: "/sponsor-a-meal",
       topColor: "bg-[#FDD835]",
       btnStyle: "bg-[#2E7D32] text-white hover:bg-[#1B5E20] border-transparent shadow-md group-hover:border-[#FDD835]/50"
     },
     {
       id: 3,
-      icon: "🎂",
+      icon: <Cake className="w-10 h-10 text-[#2E7D32] group-hover:text-white transition-colors duration-300" />,
       title: "Celebrate Here",
       desc: "Birthdays. Anniversaries. Promotions. Mark your special days here, surrounded by 30 grandparents who will bless you with all their heart. It will be the most meaningful day of your life.",
       btnText: "Book a Celebration",
       btnLink: "/celebrate",
       topColor: "bg-[#2E7D32]",
       btnStyle: "bg-transparent text-[#0a231a] hover:bg-[#0a231a] hover:text-[#FDD835] border-[#0a231a] group-hover:border-white group-hover:text-white hover:!bg-white hover:!text-[#0a231a]"
+    },
+    {
+      id: 4,
+      icon: <Handshake className="w-10 h-10 text-[#1976D2] group-hover:text-white transition-colors duration-300" />,
+      title: "Volunteer",
+      desc: "Doctors, students, professionals — give your time.",
+      btnText: "Join Us",
+      btnLink: "/volunteer",
+      topColor: "bg-[#1976D2]",
+      btnStyle: "bg-[#1976D2] text-white hover:bg-[#1565C0] border-transparent shadow-md group-hover:border-white/30"
+    },
+    {
+      id: 5,
+      icon: <Building2 className="w-10 h-10 text-[#E65100] group-hover:text-white transition-colors duration-300" />,
+      title: "CSR Partner",
+      desc: "Corporate social responsibility with real, measurable impact.",
+      btnText: "Partner With Us",
+      btnLink: "/csr-partnerships",
+      topColor: "bg-[#E65100]",
+      btnStyle: "bg-[#E65100] text-white hover:bg-[#EF6C00] border-transparent shadow-md group-hover:border-white/30"
+    },
+    {
+      id: 6,
+      icon: <Home className="w-10 h-10 text-[#8E24AA] group-hover:text-white transition-colors duration-300" />,
+      title: "Admit an Elder",
+      desc: "Know an abandoned elder? Contact us — we will help.",
+      btnText: "Contact Us",
+      btnLink: "/admission",
+      topColor: "bg-[#8E24AA]",
+      btnStyle: "bg-[#8E24AA] text-white hover:bg-[#7B1FA2] border-transparent shadow-md group-hover:border-white/30"
     }
   ];
 
@@ -61,7 +92,7 @@ export default function WaysToHelp() {
         <div className="flex items-center justify-center gap-4 mb-8">
           <div className="w-12 sm:w-24 h-[1px] bg-[#D4AF37]/40"></div>
           <span className="text-[#D4AF37] font-bold tracking-widest text-[13px] uppercase text-center">
-            Three Ways To Help
+            Ways To Help
           </span>
           <div className="w-12 sm:w-24 h-[1px] bg-[#D4AF37]/40"></div>
         </div>

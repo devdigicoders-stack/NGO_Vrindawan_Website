@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Heart, Handshake, Camera, Home } from 'lucide-react';
 import PageHero from '../Component/PageHero';
 
 function SponsorAnElder() {
@@ -16,22 +17,22 @@ function SponsorAnElder() {
     {
       title: "Choose to Sponsor",
       desc: "Set up a monthly contribution of ₹6,500 (or more — every extra rupee benefits the community). We can set up auto-debit for your convenience.",
-      icon: "❤️"
+      icon: <Heart size={32} />
     },
     {
       title: "Meet Your Elder",
       desc: "We will introduce you (virtually or in person) to the elder your contribution supports. You will receive their photo, name and a short story.",
-      icon: "🤝"
+      icon: <Handshake size={32} />
     },
     {
       title: "Stay Connected",
       desc: "Every month, we send you a brief update — a photo, a blessing, a small story from your elder's life at Aanandam. You will never wonder where your money went.",
-      icon: "📸"
+      icon: <Camera size={32} />
     },
     {
       title: "Visit Anytime",
       desc: "Sponsors are always welcome to visit Aanandam and meet their elder in person. Many sponsors become regular visitors — and lasting friends.",
-      icon: "🏠"
+      icon: <Home size={32} />
     }
   ];
 
@@ -105,7 +106,7 @@ function SponsorAnElder() {
 
         {/* Cost Breakdown Table */}
         <motion.div
-          className="max-w-6xl mx-auto w-full"
+          className="max-w-7xl mx-auto w-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}

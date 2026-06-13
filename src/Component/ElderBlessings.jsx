@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { User, Users, Heart } from 'lucide-react';
 
 export default function ElderBlessings() {
   const elders = [
     {
       id: 1,
-      icon: "👴",
+      icon: <User className="w-12 h-12 text-white" />,
       name: "Ram Lal Ji",
       details: "Age 74 | Farmer, Uttar Pradesh",
       story: "Ram Lal Ji worked his land for 50 years. When his children moved to the city, he had no one. Aanandam gave him brothers, sisters, and a reason to laugh again.",
@@ -13,7 +14,7 @@ export default function ElderBlessings() {
     },
     {
       id: 2,
-      icon: "👵",
+      icon: <Heart className="w-12 h-12 text-white" />,
       name: "Shanti Devi Ji",
       details: "Age 78 | Homemaker, Delhi",
       story: "Shanti Ji raised three children. When her husband passed and her children grew distant, she found herself alone. Today, she leads the morning bhajan sessions at Aanandam.",
@@ -21,7 +22,7 @@ export default function ElderBlessings() {
     },
     {
       id: 3,
-      icon: "👴",
+      icon: <Users className="w-12 h-12 text-white" />,
       name: "Mohan Das Ji",
       details: "Age 82 | Retired Teacher, Haryana",
       story: "He spent 40 years shaping young minds. When his health declined, he had nowhere to go. Today, Mohan Das Ji teaches the younger volunteers how to live with purpose.",

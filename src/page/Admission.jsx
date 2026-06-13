@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { MapPin, Phone, MessageCircle, Globe, Clock } from 'lucide-react';
 import PageHero from '../Component/PageHero';
 
 function Admission() {
@@ -181,34 +182,40 @@ function Admission() {
 
           <div className="relative z-10 space-y-6">
             <h2 className="font-serif font-bold text-xl sm:text-2xl text-white mb-4 flex items-center gap-3">
-              <span className="text-3xl">📍</span> Address & Contact
+              <MapPin className="w-8 h-8" /> Address & Contact
             </h2>
 
             <p className="text-white/90 text-sm sm:text-base leading-relaxed font-medium">
-              Pole No-25, 513/11, Near Karala Stadium, Opposite ISO Solid Gym, Karala Village (Opposite Rohini Sector-38), Delhi – 110081
+              Pole No-25, 513/11, Karala Village, Delhi - 110081
             </p>
 
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2 text-sm sm:text-base font-medium">
               <div className="flex items-center gap-2">
-                <span className="text-xl">📞</span>
+                <Phone className="w-5 h-5" />
                 <a href="tel:+919310105630" className="hover:text-white/80 transition-colors">+91-9310105630</a>
               </div>
               <span className="hidden sm:inline text-white/40">|</span>
               <div className="flex items-center gap-2">
-                <span className="text-xl">💬</span>
+                <MessageCircle className="w-5 h-5" />
                 <span>WhatsApp: Same Number</span>
               </div>
               <span className="hidden sm:inline text-white/40">|</span>
               <div className="flex items-center gap-2">
-                <span className="text-xl">⏰</span>
+                <Clock className="w-5 h-5" />
                 <span>Available 24×7</span>
               </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2 text-sm sm:text-base font-medium">
-              <div className="flex items-center gap-2">
-                <span className="text-xl">🌐</span>
-                <a href="https://www.HUMANIFY.in" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.HUMANIFY.in</a>
+              <div className="flex items-center gap-2 flex-wrap">
+                <Globe className="w-5 h-5 flex-shrink-0" />
+                <div className="flex gap-2 flex-wrap">
+                  <a href="https://www.vridhashram.in" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.vridhashram.in</a>
+                  <span className="text-white/40">|</span>
+                  <a href="https://www.humanify.in" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.humanify.in</a>
+                  <span className="text-white/40">|</span>
+                  <a href="https://www.nirajgera.com" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors">www.nirajgera.com</a>
+                </div>
               </div>
               <span className="hidden sm:inline text-white/40">|</span>
               <div className="flex items-center gap-2">

@@ -1,20 +1,21 @@
 import React from "react";
 import PageHero from "../Component/PageHero";
+import { TreePine, Music, Landmark, Sun, Camera, Phone } from "lucide-react";
 
 function Outbound() {
   const outings = [
     {
-      icon: "🌳",
+      icon: <TreePine size={32} className="text-[#0a231a]" />,
       title: "Nature & Garden Outings",
       desc: "Elders spend sunny mornings in parks (Lodhi Garden, local reserves), enjoying fresh air, light stretching, and bird watching."
     },
     {
-      icon: "🎭",
+      icon: <Music size={32} className="text-[#0a231a]" />,
       title: "Cultural & Festival Outings",
       desc: "Trips to regional melas, Ramlila plays, and community events, helping them stay connected to the active traditions of their youth."
     },
     {
-      icon: "🏛️",
+      icon: <Landmark size={32} className="text-[#0a231a]" />,
       title: "Heritage & Historical Walks",
       desc: "Visiting locations like Red Fort or Qutub Minar, letting our seniors share their stories and recollections about Delhi's growth."
     }
@@ -51,7 +52,7 @@ function Outbound() {
         <div className="bg-cream border border-gold/20 rounded-3xl overflow-hidden shadow-sm">
           <div className="bg-accent-dark text-white p-6 sm:p-8 space-y-2">
             <span className="text-xs font-bold uppercase tracking-wider text-white/90">Featured Outing</span>
-            <h3 className="font-serif font-black text-2xl">🕉️ Vrindavan &amp; Mathura Pilgrimage</h3>
+            <h3 className="font-serif font-black text-2xl flex items-center gap-2"><Sun className="w-6 h-6" /> Vrindavan &amp; Mathura Pilgrimage</h3>
             <p className="text-xs text-white/85">Spiritual Journey to the land of Lord Krishna</p>
           </div>
           <div className="p-6 sm:p-8 space-y-4">
@@ -69,7 +70,7 @@ function Outbound() {
               </ul>
             </div>
             <div className="bg-white p-3 rounded-lg border border-gold/10 text-xxs text-grey italic">
-              📸 Photo: Elders holding hands near the ghats, offering prayers, and singing group bhajans.
+              <Camera className="w-4 h-4 inline-block mr-1" /> Photo: Elders holding hands near the ghats, offering prayers, and singing group bhajans.
             </div>
           </div>
         </div>
@@ -130,7 +131,7 @@ function Outbound() {
               href="tel:+919310105630"
               className="inline-block px-6 py-2.5 bg-accent hover:bg-accent-dark text-dark font-bold rounded-xl text-xs transition"
             >
-              Contact Trip Planners: +91-9310105630 📞
+              <span className="flex items-center gap-2 justify-center"><Phone className="w-4 h-4" /> Contact Trip Planners: +91-9310105630</span>
             </a>
           </div>
         </div>

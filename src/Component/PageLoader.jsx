@@ -2,21 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const PageLoader = () => {
+export default function PageLoader() {
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    // Scroll to top instantly when route changes
-    window.scrollTo(0, 0);
-
-    // Show loader
     setIsLoading(true);
-    
-    // Hide the loader after a short delay to simulate page loading and provide a smooth transition
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // 2000ms (2 seconds) loading duration
+    }, 600); // Loader shows for 600ms on every page navigation
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
@@ -25,47 +19,52 @@ const PageLoader = () => {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-[9999] bg-[#0a231a] flex flex-col items-center justify-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-[9999] bg-[#FAFAF5] flex flex-col items-center justify-center"
         >
-          {/* Brand Name Animation */}
-          <motion.div
+          {/* Logo Container with breathing animation */}
+          <motion.div 
+            className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-white shadow-xl flex items-center justify-center p-4 border-4 border-[#2E7D32]/10"
             animate={{ 
-              scale: [1, 1.1, 1],
+              scale: [1, 1.05, 1],
             }}
             transition={{ 
-              repeat: Infinity, 
-              duration: 2,
+              duration: 1.5,
+              repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="mb-8"
           >
-            <h1 className="font-serif font-black text-4xl sm:text-5xl text-white">
-              Aanandam
-            </h1>
+            <img src="/image.png" alt="Aanandam Logo" className="w-full h-full object-contain" />
           </motion.div>
           
-          {/* Custom Modern Spinner */}
-          <div className="relative w-16 h-16">
-            <motion.span 
-              className="absolute inset-0 rounded-full border-4 border-white/10"
-            />
-            <motion.span 
-              className="absolute inset-0 rounded-full border-4 border-t-[#F59E0B] border-r-transparent border-b-transparent border-l-transparent"
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-            />
+          <motion.h2 
+            className="mt-6 text-[#2E7D32] font-serif font-bold text-2xl tracking-wider"
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            Aanandam Vridhashram
+          </motion.h2>
+
+          {/* Jumping dots */}
+          <div className="mt-8 flex gap-2">
+            {[0, 1, 2].map((i) => (
+              <motion.div
+                key={i}
+                className="w-3 h-3 bg-[#FDD835] rounded-full"
+                animate={{ y: [0, -10, 0] }}
+                transition={{
+                  duration: 0.6,
+                  repeat: Infinity,
+                  delay: i * 0.2,
+                  ease: "easeInOut"
+                }}
+              />
+            ))}
           </div>
-          
-          <p className="mt-8 text-white/80 font-bold tracking-[0.3em] uppercase text-xs sm:text-sm animate-pulse">
-            Loading
-          </p>
         </motion.div>
       )}
     </AnimatePresence>
   );
-};
-
-export default PageLoader;
+}

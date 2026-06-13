@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HeroBackground3D from './HeroBackground3D';
 
 function PageHero({ title, description, hideBreadcrumb = false }) {
   return (
@@ -11,9 +12,13 @@ function PageHero({ title, description, hideBreadcrumb = false }) {
       >
         {/* Dark green overlay to match the design */}
         <div className="absolute inset-0 bg-[#0a231a]/80 mix-blend-multiply"></div>
-        {/* Slight gradient for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a231a]/90 to-transparent"></div>
       </div>
+
+      {/* 3D Background Animation */}
+      <HeroBackground3D />
+
+      {/* Slight gradient for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a231a]/90 to-transparent pointer-events-none"></div>
       
       {/* Content */}
       <div className="relative z-10 px-4 mt-8 max-w-4xl mx-auto">

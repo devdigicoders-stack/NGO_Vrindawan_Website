@@ -2,18 +2,22 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import heroBg from '../assets/hero_bg.png';
+import HeroBackground3D from './HeroBackground3D';
 
 export default function HeroSlider() {
   return (
     <div className="relative w-full h-[90vh] min-h-[600px] overflow-hidden bg-[#0a231a]">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={{ backgroundImage: `url(${heroBg})` }}
       ></div>
 
+      {/* 3D Background Animation */}
+      <HeroBackground3D />
+
       {/* Gradient Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a231a] via-[#0a231a]/70 to-[#0a231a]/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a231a] via-[#0a231a]/60 to-transparent pointer-events-none"></div>
 
       {/* Hero Content Overlay */}
       <div className="absolute inset-0 z-10 flex items-center justify-center px-4 sm:px-8 pt-10">
