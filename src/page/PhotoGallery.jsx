@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaSun, FaGlassCheers, FaMicrophone, FaStethoscope, FaBus, FaHandshake, FaHandsHelping, FaStar } from 'react-icons/fa';
 import PageHero from '../Component/PageHero';
 
 function PhotoGallery() {
@@ -64,7 +65,43 @@ function PhotoGallery() {
         hideBreadcrumb={true}
       />
 
-      <section className="py-20 px-4 sm:px-6 lg:px-2 max-w-7xl mx-auto">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0a231a] mb-4">Glimpses of Life at Aanandam</h2>
+          <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            <strong className="text-[#C62828]">Pictures (and Videos) Speak Louder Than Promises.</strong><br className="hidden sm:block" />
+            This gallery showcases real moments from Aanandam Vridhashram, our free old age home in Karala Village near Rohini Sector-38, Pitampura, Delhi NCR — both as photos and embedded videos.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { icon: <FaSun />, title: "Daily Life", desc: "Meals, yoga, garden time, conversations" },
+            { icon: <FaGlassCheers />, title: "Festivals & Celebrations", desc: "Holi, Diwali, Janmashtami, birthdays" },
+            { icon: <FaMicrophone />, title: "Oldies Got Talent", desc: "Performances and events" },
+            { icon: <FaStethoscope />, title: "Health Camps", desc: "Visiting doctors, checkups, donor visits" },
+            { icon: <FaBus />, title: "Outbound Activities", desc: "Vrindavan trip and other outings" },
+            { icon: <FaHandshake />, title: "Distinguished Visitors", desc: "Amul, Axis Max Life, Yes Madam, HelpAge India, Dr. Kiran Bedi Ji" },
+            { icon: <FaHandsHelping />, title: "Volunteers in Action", desc: "Students, doctors, corporate groups" },
+            { icon: <FaStar />, title: "Before & After", desc: "Transformation stories (with consent)" }
+          ].map((cat, idx) => (
+            <motion.div 
+              key={idx}
+              className="bg-white rounded-2xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-[#FDD835] group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-4xl text-[#C62828] mb-4 transform group-hover:scale-110 transition-transform">{cat.icon}</div>
+              <h3 className="text-xl font-bold text-[#0a231a] mb-2 group-hover:text-[#C62828] transition-colors">{cat.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{cat.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-10 px-4 sm:px-6 lg:px-2 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {images.map((img, index) => (
             <motion.div
@@ -88,6 +125,39 @@ function PhotoGallery() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Hindi SEO Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="bg-[#FAF0E6] border-l-4 border-[#F57C00] p-6 sm:p-8 rounded-r-lg relative shadow-sm">
+          <div className="absolute top-4 right-4 text-[#F57C00] text-sm font-semibold opacity-70">
+            हिंदी
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#C62828] mb-4">
+            फोटो और वीडियो गैलरी
+          </h2>
+          <p className="text-[#5D4037] text-lg mb-6 leading-relaxed">
+            आनंदम् वृद्धाश्रम (कराला, रोहिणी सेक्टर-38 के पास, दिल्ली) की झलकियाँ। दैनिक जीवन, त्योहार, स्वास्थ्य शिविर, वृंदावन यात्रा और विशिष्ट अतिथियों की तस्वीरें और वीडियो यहाँ देखें।
+          </p>
+          <div className="flex flex-wrap items-center gap-2 text-[#5D4037] font-medium mb-6">
+            <span className="italic">अपनी तस्वीरें साझा करें: Instagram @aanandamoldagehome</span>
+            <span className="hidden sm:inline text-[#F57C00] font-bold mx-1">|</span>
+            <span className="flex items-center gap-2 text-gray-700 font-semibold">
+              <span className="text-xl">📞</span> +91-9310105630
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <span className="bg-[#F57C00] text-white px-5 py-1.5 rounded-full text-sm font-medium hover:bg-[#E65100] transition-colors cursor-pointer shadow-sm">
+              वृद्धाश्रम फोटो गैलरी
+            </span>
+            <span className="bg-[#F57C00] text-white px-5 py-1.5 rounded-full text-sm font-medium hover:bg-[#E65100] transition-colors cursor-pointer shadow-sm">
+              वृद्धाश्रम वीडियो
+            </span>
+            <span className="bg-[#F57C00] text-white px-5 py-1.5 rounded-full text-sm font-medium hover:bg-[#E65100] transition-colors cursor-pointer shadow-sm">
+              आनंदम् तस्वीरें
+            </span>
+          </div>
         </div>
       </section>
 

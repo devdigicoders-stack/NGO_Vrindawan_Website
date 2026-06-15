@@ -71,64 +71,193 @@ function NewsAndEvents() {
         hideBreadcrumb={true}
       />
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2 mt-16 space-y-12">
-        {/* Section Heading & Description */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0a231a] mb-4">
-            Latest Updates & Stories
+      {/* Radio & TV Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
+          <h3 className="text-[#F59E0B] font-bold text-xs sm:text-sm tracking-[0.2em] uppercase whitespace-nowrap">
+            RADIO & TV
+          </h3>
+          <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-white p-5 sm:p-6 rounded-2xl border-t-4 border-[#2E7D32] shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+            <h4 className="text-lg sm:text-xl font-bold text-[#0a231a] mb-3 flex items-center gap-2">
+              <span className="text-2xl">📺</span> Doordarshan
+            </h4>
+            <p className="text-gray-600 text-sm sm:text-[15px] font-medium leading-relaxed flex-grow">
+              DD News Conclave — "Niraj Gera reveals shocking facts about Periods".
+            </p>
+          </div>
+
+          <div className="bg-white p-5 sm:p-6 rounded-2xl border-t-4 border-[#F59E0B] shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+            <h4 className="text-lg sm:text-xl font-bold text-[#0a231a] mb-3 flex items-center gap-2">
+              <span className="text-2xl">📻</span> Radio City
+            </h4>
+            <p className="text-gray-600 text-sm sm:text-[15px] font-medium leading-relaxed flex-grow">
+              Interview on PM Narendra Modi's "Janta Curfew" appeal.
+            </p>
+          </div>
+
+          <div className="bg-white p-5 sm:p-6 rounded-2xl border-t-4 border-[#2E7D32] shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+            <h4 className="text-lg sm:text-xl font-bold text-[#0a231a] mb-3 flex items-center gap-2">
+              <span className="text-2xl">📻</span> AIR FM Rainbow
+            </h4>
+            <p className="text-gray-600 text-sm sm:text-[15px] font-medium leading-relaxed flex-grow">
+              Interview on menstrual health awareness.
+            </p>
+          </div>
+
+          <div className="bg-white p-5 sm:p-6 rounded-2xl border-t-4 border-[#F59E0B] shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+            <h4 className="text-lg sm:text-xl font-bold text-[#0a231a] mb-3 flex items-center gap-2">
+              <span className="text-2xl">📻</span> Radio Noida
+            </h4>
+            <p className="text-gray-600 text-sm sm:text-[15px] font-medium leading-relaxed flex-grow">
+              Interview on the "Sacred Stains" photo series.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Media Coverage Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2 mt-20 mb-16 space-y-12">
+        
+        {/* Header */}
+        <div className="space-y-6 text-center">
+          <div className="flex items-center justify-center gap-4">
+            <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
+            <h3 className="text-[#F59E0B] font-bold text-xs sm:text-sm tracking-[0.2em] uppercase whitespace-nowrap">
+              IN THE PRESS
+            </h3>
+            <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0a231a]">
+            Aanandam Vridhashram & Humanify Foundation in the Media.
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Discover our recent initiatives, community celebrations, and the beautiful milestones we've achieved together at Aanandam. Every event is a step towards bringing more smiles to our elders.
+          <p className="text-gray-700 text-lg leading-relaxed font-medium max-w-5xl mx-auto">
+            Aanandam Vridhashram, located in Karala Village near Rohini Sector-38, Pitampura, Delhi NCR, is part of the Humanify Foundation ecosystem — an organisation whose founder, Niraj Gera, and whose initiatives have received significant national and international media attention over the years.
           </p>
         </div>
 
-        {/* Grid Layout for Articles */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {articles.map((article, index) => (
-            <motion.div
-              key={article.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer border border-gray-100"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: (index % 3) * 0.1, duration: 0.5 }}
-              viewport={{ once: true, margin: "-50px" }}
-              onClick={() => setSelectedArticle(article)}
-            >
-              {/* Image Container */}
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute top-4 left-4 bg-[#F59E0B] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
-                  {article.category}
-                </div>
-              </div>
-
-              {/* Content Container */}
-              <div className="p-6 flex flex-col flex-grow">
-                <p className="text-[#2E7D32] text-sm font-semibold mb-2 flex items-center gap-2">
-                  <Calendar className="w-4 h-4" /> {article.date}
-                </p>
-                <h3 className="text-xl font-bold text-[#0a231a] mb-3 group-hover:text-[#C62828] transition-colors duration-300 line-clamp-2 leading-tight">
-                  {article.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
-                  {article.snippet}
-                </p>
-                <div className="mt-auto">
-                  <span className="inline-flex items-center text-[#2E7D32] font-bold text-sm group-hover:translate-x-2 transition-transform duration-300">
-                    Read More
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        {/* International Media */}
+        <div className="space-y-6 text-center">
+          <div className="flex items-center justify-center gap-4">
+            <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
+            <h3 className="text-[#F59E0B] font-bold text-xs sm:text-sm tracking-[0.2em] uppercase whitespace-nowrap">
+              INTERNATIONAL MEDIA
+            </h3>
+            <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-3">
+            {["BBC UK & USA", "Daily Mail UK", "Metro News UK", "Yahoo News Australia", "LIFO Greece", "20 Minutene Switzerland"].map((media, idx) => (
+              <span key={idx} className="bg-[#2E7D32] text-white px-4 py-2 rounded-md font-bold text-sm shadow-sm">
+                {media}
+              </span>
+            ))}
+          </div>
+          <p className="text-gray-700 text-lg leading-relaxed font-medium max-w-4xl mx-auto">
+            Coverage of Niraj Gera's social documentary photo series — including BBC's feature on "the Indian couple who swear by blind love" and Daily Mail's "Indian acid attack survivors show their scarred skin in a powerful photoshoot".
+          </p>
         </div>
+
+        {/* National Media */}
+        <div className="space-y-6 text-center">
+          <div className="flex items-center justify-center gap-4">
+            <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
+            <h3 className="text-[#F59E0B] font-bold text-xs sm:text-sm tracking-[0.2em] uppercase whitespace-nowrap">
+              NATIONAL MEDIA
+            </h3>
+            <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-3">
+            {["Times of India", "Hindustan Times", "India Today", "New Indian Express", "The Statesman", "The Tribune", "NDTV", "Asian Age", "India Times"].map((media, idx) => (
+              <span key={idx} className="bg-[#0f172a] text-white px-4 py-2 rounded-md font-bold text-sm shadow-sm">
+                {media}
+              </span>
+            ))}
+          </div>
+          <p className="text-gray-700 text-lg leading-relaxed font-medium max-w-4xl mx-auto">
+            Coverage of Niraj Gera's menstrual health advocacy, acid attack survivor photo series, and humanitarian work.
+          </p>
+        </div>
+
+        {/* Awards & Recognition */}
+        <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <h3 className="text-[#F59E0B] font-bold text-xs sm:text-sm tracking-[0.2em] uppercase whitespace-nowrap">
+              AWARDS & RECOGNITION COVERED IN MEDIA
+            </h3>
+            <div className="h-[1px] bg-gray-300 w-full"></div>
+          </div>
+          <ul className="space-y-4 text-gray-700 font-medium">
+            <li className="flex gap-3">
+              <span className="text-[#2E7D32] font-bold">✓</span> 
+              <span><strong className="text-[#0a231a]">National Icon Award 2024</strong> — Humanitarian of the Year</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-[#2E7D32] font-bold">✓</span> 
+              <span><strong className="text-[#0a231a]">MHM Champion Award 2024</strong> — by Padmashri Damodaran Ji</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-[#2E7D32] font-bold">✓</span> 
+              <span><strong className="text-[#0a231a]">World Record</strong> — Happiness Express (400+ sessions, 1,30,000+ attendees, 23+ states)</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-[#2E7D32] font-bold">✓</span> 
+              <span><strong className="text-[#0a231a]">Rex Karamveer Award Nominee 2024</strong> — Global Fellowship (iCONGO & UN)</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-[#2E7D32] font-bold">✓</span> 
+              <span><strong className="text-[#0a231a]">Times Now "Amazing Indians" Award Nominee</strong></span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Aanandam-Specific Coverage */}
+        <div className="bg-[#F59E0B] rounded-xl p-6 sm:p-8 text-white shadow-md">
+          <h3 className="text-xl sm:text-2xl font-serif font-bold mb-4 flex items-center gap-2">
+            <span>📣</span> Aanandam-Specific Coverage (Growing)
+          </h3>
+          <p className="text-white/95 leading-relaxed font-medium">
+            As Aanandam Vridhashram grows, this section will feature dedicated press coverage of the old age home itself — including visits by Amul, Axis Max Life, Yes Madam, HelpAge India, and Dr. Kiran Bedi Ji, our Vrindavan outbound trip, and Oldies Got Talent events. We encourage local Delhi NCR media (covering Rohini, Pitampura, Karala, Kanjhawala) to visit and feature our work.
+          </p>
+        </div>
+
+        {/* Hindi SEO Block */}
+        <div className="bg-[#FAF8F5] border-l-4 border-[#F59E0B] p-6 sm:p-8 rounded-r-xl relative shadow-sm mt-8">
+          <span className="absolute top-4 right-4 text-[#F59E0B] font-medium text-sm">हिंदी</span>
+          
+          <h2 className="text-xl sm:text-2xl font-bold text-[#D84315] mb-4">
+            समाचार और मीडिया कवरेज
+          </h2>
+          
+          <div className="space-y-4 text-gray-700 leading-relaxed italic text-[15px] sm:text-base">
+            <p>
+              आनंदम् वृद्धाश्रम और ह्यूमनिफाई फाउंडेशन को BBC, Daily Mail, Times of India, Hindustan Times, NDTV और कई राष्ट्रीय-अंतर्राष्ट्रीय मीडिया में स्थान मिला है।
+            </p>
+            <p>
+              संस्थापक नीरज गेरा को 'Humanitarian of the Year 2024', विश्व रिकॉर्ड और कई अन्य सम्मान मिल चुके हैं। मीडिया संपर्क हेतु: info@humanify.in | 📞 +91-9310105630
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-6">
+            <span className="bg-[#F59E0B] text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-full shadow-sm cursor-pointer">
+              वृद्धाश्रम समाचार
+            </span>
+            <span className="bg-[#F59E0B] text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-full shadow-sm cursor-pointer">
+              नीरज गेरा मीडिया कवरेज
+            </span>
+            <span className="bg-[#F59E0B] text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-full shadow-sm cursor-pointer">
+              ह्यूमनिफाई फाउंडेशन समाचार
+            </span>
+          </div>
+        </div>
+
       </section>
 
       {/* Article Read Modal */}

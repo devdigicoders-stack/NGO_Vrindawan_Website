@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cake, Heart, PartyPopper } from 'lucide-react';
+import { Cake, Heart, PartyPopper, Sparkles, Music, Building2, CalendarDays } from 'lucide-react';
 import PageHero from '../Component/PageHero';
+import CelebrationGallery from '../Component/CelebrationGallery';
+import CelebrateSeoHindi from '../Component/CelebrateSeoHindi';
 
 function CelebrateWithElders() {
   const happenings = [
@@ -33,22 +35,40 @@ function CelebrateWithElders() {
 
   const perfectFor = [
     {
-      icon: <Cake size={40} className="text-[#0a231a]" />,
+      icon: <Cake size={40} className="text-[#0a231a] group-hover:text-white transition-colors duration-300" />,
       title: "Birthdays",
       desc: "Adults and children both. A child who celebrates their birthday at Aanandam learns the meaning of empathy and gratitude in one afternoon — a lesson no school teaches.",
       borderColor: "border-[#F59E0B]" // Orange
     },
     {
-      icon: <Heart size={40} className="text-[#0a231a]" />,
+      icon: <Heart size={40} className="text-[#0a231a] group-hover:text-white transition-colors duration-300" />,
       title: "Anniversaries",
       desc: "What better way to honour love than by sharing it? Bring your partner to Aanandam and receive blessings from those who have loved for decades.",
       borderColor: "border-[#2E7D32]" // Green
     },
     {
-      icon: <PartyPopper size={40} className="text-[#0a231a]" />,
+      icon: <PartyPopper size={40} className="text-[#0a231a] group-hover:text-white transition-colors duration-300" />,
       title: "Promotions & Achievements",
       desc: "Mark your professional milestones by giving back. Start your new chapter with the most powerful good wishes you can receive — from those who have nothing to gain and everything to give.",
       borderColor: "border-[#C62828]" // Red
+    },
+    {
+      icon: <Sparkles size={40} className="text-[#0a231a] group-hover:text-white transition-colors duration-300" />,
+      title: "Festival Celebrations",
+      desc: "Holi, Diwali, Janmashtami, Lohri, Eid, Christmas, Raksha Bandhan and more — sponsor decorations, sweets, and a full day of festivities.",
+      borderColor: "border-[#FDD835]" // Yellow
+    },
+    {
+      icon: <Music size={40} className="text-[#0a231a] group-hover:text-white transition-colors duration-300" />,
+      title: "Cultural Performances",
+      desc: "Bring musicians, dancers or performers for an 'Oldies Got Talent' style event — energise the whole home with music and laughter.",
+      borderColor: "border-[#1976D2]" // Blue
+    },
+    {
+      icon: <Building2 size={40} className="text-[#0a231a] group-hover:text-white transition-colors duration-300" />,
+      title: "Corporate Team Outings",
+      desc: "A meaningful CSR/team-bonding activity for employees in Delhi NCR — celebrate a company anniversary or milestone with real impact.",
+      borderColor: "border-[#8E24AA]" // Purple
     }
   ];
 
@@ -65,17 +85,20 @@ function CelebrateWithElders() {
         hideBreadcrumb={true}
       />
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-2 mt-16 space-y-20">
+      {/* Gallery Section */}
+      <CelebrationGallery />
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2 mt-16 space-y-20">
 
         {/* Intro Section */}
         <motion.div
-          className="max-w-4xl space-y-6"
+          className="w-full space-y-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-[#0a231a] leading-tight mb-8 max-w-2xl">
+          <h2 className="font-serif font-semibold text-xl sm:text-2xl lg:text-3xl text-[#0a231a] leading-tight mb-8">
             You've Had Parties. But Have You Had Blessings?
           </h2>
           <div className="space-y-6 text-gray-700 text-lg leading-relaxed font-medium">
@@ -98,7 +121,7 @@ function CelebrateWithElders() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#F59E0B] mb-10">
+          <h2 className="font-serif font-semibold text-3xl sm:text-4xl text-[#F59E0B] mb-10">
             What Happens at an Aanandam Celebration
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
@@ -132,9 +155,21 @@ function CelebrateWithElders() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#0a231a] mb-10">
-            Perfect For
-          </h2>
+          <div className="text-center mb-16 space-y-4 max-w-4xl mx-auto px-4">
+            <div className="flex items-center justify-center gap-4 mb-2">
+              <div className="hidden sm:block h-[1px] bg-gray-300 w-12 sm:w-20"></div>
+              <h3 className="text-[#F59E0B] font-bold text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase sm:whitespace-nowrap leading-relaxed">
+                TURN YOUR SPECIAL DAY INTO SOMEONE ELSE'S BEST DAY
+              </h3>
+              <div className="hidden sm:block h-[1px] bg-gray-300 w-12 sm:w-20"></div>
+            </div>
+            <h2 className="font-serif font-bold text-2xl sm:text-4xl text-[#0a231a] leading-tight">
+              Celebrate With Our Elders.
+            </h2>
+            <p className="text-gray-600 font-medium text-[15px] sm:text-lg leading-relaxed pt-2">
+              At Aanandam Vridhashram (Karala Village, near Rohini Sector-38, Pitampura, Delhi NCR), birthdays, anniversaries, festivals and personal milestones become extra special when shared with our elder residents.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {perfectFor.map((item, index) => (
               <motion.div
@@ -161,50 +196,46 @@ function CelebrateWithElders() {
           </div>
         </motion.div>
 
-        {/* Testimonial */}
+        {/* Why It Matters Section */}
         <motion.div
-          className="bg-[#FAFAF5] border-l-4 border-[#FDD835] rounded-r-3xl p-8 sm:p-12 shadow-sm relative overflow-hidden w-full max-w-7xl mx-auto"
+          className="w-full pt-12 space-y-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <div className="relative z-10 space-y-6">
-            <p className="text-[#2E7D32] text-lg sm:text-xl font-serif italic leading-relaxed">
-              "I brought my 7-year-old daughter for her birthday. She came home and told her teacher, 'I want to go back every birthday forever.' That is the greatest gift Aanandam gave us."
-            </p>
-            <p className="text-gray-500 font-medium tracking-wide text-sm uppercase">
-              — Priyanka Sharma, Mother, Rohini
+          <div className="flex items-center gap-4">
+            <h3 className="text-[#F59E0B] font-bold text-xs sm:text-sm tracking-[0.2em] uppercase whitespace-nowrap">
+              WHY IT MATTERS
+            </h3>
+            <div className="h-[1px] bg-gray-300 w-full"></div>
+          </div>
+          
+          <p className="text-gray-700 font-medium text-lg leading-relaxed">
+            For our elders — many of whom have lost touch with their own families — these celebrations are deeply emotional moments. Laughter, music, sweets, and the simple presence of visitors bring immense joy and a sense of being remembered and valued.
+          </p>
+
+          <div className="bg-[#2E7D32] rounded-xl p-8 sm:p-10 shadow-lg text-white space-y-4">
+            <div className="flex items-center gap-3">
+              <CalendarDays className="text-[#FDD835]" size={32} />
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold">
+                How to Plan a Visit
+              </h3>
+            </div>
+            <p className="text-white/90 text-[17px] leading-relaxed font-medium">
+              Call/WhatsApp us at +91-9310105630 at least a few days in advance. We'll help you plan the celebration — including suggested activities, dietary considerations, and timing that works best for our elders' routines.
             </p>
           </div>
-        </motion.div>
 
-        {/* Bottom Call to Action Banner */}
-        <motion.div
-          className="bg-[#F59E0B] rounded-3xl p-8 sm:p-12 shadow-2xl text-white w-full max-w-7xl mx-auto overflow-hidden relative"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          {/* Decorative shapes */}
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
-          <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#C62828]/20 rounded-full blur-3xl pointer-events-none"></div>
-
-          <div className="relative z-10 space-y-4">
-            <h2 className="font-serif font-black text-2xl sm:text-3xl text-white mb-6">
-              Book Your Celebration
-            </h2>
-            <p className="text-white/90 text-lg leading-relaxed font-medium">
-              Celebrations are available on weekends and selected weekdays. We request at least 5-7 days advance notice to prepare. There is no fixed charge — you are welcome to sponsor a meal or donate whatever your heart allows.
-            </p>
-            <p className="text-white font-bold text-lg mt-4">
-              Call or WhatsApp us at <a href="https://wa.me/919310105630" target="_blank" rel="noreferrer" className="underline hover:text-white/80 transition-colors">+91-9310105630</a> to book your date.
-            </p>
-          </div>
+          <p className="text-gray-700 font-medium text-lg leading-relaxed">
+            Whether it's a child's birthday, a company anniversary, or a festival you want to make unforgettable — celebrate it at Aanandam Vridhashram, and give it real meaning.
+          </p>
         </motion.div>
 
       </section>
+
+      {/* Hindi SEO and Booking Component */}
+      <CelebrateSeoHindi />
     </div>
   );
 }

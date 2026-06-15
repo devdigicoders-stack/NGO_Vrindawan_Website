@@ -9,15 +9,15 @@ export default function HeroSlider() {
     <div className="relative w-full h-[90vh] min-h-[600px] overflow-hidden bg-[#0a231a]">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
         style={{ backgroundImage: `url(${heroBg})` }}
       ></div>
 
       {/* 3D Background Animation */}
       <HeroBackground3D />
 
-      {/* Gradient Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a231a] via-[#0a231a]/60 to-transparent pointer-events-none"></div>
+      {/* Gradient Overlay for better text readability on both mobile and desktop */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a231a] via-[#0a231a]/70 sm:via-[#0a231a]/60 to-[#0a231a]/20 sm:to-transparent pointer-events-none"></div>
 
       {/* Hero Content Overlay */}
       <div className="absolute inset-0 z-10 flex items-center justify-center px-4 sm:px-8 pt-10">

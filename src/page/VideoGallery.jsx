@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaVideo, FaComments, FaMicrophoneAlt, FaTv, FaOm, FaStar } from 'react-icons/fa';
 import PageHero from '../Component/PageHero';
 
 function VideoGallery() {
@@ -34,61 +35,87 @@ function VideoGallery() {
         hideBreadcrumb={true}
       />
 
-      <section className="py-20 px-4 sm:px-6 lg:px-2 max-w-7xl mx-auto">
-        {/* Section Heading & Description */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0a231a] mb-4">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-8">
+        <div className="relative z-10 text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0a231a] mb-4">
             A Glimpse into Aanandam
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-medium">
             Experience the everyday joy, celebrations, and heartwarming moments we share with our elders. Each video is a testament to the love, care, and family-like bond that makes our NGO a true home.
           </p>
         </div>
 
-        {/* Video Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {videos.map((video, index) => (
-            <motion.div
-              key={index}
-              className="relative rounded-2xl overflow-hidden shadow-md cursor-pointer group hover:shadow-2xl transition-all duration-300 bg-black aspect-[9/16]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: (index % 3) * 0.1, duration: 0.5 }}
-              viewport={{ once: true, margin: "-50px" }}
-              onClick={() => setSelectedVideo(video.id)}
-              onMouseEnter={() => setHoveredVideo(video.id)}
-              onMouseLeave={() => setHoveredVideo(null)}
-            >
-              {/* Video Player on Hover or Thumbnail Image */}
-              {hoveredVideo === video.id ? (
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&playsinline=1`}
-                  title={video.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
-                ></iframe>
-              ) : (
-                <img
-                  src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
-                  onError={(e) => { e.target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`; }}
-                  alt={video.title}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out opacity-80 group-hover:opacity-50"
-                  loading="lazy"
-                />
-              )}
-
-              {/* Title Overlay */}
-              <div className="absolute top-0 left-0 w-full p-4 bg-gradient-to-b from-black/80 to-transparent z-10 transition-opacity duration-300">
-                <h3 className="text-white font-bold text-lg truncate drop-shadow-md">
-                  {video.title}
-                </h3>
-              </div>
-
-            </motion.div>
-          ))}
+        <div className="relative z-10 mb-8">
+          <h3 className="text-2xl font-bold text-center text-[#F59E0B] mb-8">Suggested Video Content</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: <FaVideo />, title: "A Day at Aanandam", desc: "Walkthrough video of daily routine, meals, yoga and activities." },
+              { icon: <FaComments />, title: "Resident Stories", desc: "Short, dignified video testimonials from elders (with consent)." },
+              { icon: <FaMicrophoneAlt />, title: "Founder's TEDx Talks", desc: "\"The Power of Acceptance\" (TEDxGGSIPU), \"Going Through & Growing Through the Hard Times\" (TEDxFIIB), \"The Man Who Bleeds\" (TEDxFIIB)." },
+              { icon: <FaTv />, title: "Media Interviews", desc: "Doordarshan, Radio City, AIR FM Rainbow interviews featuring Niraj Gera." },
+              { icon: <FaOm />, title: "Vrindavan Outing", desc: "Video diary of our recent outbound trip — devotion, joy, and memories." },
+              { icon: <FaStar />, title: "Visitor Highlights", desc: "Visits from Amul, Axis Max Life, Yes Madam, HelpAge India, Dr. Kiran Bedi Ji." }
+            ].map((cat, idx) => (
+              <motion.div
+                key={idx}
+                className="bg-white rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#F59E0B] group/card shadow-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-4xl text-[#F59E0B] mb-4 transform group-hover/card:scale-110 transition-transform">{cat.icon}</div>
+                <h4 className="text-xl font-bold text-[#0a231a] mb-2 group-hover/card:text-[#F59E0B] transition-colors">{cat.title}</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">{cat.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* Video Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-16">
+        {videos.map((video, index) => (
+          <motion.div
+            key={index}
+            className="relative rounded-2xl overflow-hidden shadow-md cursor-pointer group hover:shadow-2xl transition-all duration-300 bg-black aspect-[9/16]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: (index % 3) * 0.1, duration: 0.5 }}
+            viewport={{ once: true, margin: "-50px" }}
+            onClick={() => setSelectedVideo(video.id)}
+            onMouseEnter={() => setHoveredVideo(video.id)}
+            onMouseLeave={() => setHoveredVideo(null)}
+          >
+            {/* Video Player on Hover or Thumbnail Image */}
+            {hoveredVideo === video.id ? (
+              <iframe
+                src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&playsinline=1`}
+                title={video.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
+              ></iframe>
+            ) : (
+              <img
+                src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                onError={(e) => { e.target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`; }}
+                alt={video.title}
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out opacity-80 group-hover:opacity-50"
+                loading="lazy"
+              />
+            )}
+
+            {/* Title Overlay */}
+            <div className="absolute top-0 left-0 w-full p-4 bg-gradient-to-b from-black/80 to-transparent z-10 transition-opacity duration-300">
+              <h3 className="text-white font-bold text-lg truncate drop-shadow-md">
+                {video.title}
+              </h3>
+            </div>
+
+          </motion.div>
+        ))}
+      </div>
 
       {/* Fullscreen Video Modal (Lightbox) */}
       <AnimatePresence>

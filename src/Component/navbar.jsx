@@ -58,6 +58,9 @@ function Navbar() {
                   <Link to="/life-at-aanandam" className="block px-4 py-2.5 text-[14px] font-bold text-[#0a231a] hover:bg-gray-50 hover:text-[#FDD835]">
                     Life At Aanandam
                   </Link>
+                  <Link to="/meet-our-elders" className="block px-4 py-2.5 text-[14px] font-bold text-[#0a231a] hover:bg-gray-50 hover:text-[#FDD835]">
+                    Meet Our Elders
+                  </Link>
                   <Link to="/facilities" className="block px-4 py-2.5 text-[14px] font-bold text-[#0a231a] hover:bg-gray-50 hover:text-[#FDD835]">
                     Facilities
                   </Link>
@@ -144,6 +147,9 @@ function Navbar() {
                   <Link to="/news-and-events" className="block px-4 py-2.5 text-[14px] font-bold text-[#0a231a] hover:bg-gray-50 hover:text-[#FDD835]">
                     News & Events
                   </Link>
+                  <Link to="/social-media-testimonials" className="block px-4 py-2.5 text-[14px] font-bold text-[#0a231a] hover:bg-gray-50 hover:text-[#FDD835]">
+                    Social Media & Testimonials
+                  </Link>
                 </div>
               )}
             </div>
@@ -215,6 +221,7 @@ function Navbar() {
               <Link to="/about-founder" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">About Founder</Link>
               <Link to="/about-niraj-gera" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">About Niraj Gera</Link>
               <Link to="/life-at-aanandam" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Life At Aanandam</Link>
+              <Link to="/meet-our-elders" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Meet Our Elders</Link>
               <Link to="/facilities" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Facilities</Link>
               <Link to="/dream-campus" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Dream Campus</Link>
             </div>
@@ -269,6 +276,7 @@ function Navbar() {
               <Link to="/photo-gallery" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Photo Gallery</Link>
               <Link to="/video-gallery" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Video Gallery</Link>
               <Link to="/news-and-events" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">News & Events</Link>
+              <Link to="/social-media-testimonials" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-gray-600 hover:text-[#0a231a]">Social Media & Testimonials</Link>
             </div>
           </div>
 

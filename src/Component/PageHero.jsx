@@ -11,7 +11,7 @@ function PageHero({ title, description, hideBreadcrumb = false }) {
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&q=80')" }} 
       >
         {/* Dark green overlay to match the design */}
-        <div className="absolute inset-0 bg-[#0a231a]/80 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-[#0a231a]/80"></div>
       </div>
 
       {/* 3D Background Animation */}

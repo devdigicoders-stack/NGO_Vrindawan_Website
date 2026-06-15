@@ -22,6 +22,7 @@ import Facilities from "./page/Facilities";
 import DreamCampus from "./page/DreamCampus";
 import Admission from "./page/Admission";
 import Volunteer from "./page/Volunteer";
+import MeetOurElders from "./page/MeetOurElders";
 import CelebrateWithElders from "./page/CelebrateWithElders";
 import CSRPartnerships from "./page/CSR";
 import SponsorAMeal from "./page/SponsorAMeal";
@@ -34,6 +35,7 @@ import Outbound from "./page/Outbound";
 import Media from "./page/Media";
 import Donate from "./page/Donate";
 import Contact from "./page/Contact";
+import SocialMediaTestimonials from "./page/SocialMediaTestimonials";
 
 function App() {
   return (
@@ -59,6 +61,7 @@ function App() {
             <Route path="/dream-campus" element={<DreamCampus />} />
             <Route path="/admission" element={<Admission />} />
             <Route path="/volunteer" element={<Volunteer />} />
+            <Route path="/meet-our-elders" element={<MeetOurElders />} />
             <Route path="/celebrate-with-elders" element={<CelebrateWithElders />} />
             <Route path="/csr-partnerships" element={<CSRPartnerships />} />
             <Route path="/sponsor-a-meal" element={<SponsorAMeal />} />
@@ -69,6 +72,7 @@ function App() {
             <Route path="/distinguished-visitors-associations" element={<Visitors />} />
             <Route path="/outbound-activities-elder-outings" element={<Outbound />} />
             <Route path="/news-media-coverage" element={<Media />} />
+            <Route path="/social-media-testimonials" element={<SocialMediaTestimonials />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
