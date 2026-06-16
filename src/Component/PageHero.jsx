@@ -1,24 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import HeroBackground3D from './HeroBackground3D';
 
+import bg1 from '../assets/old_age_1.png';
+import bg2 from '../assets/old_age_2.png';
+import bg3 from '../assets/old_age_3.png';
+import bg4 from '../assets/old_age_4.png';
+
+const images = [bg1, bg2, bg3, bg4];
+
 function PageHero({ title, description, hideBreadcrumb = false }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center text-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&q=80')" }} 
-      >
-        {/* Dark green overlay to match the design */}
-        <div className="absolute inset-0 bg-[#0a231a]/80"></div>
-      </div>
+    <section className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center text-center overflow-hidden bg-[#0a231a]">
+      {/* Background Image Slider */}
+      <AnimatePresence>
+        <motion.div 
+          key={`bg-${currentIndex}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${images[currentIndex]})` }} 
+        />
+      </AnimatePresence>
+
+      {/* Dark green overlay - reduced opacity for better image visibility */}
+      <div className="absolute inset-0 bg-[#0a231a]/40"></div>
 
       {/* 3D Background Animation */}
       <HeroBackground3D />
 
-      {/* Slight gradient for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a231a]/90 to-transparent pointer-events-none"></div>
+      {/* Slight gradient for better text readability - reduced opacity */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a231a]/60 to-transparent pointer-events-none"></div>
       
       {/* Content */}
       <div className="relative z-10 px-4 mt-8 max-w-4xl mx-auto">
@@ -32,13 +56,6 @@ function PageHero({ title, description, hideBreadcrumb = false }) {
           </p>
         )}
 
-        {!hideBreadcrumb && (
-          <div className="text-white/90 text-sm md:text-base font-bold tracking-wider uppercase">
-            <Link to="/" className="hover:text-[#FDD835] transition-colors duration-300">Home</Link>
-            <span className="mx-3 text-white/50">/</span>
-            <span className="text-[#FDD835]">{title}</span>
-          </div>
-        )}
       </div>
     </section>
   );

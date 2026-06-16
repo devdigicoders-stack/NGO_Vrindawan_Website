@@ -32,13 +32,13 @@ function SponsorAMeal() {
       price: "₹2,500",
       title: "Dinner Sponsorship",
       icon: <Moon size={64} className="text-[#0a231a]" />,
-      desc: "Warm, filling and nourishing. No elder goes to bed hungry when you sponsor dinner. A full stomach at night — the most peaceful gift you can give."
+      desc: "Warm, filling and nourishing. No elder goes to bed hungry when you Support Us dinner. A full stomach at night — the most peaceful gift you can give."
     }
   ];
 
   const steps = [
     "Your name (or the name of the person you wish to honour) is displayed at the meal.",
-    "Our team announces your sponsorship to all elders before the meal begins.",
+    "Our team announces your Sponsorship to all elders before the meal begins.",
     "The elders offer a group blessing in your name.",
     "You receive a photo or video from the meal — directly on WhatsApp.",
     "A thank-you message from our elders, in their own words, is shared with you."
@@ -60,7 +60,7 @@ function SponsorAMeal() {
   return (
     <div className="bg-[#FAFAF5] min-h-screen">
       <PageHero
-        title="Sponsor a Meal"
+        title="Support Us a Meal"
         description="Fill a plate, warm a heart. Your generosity becomes a reason for our elders to smile today."
         hideBreadcrumb={true}
       />
@@ -83,10 +83,10 @@ function SponsorAMeal() {
               There is something ancient and deeply human about feeding others. Every culture, every religion, every tradition honours the act of feeding the hungry — of bringing food to a table and watching someone eat with relief and gratitude.
             </p>
             <p>
-              At Aanandam, you can sponsor an entire meal for all our elders — to celebrate your birthday, mark an anniversary, honour a departed loved one, or simply because today feels like the right day to give.
+              At Aanandam, you can Support Us an entire meal for all our elders — to celebrate your birthday, mark an anniversary, honour a departed loved one, or simply because today feels like the right day to give.
             </p>
             <p>
-              When you sponsor a meal, you are not just buying food. You are sitting at that table with them. Your name is announced. Your generosity is celebrated. And thirty grandparents bless you with all the love they have — which, it turns out, is a great deal more than you expect.
+              When you Support Us a meal, you are not just buying food. You are sitting at that table with them. Your name is announced. Your generosity is celebrated. And thirty grandparents bless you with all the love they have — which, it turns out, is a great deal more than you expect.
             </p>
           </div>
         </motion.div>
@@ -126,7 +126,7 @@ function SponsorAMeal() {
           ))}
         </motion.div>
 
-        {/* What Happens After You Sponsor */}
+        {/* What Happens After You Support Us */}
         <motion.div
           className="bg-white border border-gray-100 rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden"
           initial="hidden"
@@ -137,7 +137,7 @@ function SponsorAMeal() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#FDD835]/10 rounded-bl-full -z-0"></div>
           <div className="relative z-10">
             <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#0a231a] mb-10">
-              What Happens After You Sponsor?
+              What Happens After You Support Us?
             </h2>
             <div className="space-y-6">
               {steps.map((step, index) => (
@@ -172,7 +172,7 @@ function SponsorAMeal() {
           <div className="absolute top-4 left-4 text-[#FDD835] text-8xl opacity-20 font-serif leading-none">"</div>
           <div className="relative z-10 space-y-6 max-w-3xl mx-auto">
             <p className="text-white text-xl sm:text-2xl font-serif italic leading-relaxed">
-              "I sponsored a birthday lunch for my father's 60th birthday in memory of his mother. When Aanandam sent me the photo of the elders eating and smiling, I cried for ten minutes. It was the most meaningful thing I had done in years."
+              "I Sponsored a birthday lunch for my father's 60th birthday in memory of his mother. When Aanandam sent me the photo of the elders eating and smiling, I cried for ten minutes. It was the most meaningful thing I had done in years."
             </p>
             <p className="text-[#FDD835] font-bold tracking-widest uppercase text-sm">
               — Siddharth Gupta, Delhi
@@ -200,7 +200,7 @@ function SponsorAMeal() {
               For ₹51, You Can Feed an Elder Today.
             </h2>
             <p className="text-gray-700 text-[16px] leading-[1.8] font-medium max-w-4xl">
-              At Aanandam Vridhashram (Karala Village, near Rohini Sector-38, Pitampura, Delhi NCR), every meal matters. For just ₹51 — less than the cost of a cup of coffee — you can sponsor one full, nutritious meal for one of our elder residents.
+              At Aanandam Vridhashram (Karala Village, near Rohini Sector-38, Pitampura, Delhi NCR), every meal matters. For just ₹51 — less than the cost of a cup of coffee — you can Support Us one full, nutritious meal for one of our elder residents.
             </p>
           </div>
 
@@ -217,7 +217,7 @@ function SponsorAMeal() {
               <div className="flex items-start gap-5">
                 <div className="w-10 h-10 flex-shrink-0 bg-[#F59E0B] text-white rounded-full flex items-center justify-center font-black text-lg shadow-sm">1</div>
                 <p className="text-gray-700 text-[15.5px] pt-1.5 font-medium border-b border-gray-100 pb-5 w-full">
-                  Choose how many meals you'd like to sponsor — one meal, one day's meals for one elder, or meals for the entire home for a day.
+                  Choose how many meals you'd like to Support Us — one meal, one day's meals for one elder, or meals for the entire home for a day.
                 </p>
               </div>
               <div className="flex items-start gap-5">
@@ -260,7 +260,7 @@ function SponsorAMeal() {
                 <span className="text-[#e35957] text-2xl"><FaHome /></span> Full Home, One Day
               </h3>
               <p className="text-gray-600 text-[14.5px] leading-relaxed font-medium">
-                Contact us for the current cost to sponsor meals for the entire Aanandam family for a day — a wonderful way to mark a special occasion.
+                Contact us for the current cost to Support Us meals for the entire Aanandam family for a day — a wonderful way to mark a special occasion.
               </p>
             </div>
           </div>
@@ -288,7 +288,7 @@ function SponsorAMeal() {
               जन्मदिन, सालगिरह या अपने प्रियजनों की याद में 'अन्नदान' करें — यह सबसे सरल और सीधा सहयोग है।
             </p>
           </div>
-          
+
           <div className="mt-8 flex flex-wrap gap-3">
             <span className="bg-[#E58F00] text-white text-[13px] font-bold px-5 py-2 rounded-full shadow-sm">अन्नदान वृद्धाश्रम</span>
             <span className="bg-[#E58F00] text-white text-[13px] font-bold px-5 py-2 rounded-full shadow-sm">भोजन दान ₹51</span>
@@ -305,10 +305,10 @@ function SponsorAMeal() {
           variants={fadeInUp}
         >
           <h3 className="font-serif font-bold text-2xl text-white mb-6 flex items-center gap-3">
-            <span className="text-[#e81cff] text-2xl"><FaPhoneAlt /></span> Sponsor a Meal Now
+            <span className="text-[#e81cff] text-2xl"><FaPhoneAlt /></span> Support Us a Meal Now
           </h3>
           <p className="text-white/90 text-[14.5px] leading-[2]">
-            <span className="font-bold">Phone / WhatsApp:</span> +91-9310105630 (24×7) | <span className="font-bold">Website:</span> www.vridhashram.in/sponsor-a-meal
+            <span className="font-bold">Phone / WhatsApp:</span> +91-9310105630 (24×7) | <span className="font-bold">Website:</span> www.vridhashram.in/Support Us-a-meal
           </p>
         </motion.div>
 

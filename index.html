@@ -11,10 +11,32 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Mukta:wght@300;400;600;700;800&family=Kalam:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
+  <style>
+    /* Forcefully hide Google Translate top banner */
+    .goog-te-banner-frame.skiptranslate { display: none !important; }
+    .VIpgJd-ZVi9od-ORHb-OEVmcd { display: none !important; }
+    /* Prevent body from shifting down */
+    body { top: 0px !important; position: static !important; }
+  </style>
 </head>
 
 <body>
   <div id="root"></div>
+
+  <!-- Google Translate Widget Container (Hidden) -->
+  <div id="google_translate_element" style="opacity:0; position:absolute; z-index:-1; width:0; height:0; overflow:hidden;"></div>
+
+  <!-- Google Translate Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en', includedLanguages: 'en,hi' }, 
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

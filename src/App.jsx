@@ -21,9 +21,11 @@ import LifeAtAanandam from "./page/LifeAtAanandam";
 import Facilities from "./page/Facilities";
 import DreamCampus from "./page/DreamCampus";
 import Admission from "./page/Admission";
+import ResidentStories from "./page/ResidentStories";
 import Volunteer from "./page/Volunteer";
 import MeetOurElders from "./page/MeetOurElders";
 import CelebrateWithElders from "./page/CelebrateWithElders";
+import CelebrateSpecialDays from "./page/CelebrateSpecialDays";
 import CSRPartnerships from "./page/CSR";
 import SponsorAMeal from "./page/SponsorAMeal";
 import SponsorAnElder from "./page/SponsorAnElder";
@@ -62,7 +64,9 @@ function App() {
             <Route path="/admission" element={<Admission />} />
             <Route path="/volunteer" element={<Volunteer />} />
             <Route path="/meet-our-elders" element={<MeetOurElders />} />
+            <Route path="/resident-stories" element={<ResidentStories />} />
             <Route path="/celebrate-with-elders" element={<CelebrateWithElders />} />
+            <Route path="/celebrate-special-days" element={<CelebrateSpecialDays />} />
             <Route path="/csr-partnerships" element={<CSRPartnerships />} />
             <Route path="/sponsor-a-meal" element={<SponsorAMeal />} />
             <Route path="/sponsor-an-elder" element={<SponsorAnElder />} />
@@ -80,7 +84,7 @@ function App() {
 
         {/* Global Footer */}
         <Footer />
-        
+
         {/* Floating Back to Top Button */}
         <BackToTopButton />
       </div>

@@ -15,7 +15,7 @@ function SponsorAnElder() {
 
   const steps = [
     {
-      title: "Choose to Sponsor",
+      title: "Choose to Support Us",
       desc: "Set up a monthly contribution of ₹6,500 (or more — every extra rupee benefits the community). We can set up auto-debit for your convenience.",
       icon: <Heart size={32} />
     },
@@ -31,7 +31,7 @@ function SponsorAnElder() {
     },
     {
       title: "Visit Anytime",
-      desc: "Sponsors are always welcome to visit Aanandam and meet their elder in person. Many sponsors become regular visitors — and lasting friends.",
+      desc: "Sponsors are always welcome to visit Aanandam and meet their elder in person. Many Sponsors become regular visitors — and lasting friends.",
       icon: <Home size={32} />
     }
   ];
@@ -52,7 +52,7 @@ function SponsorAnElder() {
   return (
     <div className="bg-[#FAFAF5] min-h-screen">
       <PageHero
-        title="Sponsor an Elder"
+        title="Support Us an Elder"
         description="Become the anchor in someone's twilight years. Your monthly commitment gives an abandoned elder a life of dignity, health, and love."
         hideBreadcrumb={true}
       />
@@ -95,10 +95,10 @@ function SponsorAnElder() {
             </h2>
             <div className="space-y-6 text-gray-700 text-lg leading-relaxed font-medium">
               <p>
-                For <span className="text-[#C62828] font-bold">₹6,500 a month</span> — the cost of two restaurant dinners in a city like Delhi — you can completely sponsor the life of one abandoned elder at Aanandam. Every rupee of your monthly contribution covers their food, shelter, clothing, medicines, toiletries and activities for an entire month.
+                For <span className="text-[#C62828] font-bold">₹6,500 a month</span> — the cost of two restaurant dinners in a city like Delhi — you can completely Support Us the life of one abandoned elder at Aanandam. Every rupee of your monthly contribution covers their food, shelter, clothing, medicines, toiletries and activities for an entire month.
               </p>
               <p className="bg-[#FDD835]/10 p-6 rounded-2xl border border-[#FDD835]/30 text-[#0a231a]">
-                Nothing passes through unnecessary hands. Nothing is lost in administration. Your contribution goes directly, immediately and completely to the elder you sponsor.
+                Nothing passes through unnecessary hands. Nothing is lost in administration. Your contribution goes directly, immediately and completely to the elder you Support Us.
               </p>
             </div>
           </motion.div>
@@ -214,7 +214,7 @@ function SponsorAnElder() {
         >
           <div className="relative z-10 space-y-6">
             <p className="text-[#2E7D32] text-lg sm:text-xl font-serif italic leading-relaxed">
-              "I started sponsoring Shanti Ji six months ago. Last month, she sent me a hand-embroidered card for my birthday through the Aanandam team. I cried. I didn't know a ₹6,500 decision would change my life this much."
+              "I started Sponsoring Shanti Ji six months ago. Last month, she sent me a hand-embroidered card for my birthday through the Aanandam team. I cried. I didn't know a ₹6,500 decision would change my life this much."
             </p>
             <p className="text-gray-500 font-medium tracking-wide text-sm uppercase">
               — Neha Arora, Corporate Professional, Gurgaon
@@ -252,11 +252,11 @@ function SponsorAnElder() {
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <a href="/donate" className="w-full sm:w-auto bg-[#C62828] hover:bg-[#B71C1C] text-white font-bold py-4 px-10 rounded-2xl shadow-xl transition transform hover:-translate-y-1 hover:shadow-2xl text-lg text-center border-2 border-[#C62828]">
+          <a href="/Support Us" className="w-full sm:w-auto bg-[#C62828] hover:bg-[#B71C1C] text-white font-bold py-4 px-10 rounded-2xl shadow-xl transition transform hover:-translate-y-1 hover:shadow-2xl text-lg text-center border-2 border-[#C62828]">
             Start Monthly Sponsorship
           </a>
           <a href="https://wa.me/919310105630" target="_blank" rel="noreferrer" className="w-full sm:w-auto bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold py-4 px-10 rounded-2xl shadow-xl transition transform hover:-translate-y-1 hover:shadow-2xl text-lg text-center flex items-center justify-center gap-3 border-2 border-[#2E7D32]">
-            Meet Elders to Sponsor
+            Meet Elders to Support Us
           </a>
         </motion.div>
 

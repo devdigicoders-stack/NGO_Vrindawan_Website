@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
-const CelebrationGallery = () => {
+const CelebrationGallery = ({ limit }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
@@ -20,6 +20,8 @@ const CelebrationGallery = () => {
     "/20260319_130801.jpg"
   ];
 
+  const displayImages = limit ? images.slice(0, limit) : images;
+
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12">
@@ -33,7 +35,7 @@ const CelebrationGallery = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {images.map((src, index) => (
+        {displayImages.map((src, index) => (
           <motion.div
             key={index}
             className="rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 aspect-[4/3] group relative cursor-pointer"

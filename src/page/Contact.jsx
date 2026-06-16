@@ -39,7 +39,7 @@ function Contact() {
     <div className="bg-white min-h-screen">
       <PageHero
         title="Contact Us"
-        description="Whether you want to sponsor an elder, volunteer your time, or just come over to share a cup of tea, we’d love to hear from you. Aanandam's doors are always open."
+        description="Whether you want to Support Us an elder, volunteer your time, or just come over to share a cup of tea, we’d love to hear from you. Aanandam's doors are always open."
         hideBreadcrumb={true}
       />
 
@@ -57,9 +57,9 @@ function Contact() {
 
         {/* Contact Information Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12 mt-12 mb-8">
-          
+
           {/* Address */}
-          <div 
+          <div
             className="relative group bg-white px-6 pb-8 pt-16 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#2E7D32]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center mt-6 lg:mt-0"
             onMouseEnter={() => setHoveredCard('address')}
             onMouseLeave={() => setHoveredCard(null)}
@@ -78,7 +78,7 @@ function Contact() {
           </div>
 
           {/* Contact Details */}
-          <div 
+          <div
             className="relative group bg-white px-6 pb-8 pt-16 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#2E7D32]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center mt-6 lg:mt-0"
             onMouseEnter={() => setHoveredCard('contact')}
             onMouseLeave={() => setHoveredCard(null)}
@@ -92,13 +92,13 @@ function Contact() {
             </p>
             <div className="w-full h-px bg-gray-100 mb-6 group-hover:bg-[#2E7D32]/20 transition-colors duration-300"></div>
             <p className="text-[#0a231a] font-bold text-sm leading-relaxed">
-              +91-9310105630 <br/>
+              +91-9310105630 <br />
               <span className="font-normal text-gray-500">nirajgera@gmail.com</span>
             </p>
           </div>
 
           {/* Visiting Hours */}
-          <div 
+          <div
             className="relative group bg-white px-6 pb-8 pt-16 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#2E7D32]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center mt-6 lg:mt-0"
             onMouseEnter={() => setHoveredCard('hours')}
             onMouseLeave={() => setHoveredCard(null)}
@@ -112,7 +112,7 @@ function Contact() {
             </p>
             <div className="w-full h-px bg-gray-100 mb-6 group-hover:bg-[#2E7D32]/20 transition-colors duration-300"></div>
             <p className="text-[#0a231a] font-bold text-sm leading-relaxed">
-              All Days <br/>
+              All Days <br />
               <span className="font-normal text-gray-500">10:00 AM – 6:00 PM</span>
             </p>
           </div>
@@ -129,7 +129,7 @@ function Contact() {
             </button>
             <button onClick={() => scrollToForm('Donation Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition flex flex-col items-center">
               <Heart className="w-8 h-8 mb-2 text-[#0a231a] group-hover:text-white transition-colors group-hover:scale-110" />
-              <span className="font-bold text-sm">Donate</span>
+              <span className="font-bold text-sm">Support Us</span>
             </button>
             <button onClick={() => scrollToForm('Volunteer Form')} className="bg-cream border border-gold/20 p-4 rounded-2xl hover:bg-primary hover:text-white group transition flex flex-col items-center">
               <Handshake className="w-8 h-8 mb-2 text-[#0a231a] group-hover:text-white transition-colors group-hover:scale-110" />
@@ -148,21 +148,21 @@ function Contact() {
 
         {/* Contact Form Section (Image Design) */}
         <div id="enquiry-form" className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row mt-16 border border-gray-100">
-          
+
           {/* Left Side: Image */}
           <div className="w-full lg:w-5/12 h-[350px] sm:h-[450px] lg:h-auto relative flex-shrink-0 bg-gray-100 overflow-hidden group cursor-pointer">
             {/* Center to Sides Hover Animation with Fade-out */}
             <div className="absolute inset-0 bg-white/30 scale-x-0 opacity-100 group-hover:scale-x-100 group-hover:opacity-0 transition-all duration-1000 ease-out origin-center z-10 pointer-events-none"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80" 
-              alt="Volunteers and community" 
+            <img
+              src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80"
+              alt="Volunteers and community"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
           </div>
 
           {/* Right Side: Form */}
           <div className="w-full lg:w-7/12 p-8 sm:p-12 lg:p-16 flex flex-col justify-center bg-white">
-            
+
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-200 mb-6 w-max">
               <span className="w-2 h-2 rounded-full bg-[#FDD835]"></span>
@@ -172,19 +172,19 @@ function Contact() {
             <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#0a231a] mb-6">
               Contact Us Today
             </h2>
-            
+
             <p className="text-gray-600 mb-10 leading-relaxed text-[15px] sm:text-[16px]">
               We'd love to hear from you! Whether you want to volunteer, support our programs, or learn more about our initiatives.
             </p>
 
             <form onSubmit={handleContactSubmit} className="space-y-6">
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="block text-sm font-bold text-[#0a231a]">First Name *</label>
                   <input
                     type="text"
-                    value={formData.name} 
+                    value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Enter First Name"
                     className="w-full p-4 rounded-xl bg-gray-50 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#FDD835]/50 border-none placeholder-gray-400"
@@ -244,7 +244,7 @@ function Contact() {
                   type="submit"
                   className="inline-flex items-center gap-2 py-4 px-8 bg-[#FDD835] hover:bg-[#F5B041] text-[#0a231a] font-bold text-[16px] rounded-lg shadow-sm transition duration-300 transform hover:-translate-y-1"
                 >
-                  Submit Message 
+                  Submit Message
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M7 17L17 7m0 0H8m9 0v9"></path></svg>
                 </button>
               </div>
@@ -261,8 +261,8 @@ function Contact() {
               <p className="text-sm text-grey">Yes, visitors are welcome any day between 10 AM and 6 PM. However, a prior call helps us organize a better interaction for you with the elders.</p>
             </div>
             <div className="bg-cream/50 border border-gold/15 p-6 rounded-2xl">
-              <h4 className="font-bold text-primary mb-2">How do I donate in person?</h4>
-              <p className="text-sm text-grey">You can visit the campus to donate via cheque, UPI, or in-kind donations (ration, medicines). Our manager will issue an 80G receipt immediately.</p>
+              <h4 className="font-bold text-primary mb-2">How do I Support Us in person?</h4>
+              <p className="text-sm text-grey">You can visit the campus to Support Us via cheque, UPI, or in-kind donations (ration, medicines). Our manager will issue an 80G receipt immediately.</p>
             </div>
           </div>
         </div>

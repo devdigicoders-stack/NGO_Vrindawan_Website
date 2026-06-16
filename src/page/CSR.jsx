@@ -28,7 +28,7 @@ function CSR() {
     },
     {
       title: "Flexible Partnership Models",
-      desc: "Monthly giving, annual sponsorship, one-time infrastructure support, medical camps, festive celebrations — we customise to your budget and objectives."
+      desc: "Monthly giving, annual Sponsorship, one-time infrastructure support, medical camps, festive celebrations — we customise to your budget and objectives."
     },
     {
       title: "Brand Visibility",
@@ -165,7 +165,7 @@ function CSR() {
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="text-4xl text-[#3498db] mb-6 group-hover:text-white transition-colors duration-500"><FaCreditCard /></div>
                   <h3 className="font-serif font-bold text-[#0a231a] group-hover:text-white transition-colors duration-500 text-[19px] mb-4">Recurring Giving</h3>
-                  <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-500 text-[14.5px] leading-relaxed">Sponsor meals or elder care as part of employee payroll-giving schemes.</p>
+                  <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-500 text-[14.5px] leading-relaxed">Support Us meals or elder care as part of employee payroll-giving schemes.</p>
                 </div>
               </div>
 

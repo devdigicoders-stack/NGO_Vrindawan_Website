@@ -95,7 +95,7 @@ export default function OriginStory() {
               </li>
               <li className="flex items-start gap-3">
                 {checkIcon}
-                <span><strong className="text-[#0a231a]">Transparency</strong> in every rupee donated and every decision made</span>
+                <span><strong className="text-[#0a231a]">Transparency</strong> in every rupee Support Usd and every decision made</span>
               </li>
             </ul>
           </motion.div>

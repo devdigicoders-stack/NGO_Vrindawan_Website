@@ -17,7 +17,7 @@ function SocialMediaTestimonials() {
         hideBreadcrumb={true}
       />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 space-y-16">
-        
+
         {/* Header Block */}
         <div className="space-y-6 text-center">
           <div className="flex items-center justify-center gap-4">
@@ -44,7 +44,7 @@ function SocialMediaTestimonials() {
             </h3>
             <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             <div className="bg-white p-6 sm:p-8 rounded-2xl border-t-4 border-[#2E7D32] border-b-4 border-b-transparent hover:border-b-[#2E7D32] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
               <h4 className="text-xl font-bold text-[#0a231a] mb-4 flex items-center gap-3">
@@ -83,7 +83,7 @@ function SocialMediaTestimonials() {
             </h3>
             <div className="h-[1px] bg-gray-300 w-full"></div>
           </div>
-          
+
           <ul className="space-y-4 text-gray-700 font-medium max-w-4xl">
             {[
               "Daily life moments — meals, yoga, conversations, laughter",
@@ -95,7 +95,7 @@ function SocialMediaTestimonials() {
               "Donor and volunteer shoutouts"
             ].map((item, idx) => (
               <li key={idx} className="flex gap-3">
-                <span className="text-[#2E7D32] font-bold">✓</span> 
+                <span className="text-[#2E7D32] font-bold">✓</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -111,7 +111,7 @@ function SocialMediaTestimonials() {
             </h3>
             <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
             <div className="bg-white p-6 sm:p-8 rounded-2xl border-l-4 border-[#2E7D32] shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
               <p className="text-gray-700 italic font-medium leading-relaxed text-lg flex-grow mb-6">
@@ -133,7 +133,7 @@ function SocialMediaTestimonials() {
 
             <div className="bg-white p-6 sm:p-8 rounded-2xl border-l-4 border-[#2E7D32] shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
               <p className="text-gray-700 italic font-medium leading-relaxed text-lg flex-grow mb-6">
-                "We sponsor an elder every month, and the updates we receive make us feel like part of the Aanandam family. It's the most meaningful ₹1,500 we spend each month."
+                "We Support Us an elder every month, and the updates we receive make us feel like part of the Aanandam family. It's the most meaningful ₹1,500 we spend each month."
               </p>
               <p className="text-[#F59E0B] font-bold text-sm">
                 — Monthly Donor Family, Delhi NCR
@@ -203,11 +203,11 @@ function SocialMediaTestimonials() {
         {/* Hindi SEO Block */}
         <div className="bg-[#FAF8F5] border-l-4 border-[#F59E0B] p-6 sm:p-8 rounded-r-xl relative shadow-sm mt-8">
           <span className="absolute top-4 right-4 text-[#F59E0B] font-medium text-sm">हिंदी</span>
-          
+
           <h2 className="text-xl sm:text-2xl font-bold text-[#D84315] mb-4">
             सोशल मीडिया और प्रशंसापत्र
           </h2>
-          
+
           <div className="space-y-4 text-gray-700 leading-relaxed italic text-[15px] sm:text-base">
             <p>
               हमारे साथ जुड़ें — सोशल मीडिया पर आनंदम् वृद्धाश्रम को फॉलो करें। Instagram: @aanandamoldagehome और @geraniraj — रोज़ाना तस्वीरें, कहानियाँ और कार्यक्रम।

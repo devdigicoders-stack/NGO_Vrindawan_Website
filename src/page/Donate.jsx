@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PageHero from "../Component/PageHero";
 import DonationTables from "../Component/DonationTables";
 import { FaCreditCard, FaBoxOpen, FaHeart, FaMobileAlt, FaPhoneAlt } from "react-icons/fa";
+import HinduCalendar from "../Component/HinduCalendar";
 
 function Donate() {
   const [amountType, setAmountType] = useState("meal");
@@ -57,7 +58,7 @@ function Donate() {
                   Aanandam is <strong className="text-primary">100% donation-funded</strong>. We receive no government grants. We charge no fees from our elders. We exist entirely because compassionate individuals — students, professionals, families, companies — believe that abandoned grandparents deserve better.
                 </p>
                 <p className="font-medium text-dark bg-warm p-4 rounded-xl border border-gold/20 shadow-sm">
-                  Every rupee you donate reaches directly to an elder. We publish our expenses transparently. You will always know how your money is used.
+                  Every rupee you Support Us reaches directly to an elder. We publish our expenses transparently. You will always know how your money is used.
                 </p>
               </div>
             </div>
@@ -79,7 +80,7 @@ function Donate() {
               <div className="w-12 sm:w-24 h-[1px] bg-[#E58F00]/30"></div>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#9a3412] font-bold mb-6 leading-tight">
-              Donate to Aanandam Vridhashram — <br className="hidden lg:block" />Every Rupee Becomes a Meal, a Medicine, a Moment of Dignity.
+              Support Us to Aanandam Vridhashram — <br className="hidden lg:block" />Every Rupee Becomes a Meal, a Medicine, a Moment of Dignity.
             </h2>
             <p className="text-gray-700 text-[16px] leading-[1.8] font-medium max-w-4xl mx-auto">
               Aanandam Vridhashram, a 100% free old age home in Karala Village near Rohini Sector-38 and Pitampura, Delhi NCR, runs entirely on the generosity of donors like you. As an initiative under Humanify Foundation, all donations are eligible for tax exemption under Section 80G of the Income Tax Act.
@@ -108,7 +109,7 @@ function Donate() {
                   </p>
                 </div>
                 <button className="bg-[#E58F00] hover:bg-[#d97706] text-white font-bold py-4 px-4 w-full uppercase tracking-wider text-[13px] transition-colors">
-                  Donate Now
+                  Support Us Now
                 </button>
               </div>
 
@@ -131,7 +132,7 @@ function Donate() {
               {/* Card 3 */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col overflow-hidden hover:shadow-md transition-shadow">
                 <div className="bg-[#2d3748] p-6 text-white text-center">
-                  <h3 className="font-serif text-lg font-bold mb-2">Sponsor a Meal</h3>
+                  <h3 className="font-serif text-lg font-bold mb-2">Support Us a Meal</h3>
                   <p className="font-serif text-[28px] font-bold">₹51</p>
                 </div>
                 <div className="p-8 flex-grow flex items-center justify-center text-center">
@@ -140,14 +141,14 @@ function Donate() {
                   </p>
                 </div>
                 <button className="bg-[#E58F00] hover:bg-[#d97706] text-white font-bold py-4 px-4 w-full uppercase tracking-wider text-[13px] transition-colors">
-                  Sponsor a Meal
+                  Support Us a Meal
                 </button>
               </div>
 
               {/* Card 4 */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col overflow-hidden hover:shadow-md transition-shadow">
                 <div className="bg-[#991b1b] p-6 text-white text-center">
-                  <h3 className="font-serif text-lg font-bold mb-2">Sponsor an Elder</h3>
+                  <h3 className="font-serif text-lg font-bold mb-2">Support Us an Elder</h3>
                   <p className="font-serif text-[28px] font-bold">₹1,500/mo</p>
                 </div>
                 <div className="p-8 flex-grow flex items-center justify-center text-center">
@@ -156,7 +157,7 @@ function Donate() {
                   </p>
                 </div>
                 <button className="bg-[#E58F00] hover:bg-[#d97706] text-white font-bold py-4 px-4 w-full uppercase tracking-wider text-[13px] transition-colors">
-                  Sponsor an Elder
+                  Support Us an Elder
                 </button>
               </div>
             </div>
@@ -164,11 +165,14 @@ function Donate() {
         </div>
       </section>
 
+      {/* Hindu Calendar Section */}
+      <HinduCalendar />
+
       {/* Main Content Area */}
       <section className="bg-[#FFFDF5] pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-12 text-sm sm:text-base text-grey leading-relaxed">
 
-          {/* Ways to Donate Section */}
+          {/* Ways to Support Us Section */}
           <div className="space-y-8">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="w-12 sm:w-24 h-[1px] bg-[#E58F00]/30"></div>
@@ -190,7 +194,7 @@ function Donate() {
                     <span className="mr-3 text-2xl text-[#E58F00] group-hover:text-white"><FaCreditCard /></span> UPI / Online Transfer
                   </h3>
                   <p className="text-grey group-hover:text-white/80 transition-colors duration-300 text-sm mb-6 leading-relaxed">
-                    The fastest way to donate. Use any UPI app — GPay, PhonePe, Paytm — or direct bank transfer.
+                    The fastest way to Support Us. Use any UPI app — GPay, PhonePe, Paytm — or direct bank transfer.
                   </p>
 
                   <div className="space-y-2 text-sm text-dark group-hover:text-white/90 transition-colors duration-300">
@@ -203,7 +207,7 @@ function Donate() {
                 </div>
               </div>
 
-              {/* Card 2: Donate in Kind */}
+              {/* Card 2: Support Us in Kind */}
               <div className="relative bg-white p-8 rounded-2xl shadow-sm border border-gold/20 overflow-hidden group cursor-pointer transition-shadow duration-300 hover:shadow-2xl hover:border-transparent">
                 {/* The Sliding Dark Green Background */}
                 <div className="absolute bottom-0 left-0 w-full h-0 bg-[#0a231a] transition-all duration-500 ease-out group-hover:h-full z-0"></div>
@@ -211,10 +215,10 @@ function Donate() {
                 {/* Content Container */}
                 <div className="relative z-10">
                   <h3 className="font-serif font-bold text-xl text-dark group-hover:text-white transition-colors duration-300 flex items-center mb-4">
-                    <span className="mr-3 text-2xl text-[#E58F00] group-hover:text-white"><FaBoxOpen /></span> Donate in Kind
+                    <span className="mr-3 text-2xl text-[#E58F00] group-hover:text-white"><FaBoxOpen /></span> Support Us in Kind
                   </h3>
                   <p className="text-grey group-hover:text-white/80 transition-colors duration-300 text-sm mb-4">
-                    You can donate items we need every month:
+                    You can Support Us items we need every month:
                   </p>
 
                   <ul className="text-sm text-dark group-hover:text-white/90 transition-colors duration-300 space-y-1.5 mb-6">
@@ -260,7 +264,7 @@ function Donate() {
             {/* Contact Banner */}
             <div className="mt-10 bg-[#1f2937] rounded-xl p-8 md:p-10 shadow-md">
               <h3 className="font-serif font-bold text-2xl text-white mb-6 flex items-center gap-3">
-                <span className="text-[#e81cff] text-2xl"><FaPhoneAlt /></span> Donate Now
+                <span className="text-[#e81cff] text-2xl"><FaPhoneAlt /></span> Support Us Now
               </h3>
               <p className="text-white/90 text-[14.5px] leading-[2]">
                 <span className="font-bold">Phone / WhatsApp:</span> +91-9310105630 (24×7) | <span className="font-bold">Email:</span> nirajgera@gmail.com | <span className="font-bold">Website:</span> www.vridhashram.in | www.humanify.in | www.nirajgera.com | <span className="font-bold">Address:</span> Pole No-25, 513/11, Karala Village, Delhi - 110081

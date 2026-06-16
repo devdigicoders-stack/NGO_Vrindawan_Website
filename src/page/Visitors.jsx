@@ -108,7 +108,7 @@ function Visitors() {
             <ul className="list-disc pl-5 space-y-2 text-xs text-grey leading-relaxed">
               <li>Confirms that operations meet national standards of elderly safety.</li>
               <li>Validates that our model is trusted by professional researchers.</li>
-              <li>Reassures sponsors that donations directly reach the needy.</li>
+              <li>Reassures Sponsors that donations directly reach the needy.</li>
               <li>Links Aanandam to the wider social-care network in India.</li>
             </ul>
           </div>

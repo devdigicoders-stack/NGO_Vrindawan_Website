@@ -14,7 +14,7 @@ function MeetOurElders() {
         description="Discover the beautiful stories, wisdom, and joy our elders bring to Aanandam."
         hideBreadcrumb={true}
       />
-      
+
       {/* Before and After Stories */}
       <BeforeAndAfterStories />
 
@@ -24,7 +24,7 @@ function MeetOurElders() {
       {/* In Their Own Words Testimonial Section */}
       <InTheirOwnWords />
 
-      {/* Sponsor Banner at the very bottom */}
+      {/* Support Us Banner at the very bottom */}
       <SponsorBanner />
 
       {/* Hindi SEO Section */}

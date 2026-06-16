@@ -21,7 +21,7 @@ function CelebrateWithElders() {
     },
     {
       title: "Sharing of Sweets or Meal",
-      desc: "You bring or sponsor sweets, a meal or snacks for everyone. Eating together is the deepest form of celebration in Indian culture — and Aanandam honours it completely."
+      desc: "You bring or Support Us sweets, a meal or snacks for everyone. Eating together is the deepest form of celebration in Indian culture — and Aanandam honours it completely."
     },
     {
       title: "Blessings Certificate",
@@ -55,7 +55,7 @@ function CelebrateWithElders() {
     {
       icon: <Sparkles size={40} className="text-[#0a231a] group-hover:text-white transition-colors duration-300" />,
       title: "Festival Celebrations",
-      desc: "Holi, Diwali, Janmashtami, Lohri, Eid, Christmas, Raksha Bandhan and more — sponsor decorations, sweets, and a full day of festivities.",
+      desc: "Holi, Diwali, Janmashtami, Lohri, Eid, Christmas, Raksha Bandhan and more — Support Us decorations, sweets, and a full day of festivities.",
       borderColor: "border-[#FDD835]" // Yellow
     },
     {
@@ -210,7 +210,7 @@ function CelebrateWithElders() {
             </h3>
             <div className="h-[1px] bg-gray-300 w-full"></div>
           </div>
-          
+
           <p className="text-gray-700 font-medium text-lg leading-relaxed">
             For our elders — many of whom have lost touch with their own families — these celebrations are deeply emotional moments. Laughter, music, sweets, and the simple presence of visitors bring immense joy and a sense of being remembered and valued.
           </p>

@@ -4,6 +4,7 @@ import PageHero from "../Component/PageHero";
 import OriginStory from "../Component/OriginStory";
 import TeamSection from "../Component/TeamSection";
 import AboutSeoSection from "../Component/AboutSeoSection";
+import OtherServiceProjects from "../Component/OtherServiceProjects";
 
 function About() {
   return (
@@ -121,6 +122,9 @@ function About() {
         </div>
 
       </section>
+
+      {/* Other Service Projects Section */}
+      <OtherServiceProjects />
 
       {/* Team Section */}
       <TeamSection />

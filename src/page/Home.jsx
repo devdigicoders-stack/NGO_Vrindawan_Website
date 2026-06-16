@@ -11,6 +11,8 @@ import ElderBlessings from "../Component/ElderBlessings";
 import WaysToHelp from "../Component/WaysToHelp";
 import FinalCTA from "../Component/FinalCTA";
 import SeoHindiSection from "../Component/SeoHindiSection";
+import CelebrateHomeSection from "../Component/CelebrateHomeSection";
+import CelebrationGallery from "../Component/CelebrationGallery";
 
 function Home() {
 
@@ -45,6 +47,12 @@ function Home() {
 
       {/* Ways To Help */}
       <WaysToHelp />
+
+      {/* Celebrate Special Days Section */}
+      <CelebrateHomeSection />
+
+      {/* Image Gallery */}
+      <CelebrationGallery limit={6} />
 
       {/* SEO Hindi Content */}
       <SeoHindiSection />

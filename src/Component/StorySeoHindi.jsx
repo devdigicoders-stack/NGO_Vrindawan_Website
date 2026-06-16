@@ -34,7 +34,7 @@ const StorySeoHindi = () => {
           <span className="bg-[#F57C00] text-white px-4 py-1.5 rounded-full shadow-sm">बुजुर्ग की कहानी</span>
           <span className="bg-[#F57C00] text-white px-4 py-1.5 rounded-full shadow-sm">एक बुजुर्ग को प्रायोजित करें</span>
           <span className="bg-[#F57C00] text-white px-4 py-1.5 rounded-full shadow-sm">परित्यक्त बुजुर्ग दिल्ली</span>
-          <span className="bg-[#F57C00] text-white px-4 py-1.5 rounded-full shadow-sm">sponsor elder india</span>
+          <span className="bg-[#F57C00] text-white px-4 py-1.5 rounded-full shadow-sm">Support Us elder india</span>
         </div>
       </div>
     </section>

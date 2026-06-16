@@ -12,41 +12,35 @@ function Founder() {
 
       <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-2">
 
-
-
-        {/* Founder Content */}
-        <div className="space-y-8 mb-16">
-          <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#0a231a] text-center">
-            He Didn't Choose Social Work. Social Work Chose Him.
-          </h2>
-
-          <div className="flex flex-col md:flex-row gap-10 items-start mt-8">
-            <div className="w-full md:w-1/3 flex-shrink-0 relative group rounded-2xl overflow-hidden shadow-lg border border-gray-100 cursor-pointer">
-              {/* Subtle dark overlay on hover */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10"></div>
-              <img
-                src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80"
-                alt="Niraj Gera"
-                className="w-full h-auto object-cover aspect-[4/5] transform transition-transform duration-700 ease-out group-hover:scale-110"
-              />
-            </div>
-
-            <div className="w-full md:w-2/3 space-y-6 text-gray-700 text-[15px] sm:text-[16px] leading-relaxed font-medium">
-              <p>
-                There are people who do good. And then there are people who <em>are</em> good — so completely and so consistently that their very existence changes the lives of everyone around them. Niraj Gera is the second kind.
-              </p>
-              <p>
-                For over <strong className="text-[#0a231a]">18 years</strong>, Niraj Gera has walked where few would dare — into slums, schools, rural villages, old age homes, and the hearts of society's most forgotten people — carrying nothing but intention, a camera, and a boundless capacity for love.
-              </p>
-              <p>
-                He is the Founder & Chairman of <strong className="text-[#0a231a]">Humanify Foundation</strong>, the creator of <strong className="text-[#0a231a]">Aanandam Vridhashram</strong>, a <strong className="text-[#0a231a]">TEDx speaker</strong>, an internationally recognised <strong className="text-[#0a231a]">documentary photographer</strong>, a <strong className="text-[#0a231a]">certified life coach</strong>, a motivational educator, a poet — and at his core, a human being who refuses to look away from pain.
-              </p>
-              <p className="pt-2 text-gray-700">
-                His journey wasn't born out of a desire for recognition, but from a profound inability to ignore the suffering around him. Whether it was organizing over 400 health and hygiene sessions for women across rural India or standing by the side of acid attack survivors to help them reclaim their dignity, Niraj's actions have always been guided by a deep spiritual conviction. He believes that true worship is service, and true service is rendered without conditions.
-              </p>
-              <p className="text-gray-700">
-                Aanandam Vridhashram stands as the ultimate reflection of this philosophy. It is not an institution; it is a home built entirely on public participation and boundless compassion. Through his unwavering dedication, he continues to inspire thousands of young volunteers to recognize that empathy is the most powerful tool we possess to heal the world.
-              </p>
+        {/* About Niraj Gera Section */}
+        <div className="flex flex-col md:flex-row gap-10 items-center mt-8 mb-16 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <div className="w-full md:w-1/3 flex-shrink-0 relative group rounded-xl overflow-hidden shadow-md">
+            <img
+              src="/Gallery/Photographer - Niraj Gera.jpg"
+              alt="Niraj Gera"
+              className="w-full h-auto object-cover aspect-[4/5] transform transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+          </div>
+          <div className="w-full md:w-2/3 space-y-5">
+            <h2 className="font-serif font-black text-3xl text-[#0a231a]">
+              About Niraj Gera
+            </h2>
+            <p className="text-gray-700 text-[16px] leading-relaxed font-medium">
+              Niraj Gera is the visionary Founder & Chairman of Humanify Foundation and the creator of Aanandam Vridhashram. With over 18 years of unwavering dedication, he has worked extensively in slums, schools, rural villages, and old age homes. He is a TEDx speaker, an internationally recognised documentary photographer, a certified life coach, and a motivational educator.
+            </p>
+            <p className="text-gray-700 text-[16px] leading-relaxed font-medium">
+              His mission is simple: to serve humanity unconditionally. Through his compassion and leadership, he inspires thousands to recognize empathy as the most powerful tool to heal the world.
+            </p>
+            <div className="pt-4">
+              <a
+                href="https://nirajgera.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-3.5 bg-[#0a231a] hover:bg-[#FDD835] hover:text-[#0a231a] text-white font-bold rounded-lg transition-all duration-300 shadow-md border-2 border-transparent hover:border-[#0a231a]"
+              >
+                Visit NirajGera.com
+                <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
             </div>
           </div>
         </div>

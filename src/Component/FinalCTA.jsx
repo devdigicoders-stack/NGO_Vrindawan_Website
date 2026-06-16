@@ -23,7 +23,7 @@ export default function FinalCTA() {
               Will You Be the Reason an Elder Smiles Today?
             </h2>
             <p className="text-white/95 text-[16px] sm:text-[18px] leading-[1.9] font-medium">
-              Every day at Aanandam begins with a question: who will come today? Who will sit with us? Who will remember us? You can be that person. Whether you donate ₹100 or ₹100,000 — whether you spend one Sunday with us or dedicate your career to our cause — <span className="font-black text-[#FFFDE7]">every act of love counts at Aanandam.</span> Come. Sit. Stay. Give. And discover what it truly means to be human.
+              Every day at Aanandam begins with a question: who will come today? Who will sit with us? Who will remember us? You can be that person. Whether you Support Us ₹100 or ₹100,000 — whether you spend one Sunday with us or dedicate your career to our cause — <span className="font-black text-[#FFFDE7]">every act of love counts at Aanandam.</span> Come. Sit. Stay. Give. And discover what it truly means to be human.
             </p>
           </div>
         </motion.div>

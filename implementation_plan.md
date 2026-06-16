@@ -32,9 +32,9 @@ We will build a fully functioning routing system in React (`react-router-dom`) w
 3. **Founder Profile (`/about-founder`)** — Niraj Gera Ji's bio, World Record, NITI Aayog credentials.
 4. **Admission Guidelines (`/admission`)** — Transparent details about capabilities and care limitations.
 5. **Distinguished Visitors (`/distinguished-visitors-associations`)** [NEW] — Visits from Amul, Axis Max Life, Yes Madam, HelpAge India, Dr. Kiran Bedi Ji.
-6. **Outbound Activities (`/outbound-activities-elder-outings`)** [NEW] — Vrindavan pilgrimage, health impact, and sponsorship details.
+6. **Outbound Activities (`/outbound-activities-elder-outings`)** [NEW] — Vrindavan pilgrimage, health impact, and Support Usship details.
 7. **Media Coverage (`/news-media-coverage`)** [NEW] — Press clippings from BBC, Times of India, etc.
-8. **Donate / Support (`/donate`)** — Sponsor meals, sponsor elders, general support, bank/UPI details.
+8. **Support Us / Support (`/Support Us`)** — Support Us meals, Support Us elders, general support, bank/UPI details.
 9. **Contact Us (`/contact`)** — Form, address, map placeholder, phone number.
 
 ---

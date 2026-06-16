@@ -8,20 +8,20 @@ export default function WaysToHelp() {
     {
       id: 1,
       icon: <Heart className="w-10 h-10 text-[#D32F2F] group-hover:text-white transition-colors duration-300" />,
-      title: "Donate",
-      desc: "₹500 feeds an elder for a day. ₹6,500 sponsors an elder for an entire month. No amount is too small. Every rupee reaches them directly.",
-      btnText: "Donate Now",
-      btnLink: "/donate",
+      title: "Support Us",
+      desc: "₹500 feeds an elder for a day. ₹6,500 Sponsors an elder for an entire month. No amount is too small. Every rupee reaches them directly.",
+      btnText: "Support Us Now",
+      btnLink: "/Support Us",
       topColor: "bg-[#D32F2F]",
       btnStyle: "bg-[#D32F2F] text-white hover:bg-[#b71c1c] border-transparent shadow-md group-hover:border-white/30"
     },
     {
       id: 2,
       icon: <Utensils className="w-10 h-10 text-[#FDD835] group-hover:text-white transition-colors duration-300" />,
-      title: "Sponsor a Meal",
+      title: "Support Us a Meal",
       desc: "Celebrate your birthday or anniversary by feeding our elders. From just ₹750, you can bring a warm meal — and a warm smile — to everyone at Aanandam.",
       btnText: "Choose a Meal",
-      btnLink: "/sponsor-a-meal",
+      btnLink: "/Support Us-a-meal",
       topColor: "bg-[#FDD835]",
       btnStyle: "bg-[#2E7D32] text-white hover:bg-[#1B5E20] border-transparent shadow-md group-hover:border-[#FDD835]/50"
     },

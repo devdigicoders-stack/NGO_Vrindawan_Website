@@ -21,7 +21,7 @@ function Outbound() {
     }
   ];
 
-  const sponsorTiers = [
+  const supportUsTiers = [
     { price: "₹5,000", label: "Local Park Outing", desc: "Sponsors transport, snacks, and medical support staff for a half-day local garden visit." },
     { price: "₹15,000", label: "Full-Day Temple Outing", desc: "Covers a comfortable bus, special meals, and support volunteers for a major temple trip." },
     { price: "₹30,000", label: "Overnight Pilgrimage", desc: "Covers hotel stay, travel support, and all arrangements for a local overnight trip." },
@@ -104,17 +104,17 @@ function Outbound() {
 
         {/* Sponsorship Grid */}
         <div className="space-y-6">
-          <h3 className="font-serif font-bold text-xl text-dark text-center">Sponsor a Joyful Outing</h3>
+          <h3 className="font-serif font-bold text-xl text-dark text-center">Support Us a Joyful Outing</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {sponsorTiers.map((tier, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-gold/15 rounded-2xl p-6 text-center space-y-3 shadow-xs border-t-4 border-t-accent"
-              >
-                <span className="block font-serif font-black text-2xl text-red-brand">{tier.price}</span>
-                <h4 className="font-serif font-bold text-sm text-dark">{tier.label}</h4>
-                <p className="text-xxs text-grey leading-relaxed">{tier.desc}</p>
-              </div>
+            {supportUsTiers.map((tier, idx) => (
+            <div
+              key={idx}
+              className="bg-white border border-gold/15 rounded-2xl p-6 text-center space-y-3 shadow-xs border-t-4 border-t-accent"
+            >
+              <span className="block font-serif font-black text-2xl text-red-brand">{tier.price}</span>
+              <h4 className="font-serif font-bold text-sm text-dark">{tier.label}</h4>
+              <p className="text-xxs text-grey leading-relaxed">{tier.desc}</p>
+            </div>
             ))}
           </div>
         </div>
@@ -142,7 +142,7 @@ function Outbound() {
           <p className="font-kalam text-sm sm:text-base text-dark/95 leading-relaxed">
             आनंदम् में हमारे बुजुर्गों को केवल चार दीवारों के भीतर नहीं रखा जाता। हम उन्हें नियमित तीर्थ यात्राओं और पिकनिक पर ले जाते हैं।
             हाल ही में आयोजित <strong>वृंदावन यात्रा</strong> में हमारे बुजुर्गों ने बांके बिहारी मंदिर और प्रेम मंदिर के दर्शन किए।
-            घाट पर बैठकर यमुना जी की आरती की और भजन गाए। आप भी इनमें से किसी यात्रा को प्रायोजित (sponsor) कर सकते हैं:
+            घाट पर बैठकर यमुना जी की आरती की और भजन गाए। आप भी इनमें से किसी यात्रा को प्रायोजित (Support Us) कर सकते हैं:
             स्थानीय पार्क यात्रा (₹5,000), मंदिर दर्शन (₹15,000), या संपूर्ण वृंदावन यात्रा (₹50,000+)।
           </p>
           <div className="flex flex-wrap gap-2 text-xxs font-bold">

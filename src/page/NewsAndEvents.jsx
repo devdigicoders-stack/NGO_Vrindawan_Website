@@ -14,7 +14,7 @@ function NewsAndEvents() {
       category: "Event",
       title: "Grand Diwali Celebration at Aanandam",
       snippet: "Our elders celebrated the festival of lights with incredible joy, music, and a special feast organized by our wonderful volunteers.",
-      content: "Diwali is always a special time at Aanandam. This year, over 50 volunteers joined our 30 residents to light diyas, make beautiful rangolis, and share a festive meal. The evening concluded with an unforgettable bhajan session where everyone sang and danced together. Thank you to everyone who sponsored sweets and gifts for our elders. Your generosity brought light to their lives."
+      content: "Diwali is always a special time at Aanandam. This year, over 50 volunteers joined our 30 residents to light diyas, make beautiful rangolis, and share a festive meal. The evening concluded with an unforgettable bhajan session where everyone sang and danced together. Thank you to everyone who Sponsored sweets and gifts for our elders. Your generosity brought light to their lives."
     },
     {
       id: 2,
@@ -124,7 +124,7 @@ function NewsAndEvents() {
 
       {/* Media Coverage Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2 mt-20 mb-16 space-y-12">
-        
+
         {/* Header */}
         <div className="space-y-6 text-center">
           <div className="flex items-center justify-center gap-4">
@@ -151,7 +151,7 @@ function NewsAndEvents() {
             </h3>
             <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
           </div>
-          
+
           <div className="flex flex-wrap justify-center gap-3">
             {["BBC UK & USA", "Daily Mail UK", "Metro News UK", "Yahoo News Australia", "LIFO Greece", "20 Minutene Switzerland"].map((media, idx) => (
               <span key={idx} className="bg-[#2E7D32] text-white px-4 py-2 rounded-md font-bold text-sm shadow-sm">
@@ -173,7 +173,7 @@ function NewsAndEvents() {
             </h3>
             <div className="hidden sm:block h-[1px] bg-gray-300 w-16"></div>
           </div>
-          
+
           <div className="flex flex-wrap justify-center gap-3">
             {["Times of India", "Hindustan Times", "India Today", "New Indian Express", "The Statesman", "The Tribune", "NDTV", "Asian Age", "India Times"].map((media, idx) => (
               <span key={idx} className="bg-[#0f172a] text-white px-4 py-2 rounded-md font-bold text-sm shadow-sm">
@@ -196,23 +196,23 @@ function NewsAndEvents() {
           </div>
           <ul className="space-y-4 text-gray-700 font-medium">
             <li className="flex gap-3">
-              <span className="text-[#2E7D32] font-bold">✓</span> 
+              <span className="text-[#2E7D32] font-bold">✓</span>
               <span><strong className="text-[#0a231a]">National Icon Award 2024</strong> — Humanitarian of the Year</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#2E7D32] font-bold">✓</span> 
+              <span className="text-[#2E7D32] font-bold">✓</span>
               <span><strong className="text-[#0a231a]">MHM Champion Award 2024</strong> — by Padmashri Damodaran Ji</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#2E7D32] font-bold">✓</span> 
+              <span className="text-[#2E7D32] font-bold">✓</span>
               <span><strong className="text-[#0a231a]">World Record</strong> — Happiness Express (400+ sessions, 1,30,000+ attendees, 23+ states)</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#2E7D32] font-bold">✓</span> 
+              <span className="text-[#2E7D32] font-bold">✓</span>
               <span><strong className="text-[#0a231a]">Rex Karamveer Award Nominee 2024</strong> — Global Fellowship (iCONGO & UN)</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#2E7D32] font-bold">✓</span> 
+              <span className="text-[#2E7D32] font-bold">✓</span>
               <span><strong className="text-[#0a231a]">Times Now "Amazing Indians" Award Nominee</strong></span>
             </li>
           </ul>
@@ -231,11 +231,11 @@ function NewsAndEvents() {
         {/* Hindi SEO Block */}
         <div className="bg-[#FAF8F5] border-l-4 border-[#F59E0B] p-6 sm:p-8 rounded-r-xl relative shadow-sm mt-8">
           <span className="absolute top-4 right-4 text-[#F59E0B] font-medium text-sm">हिंदी</span>
-          
+
           <h2 className="text-xl sm:text-2xl font-bold text-[#D84315] mb-4">
             समाचार और मीडिया कवरेज
           </h2>
-          
+
           <div className="space-y-4 text-gray-700 leading-relaxed italic text-[15px] sm:text-base">
             <p>
               आनंदम् वृद्धाश्रम और ह्यूमनिफाई फाउंडेशन को BBC, Daily Mail, Times of India, Hindustan Times, NDTV और कई राष्ट्रीय-अंतर्राष्ट्रीय मीडिया में स्थान मिला है।
