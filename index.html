@@ -13,29 +13,41 @@
     rel="stylesheet">
   <style>
     /* Forcefully hide Google Translate top banner */
-    .goog-te-banner-frame.skiptranslate { display: none !important; }
-    .VIpgJd-ZVi9od-ORHb-OEVmcd { display: none !important; }
+    .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+    }
+
+    .VIpgJd-ZVi9od-ORHb-OEVmcd {
+      display: none !important;
+    }
+
     /* Prevent body from shifting down */
-    body { top: 0px !important; position: static !important; }
+    body {
+      top: 0px !important;
+      position: static !important;
+    }
   </style>
 </head>
 
 <body>
   <div id="root"></div>
+  <!-- nmbjbjjb -->
 
   <!-- Google Translate Widget Container (Hidden) -->
-  <div id="google_translate_element" style="opacity:0; position:absolute; z-index:-1; width:0; height:0; overflow:hidden;"></div>
+  <div id="google_translate_element"
+    style="opacity:0; position:absolute; z-index:-1; width:0; height:0; overflow:hidden;"></div>
 
   <!-- Google Translate Script -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
-        { pageLanguage: 'en', includedLanguages: 'en,hi' }, 
+        { pageLanguage: 'en', includedLanguages: 'en,hi' },
         'google_translate_element'
       );
     }
   </script>
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script type="module" src="/src/main.jsx"></script>
 </body>
