@@ -68,10 +68,16 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <p className="text-[15px] leading-relaxed">
-                  Pole No-25, 513/11, Karala Village,<br />
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Aanandam+Vridhashram+Karala+Village+Delhi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[15px] leading-relaxed hover:text-[#FDD835] transition-colors"
+                >
+                  Pole No-25, 513/11, near Karala Stadium,<br />
+                  opposite ISO Solid Gym, Karala Village,<br />
                   Delhi - 110081
-                </p>
+                </a>
               </div>
             </div>
 
@@ -102,21 +108,27 @@ export default function Footer() {
         {/* Middle Section: Newsletter & Contact */}
         <div className="py-10 border-t border-b border-white/10 flex flex-col lg:flex-row items-center justify-between gap-10 mb-8">
 
-          {/* Newsletter Box */}
+          {/* YouTube Subscribe Box */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-            <div className="flex w-full max-w-md bg-white/5 rounded overflow-hidden border border-white/10">
-              <input
-                type="email"
-                placeholder="Enter Email Address *"
-                className="bg-transparent text-white placeholder-white/50 px-4 py-3 outline-none w-full text-[15px]"
-              />
-              <button className="bg-[#FDD835] text-[#0a231a] font-bold px-6 py-3 flex items-center gap-2 hover:bg-yellow-500 transition-colors">
-                Subscribe
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <a 
+              href="https://www.youtube.com/@NirajGera?sub_confirmation=1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 w-full max-w-md bg-white/5 hover:bg-white/10 p-4 rounded-xl border border-white/10 transition-all duration-300 group shadow-lg"
+            >
+              <div className="w-12 h-12 bg-[#FF0000] rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(255,0,0,0.5)] group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" />
                 </svg>
-              </button>
-            </div>
+              </div>
+              <div className="flex-1">
+                <h4 className="font-bold text-white text-[15px] group-hover:text-[#FF0000] transition-colors">Subscribe on YouTube</h4>
+                <p className="text-white/60 text-[13px]">Watch our latest activities & stories</p>
+              </div>
+              <div className="bg-[#FF0000] text-white font-bold px-5 py-2 rounded-lg text-[13px] group-hover:bg-white group-hover:text-[#FF0000] transition-colors">
+                Subscribe
+              </div>
+            </a>
           </div>
 
           {/* Contact Info blocks */}

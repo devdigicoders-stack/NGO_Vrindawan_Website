@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import PageHero from '../Component/PageHero';
 import { GraduationCap, Stethoscope, Heart, Music, BookOpen, Building } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 function Volunteer() {
   const whoWeNeed = [
@@ -161,15 +162,132 @@ function Volunteer() {
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <a href="#" className="w-full sm:w-auto bg-[#C62828] hover:bg-[#B71C1C] text-white font-bold py-3 px-8 rounded-xl shadow-md transition transform hover:-translate-y-0.5 hover:shadow-lg text-sm text-center">
+          <a href="#registration-form" onClick={(e) => {
+            e.preventDefault();
+            document.querySelector('#registration-form').scrollIntoView({ behavior: 'smooth' });
+          }} className="w-full sm:w-auto bg-[#C62828] hover:bg-[#B71C1C] text-white font-bold py-3 px-8 rounded-xl shadow-md transition transform hover:-translate-y-0.5 hover:shadow-lg text-sm text-center cursor-pointer">
             Register as Volunteer
           </a>
-          <a href="#" className="w-full sm:w-auto bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold py-3 px-8 rounded-xl shadow-md transition transform hover:-translate-y-0.5 hover:shadow-lg text-sm text-center">
+          <a href="#registration-form" onClick={(e) => {
+            e.preventDefault();
+            document.querySelector('#registration-form').scrollIntoView({ behavior: 'smooth' });
+          }} className="w-full sm:w-auto bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold py-3 px-8 rounded-xl shadow-md transition transform hover:-translate-y-0.5 hover:shadow-lg text-sm text-center cursor-pointer">
             Apply for Internship
           </a>
-          <a href="#" className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#0a231a] font-bold py-3 px-8 rounded-xl shadow-sm border-2 border-[#0a231a] transition transform hover:-translate-y-0.5 hover:shadow-md text-sm text-center">
+          <a href="#registration-form" onClick={(e) => {
+            e.preventDefault();
+            document.querySelector('#registration-form').scrollIntoView({ behavior: 'smooth' });
+          }} className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#0a231a] font-bold py-3 px-8 rounded-xl shadow-sm border-2 border-[#0a231a] transition transform hover:-translate-y-0.5 hover:shadow-md text-sm text-center cursor-pointer">
             Plan a Corporate Volunteer Day
           </a>
+        </motion.div>
+
+        {/* Registration Form Section */}
+        <motion.div
+          id="registration-form"
+          className="mt-20 bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Form Left Side - Info */}
+          <div className="bg-[#0a231a] w-full md:w-2/5 p-10 sm:p-12 text-white flex flex-col justify-center relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-[#FFE401]/10 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 rounded-full bg-green-500/20 blur-3xl"></div>
+            
+            <div className="relative z-10">
+              <h3 className="font-serif font-black text-3xl sm:text-4xl text-[#FFE401] mb-6 leading-tight">
+                Ready to Make a Difference?
+              </h3>
+              <p className="text-white/80 leading-relaxed mb-8">
+                Whether you're looking to volunteer your time, apply for an internship, or organize a corporate visit, we would love to hear from you. Fill out the form and our team will get in touch shortly.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Heart className="text-[#FFE401]" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white text-sm">Experience Joy</h4>
+                    <p className="text-white/60 text-sm">Create unforgettable memories</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <GraduationCap className="text-[#FFE401]" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white text-sm">Learn & Grow</h4>
+                    <p className="text-white/60 text-sm">Gain valuable life experience</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Form Right Side - Inputs */}
+          <div className="w-full md:w-3/5 p-10 sm:p-12">
+            <h3 className="text-2xl font-bold text-[#0a231a] mb-8">Submit Your Application</h3>
+            
+            <form className="space-y-6" onSubmit={(e) => { 
+              e.preventDefault(); 
+              Swal.fire({
+                title: 'Success!',
+                text: 'Your application has been submitted successfully. We will get in touch soon.',
+                icon: 'success',
+                confirmButtonColor: '#0a231a',
+                confirmButtonText: 'Great!'
+              });
+              e.target.reset();
+            }}>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-gray-700">Full Name *</label>
+                  <input type="text" required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white" placeholder="John Doe" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-gray-700">Email Address *</label>
+                  <input type="email" required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white" placeholder="john@example.com" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-gray-700">Phone Number *</label>
+                  <input type="tel" required maxLength="10" minLength="10" pattern="[0-9]{10}" onInput={(e) => e.target.value = e.target.value.replace(/[^0-9]/g, '')} className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white" placeholder="10-digit Mobile Number" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-gray-700">Applying For *</label>
+                  <select required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white cursor-pointer text-gray-700">
+                    <option value="">Select an option</option>
+                    <option value="volunteer">Regular Volunteer</option>
+                    <option value="internship">Student Internship</option>
+                    <option value="corporate">Corporate Group Visit</option>
+                    <option value="medical">Medical / Health Camp</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-gray-700">Profession / Institute *</label>
+                <input type="text" required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white" placeholder="e.g. Student at Delhi University, or IT Professional" />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-gray-700">Message / Why do you want to join? (Optional)</label>
+                <textarea rows="4" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white resize-none" placeholder="Tell us a little about yourself and how you'd like to help..."></textarea>
+              </div>
+
+              <button type="submit" className="w-full bg-[#FFE401] hover:bg-[#E6CD00] text-[#0a231a] font-black text-lg py-4 rounded-xl shadow-md transition transform hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 mt-4">
+                Submit Application
+              </button>
+
+            </form>
+          </div>
         </motion.div>
 
       </section>
