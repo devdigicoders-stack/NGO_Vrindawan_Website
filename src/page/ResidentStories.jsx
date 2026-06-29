@@ -8,28 +8,28 @@ function ResidentStories() {
     {
       id: 1,
       name: "Ramlal Ji, 78",
-      image: "/Gallery/14_Wrinkled Reality.jpg",
+      image: "/fwd47photos/9.jpg",
       story: "Ramlal Ji was a hardworking farmer his entire life. After his wife passed away, his sons took over the property and slowly started ignoring his basic needs. Eventually, he was asked to leave his own house and was found sleeping at a bus stand for weeks.",
       experience: "At Aanandam, Ramlal Ji found a new family. He is now the head gardener of our ashram. The joy of growing vegetables and sharing meals with his new friends has brought back the smile he thought he had lost forever."
     },
     {
       id: 2,
       name: "Savitri Devi, 82",
-      image: "/Gallery/15_astounded .jpg",
+      image: "/fwd47photos/10.jpg",
       story: "Savitri Devi suffered a stroke that left her partially paralyzed. Her family, unable to bear the medical expenses and time required for her care, abandoned her outside a government hospital. She had lost the will to live.",
       experience: "With regular physiotherapy, proper medication, and endless love from the volunteers at Aanandam, Savitri Devi can now walk with a walker. She leads our evening bhajans and says she feels like a queen in her new home."
     },
     {
       id: 3,
       name: "Om Prakash & Kamla, 75 & 71",
-      image: "/Gallery/12_The Ties of Kinship .jpg",
+      image: "/fwd47photos/11.jpg",
       story: "This beautiful couple was thrown out by their daughter-in-law while their son remained a silent spectator. They spent all their savings on their son's education, leaving them penniless and wandering the streets of Delhi in the harsh winter.",
       experience: "Aanandam gave them a private room where they can live with dignity. They are the most romantic couple in the ashram. Om Prakash Ji reads the newspaper to Kamla Ji every morning, and they celebrate every festival with youthful enthusiasm."
     },
     {
       id: 4,
       name: "Kailash Nath, 85",
-      image: "/Gallery/2_ Dejected Wrinkles (1).jpg",
+      image: "/fwd47photos/12.jpg",
       story: "A retired school teacher, Kailash Nath was deeply respected in his village. But after retirement, his children moved abroad and stopped calling. The loneliness and isolation drove him into deep depression.",
       experience: "Today, 'Masterji' teaches basic reading and writing to the illiterate staff and volunteers at Aanandam. The respect and purpose he regained here have completely cured his depression. He says, 'I am reborn here.'"
     }

@@ -6,12 +6,12 @@ const EldersGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    "/20260215_140949 (1).jpg",
-    "/20260215_152343.jpg",
-    "/20260304_134952.jpg",
-    "/20260304_135319.jpg",
-    "/20260304_151034.jpg",
-    "/20260304_151141.jpg"
+    "/fwd47photos/16.jpg",
+    "/fwd47photos/15.jpg",
+    "/fwd47photos/17.jpg",
+    "/fwd47photos/18.jpg",
+    "/fwd47photos/19.jpg",
+    "/fwd47photos/26.jpg"
   ];
 
   return (

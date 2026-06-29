@@ -7,14 +7,14 @@ function Facilities() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    "/20260304_150913.jpg",
-    "/20260304_151034.jpg",
-    "/20260304_151141.jpg",
-    "/20260304_151401.jpg",
-    "/20260304_151935.jpg",
-    "/20260304_152202 (1).jpg",
-    "/20260306_131933.jpg",
-    "/20260308_170324.jpg"
+    "/fwd47photos/27.jpg",
+    "/fwd47photos/28.jpg",
+    "/fwd47photos/31.jpg",
+    "/fwd47photos/33.jpg",
+    "/fwd47photos/34.jpg",
+    "/fwd47photos/43.jpg",
+    "/fwd47photos/46.jpg",
+    "/fwd47photos/47.jpg"
   ];
 
   const facilitiesList = [

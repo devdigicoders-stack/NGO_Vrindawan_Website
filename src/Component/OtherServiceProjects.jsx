@@ -7,56 +7,56 @@ function OtherServiceProjects() {
     {
       id: 1,
       name: "Daily Nutritious Meals",
-      image: "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=600&q=80",
+      image: "/fwd47photos/15.jpg",
       description: "Providing balanced, healthy, and timely meals tailored to the dietary needs of the elderly to ensure their physical well-being.",
       link: "https://humanifyfoundation.org/"
     },
     {
       id: 2,
       name: "Medical Checkups & Care",
-      image: "https://images.unsplash.com/photo-1576091160550-2173ff9e9e9c?auto=format&fit=crop&w=600&q=80",
+      image: "/fwd47photos/16.jpg",
       description: "Regular doctor visits, free medicines, and emergency medical support to keep our residents healthy and safe.",
       link: "https://humanifyfoundation.org/"
     },
     {
       id: 3,
       name: "Yoga & Spiritual Sessions",
-      image: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&w=600&q=80",
+      image: "/fwd47photos/8.jpg",
       description: "Daily morning yoga, meditation, and bhajan sessions to keep the mind peaceful and the spirit uplifted.",
       link: "https://humanifyfoundation.org/"
     },
     {
       id: 4,
       name: "Birthday & Festival Celebrations",
-      image: "https://images.unsplash.com/photo-1530103862676-de88927951ea?auto=format&fit=crop&w=600&q=80",
+      image: "/fwd47photos/19.jpg",
       description: "Making every resident feel special by celebrating their birthdays and all major Indian festivals with joy and togetherness.",
       link: "https://humanifyfoundation.org/"
     },
     {
       id: 5,
       name: "Clean & Safe Accommodation",
-      image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80",
+      image: "/fwd47photos/23.jpg",
       description: "Providing a hygienic, comfortable, and safe living environment that feels just like their own home.",
       link: "https://humanifyfoundation.org/"
     },
     {
       id: 6,
       name: "Outbound Spiritual Trips",
-      image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=600&q=80",
+      image: "/fwd47photos/33.jpg",
       description: "Organizing outbound trips to holy places like Vrindavan and local temples to fulfill their spiritual desires.",
       link: "https://humanifyfoundation.org/"
     },
     {
       id: 7,
       name: "Mental Health & Counseling",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
+      image: "/fwd47photos/25.jpg",
       description: "Offering counseling and emotional support to help residents overcome trauma, loneliness, and depression.",
       link: "https://humanifyfoundation.org/"
     },
     {
       id: 8,
       name: "Youth & Volunteer Interactions",
-      image: "https://images.unsplash.com/photo-1593113589914-009ce0b5368a?auto=format&fit=crop&w=600&q=80",
+      image: "/fwd47photos/26.jpg",
       description: "Bridging the generational gap by bringing young students and volunteers to spend quality time with the elders.",
       link: "https://humanifyfoundation.org/"
     }

@@ -154,7 +154,7 @@ function Contact() {
             {/* Center to Sides Hover Animation with Fade-out */}
             <div className="absolute inset-0 bg-white/30 scale-x-0 opacity-100 group-hover:scale-x-100 group-hover:opacity-0 transition-all duration-1000 ease-out origin-center z-10 pointer-events-none"></div>
             <img
-              src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80"
+              src="/fwd47photos/46.jpg"
               alt="Volunteers and community"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />

@@ -72,6 +72,9 @@ function Navbar() {
                   <Link to="/dream-campus" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
                     Dream Campus
                   </Link>
+                  <Link to="/hindi" className="block px-4 py-2.5 text-[14px] font-bold text-orange-600 hover:bg-[#FFE401] hover:text-orange-800">
+                    हिंदी पेज
+                  </Link>
                 </div>
               )}
             </div>
@@ -118,13 +121,13 @@ function Navbar() {
 
               {supportUsDropdown && (
                 <div className="absolute top-16 left-0 w-60 bg-white rounded shadow-lg py-2 z-50 animate-fade-in border-t-4 border-green-800">
-                  <Link to="/Support Us" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
+                  <Link to="/donate" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
                     Support Us Now
                   </Link>
-                  <Link to="/Support Us-a-meal" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
+                  <Link to="/sponsor-a-meal" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
                     Support Us A Meal
                   </Link>
-                  <Link to="/Support Us-an-elder" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
+                  <Link to="/sponsor-an-elder" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
                     Support Us An Elder
                   </Link>
                   <Link to="/csr-partnerships" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
@@ -254,6 +257,7 @@ function Navbar() {
               <Link to="/resident-stories" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Story of Residents</Link>
               <Link to="/facilities" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Facilities</Link>
               <Link to="/dream-campus" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Dream Campus</Link>
+              <Link to="/hindi" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-orange-600 hover:text-orange-800">हिंदी पेज</Link>
             </div>
           </div>
 
@@ -286,9 +290,9 @@ function Navbar() {
             </button>
 
             <div className={`space-y-1 pl-4 overflow-hidden transition-all duration-300 ${mobileSection === 'Support Us' ? 'max-h-64 pb-3' : 'max-h-0'}`}>
-              <Link to="/Support Us" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Support Us Now</Link>
-              <Link to="/Support Us-a-meal" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Support Us A Meal</Link>
-              <Link to="/Support Us-an-elder" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Support Us An Elder</Link>
+              <Link to="/donate" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Support Us Now</Link>
+              <Link to="/sponsor-a-meal" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Support Us A Meal</Link>
+              <Link to="/sponsor-an-elder" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Support Us An Elder</Link>
               <Link to="/csr-partnerships" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">CSR Partnerships</Link>
             </div>
           </div>

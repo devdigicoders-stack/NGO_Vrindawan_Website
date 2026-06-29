@@ -1,59 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import PageHero from '../Component/PageHero';
-import { GraduationCap, Stethoscope, Heart, Music, BookOpen, Building } from 'lucide-react';
 import Swal from 'sweetalert2';
 
 function Volunteer() {
-  const whoWeNeed = [
-    {
-      icon: <GraduationCap size={32} />,
-      title: "Students & Interns",
-      desc: "NSS, NCC, social work students, management interns — Aanandam provides meaningful internship certificates and impactful social hours. You will learn things no classroom teaches.",
-      borderColor: "border-[#F59E0B]" // Orange
-    },
-    {
-      icon: <Stethoscope size={32} />,
-      title: "Doctors & Health Professionals",
-      desc: "Visit monthly for health check-ups, advice, and guidance. Dentists, physiotherapists, dieticians, ophthalmologists — every specialty is welcome and deeply needed.",
-      borderColor: "border-[#2E7D32]" // Green
-    },
-    {
-      icon: <Heart size={32} />,
-      title: "Yoga & Meditation Teachers",
-      desc: "Lead morning sessions for our elders. Your hour-long class will set the tone for an elder's entire day. This is the most direct form of preventive healthcare.",
-      borderColor: "border-[#C62828]" // Red
-    },
-    {
-      icon: <Music size={32} />,
-      title: "Musicians & Performers",
-      desc: "Sing. Play. Perform. Our elders love classical music, bhajans and folk songs. A live performance at Aanandam is an emotional experience neither performer nor audience forgets.",
-      borderColor: "border-[#9C27B0]" // Purple
-    },
-    {
-      icon: <BookOpen size={32} />,
-      title: "Educators & Counsellors",
-      desc: "Run activity sessions, storytelling circles, life history interviews, or gentle counselling. Help elders process their journeys and find meaning in the present.",
-      borderColor: "border-[#0288D1]" // Blue
-    },
-    {
-      icon: <Building size={32} />,
-      title: "Corporate Teams",
-      desc: "CSR volunteering day at Aanandam. Your entire team spends a day with elders — serving meals, conducting activities, sharing stories. The most powerful team-building exercise you will ever do.",
-      borderColor: "border-[#00796B]" // Teal
-    }
-  ];
-
-  const steps = [
-    "Fill out our volunteer registration form (link below) or WhatsApp us your name, profession and availability.",
-    "We match you with the most suitable volunteer role based on your skills and schedule.",
-    "Your first visit is scheduled. We guide you on what to bring, what to expect and how to prepare.",
-    "You arrive. You connect. You give. And you receive something you didn't expect — something that stays with you long after you leave Aanandam."
-  ];
-
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
+
+  const cards = [
+    {
+      emoji: "🏅",
+      title: "Internship Certificate",
+      desc: "Signed certificate from Humanify Foundation — valid for NSS, NCC, college credit and CV. Accepted by schools and colleges across Delhi NCR."
+    },
+    {
+      emoji: "📸",
+      title: "Real Impact, Real Stories",
+      desc: "Your photos, reels or content directly help us reach more donors and volunteers. Your work has a visible, measurable effect — not just a thank-you email."
+    },
+    {
+      emoji: "🤝",
+      title: "Nationally Recognised NGO",
+      desc: "Aanandam is associated with HelpAge India, Amul, Axis Max Life, Yes Madam, and has been visited by Dr. Kiran Bedi Ji. Your association carries weight."
+    },
+    {
+      emoji: "🌱",
+      title: "Flexible. Free. No Conditions.",
+      desc: "One day or six months. Onsite or online. Weekdays or weekends. No fee. We work around you — not the other way around."
+    }
+  ];
+
+  // Form State
+  const [applyAs, setApplyAs] = useState('Volunteer');
+  const [duration, setDuration] = useState('Flexible');
+  const [contribute, setContribute] = useState(['Elder Interaction']);
+  const [availability, setAvailability] = useState('Onsite');
+  const [days, setDays] = useState('Flexible');
+
+  const toggleContribute = (item) => {
+    if (contribute.includes(item)) {
+      setContribute(contribute.filter(i => i !== item));
+    } else {
+      setContribute([...contribute, item]);
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    Swal.fire({
+      title: 'Application Submitted!',
+      text: 'Thank you for applying. We will reach out to you within 48 hours.',
+      icon: 'success',
+      confirmButtonColor: '#2E7D32',
+    });
+    e.target.reset();
   };
 
   return (
@@ -64,229 +66,368 @@ function Volunteer() {
         hideBreadcrumb={true}
       />
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-2 mt-16 space-y-20">
-
-        {/* Intro Section */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 space-y-10">
+        
         <motion.div
-          className="max-w-5xl space-y-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={fadeInUp}
         >
-          <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#0a231a] leading-tight mb-6">
-            You Don't Need Special Skills. You Just Need to Show Up.
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl text-[#0a231a] mb-6">
+            Why Aanandam Will Stay With You
           </h2>
-          <div className="space-y-6 text-gray-700 text-base leading-relaxed font-medium">
-            <p>
-              Volunteering at Aanandam is one of the most talked-about experiences in Delhi's social impact community. People come for a few hours — and come back every week. Students arrive for internship hours — and stay long after their certificates are issued. Doctors come for a medical camp — and make it a monthly commitment.
+          <p className="text-gray-700 text-lg leading-relaxed mb-8">
+            This is not a routine internship or a box to tick. When you sit beside an elder who hasn't had a real conversation in weeks — when you see their face change — something in you changes too. Permanently. Our volunteers often say the same thing: <span className="italic font-medium">"I came to give. I left with far more than I brought."</span>
+          </p>
+
+          <div className="bg-[#f9f7eb] border-l-4 border-[#F59E0B] p-6 sm:p-8 rounded-r-lg shadow-sm mb-12">
+            <p className="text-[#0a231a] text-[20px] font-serif italic font-bold leading-relaxed">
+              "Aanandam is founded by Sh. Niraj Gera — World Record Holder, NITI Aayog Mentor of Change, TEDx Speaker and social activist with 18+ years of work across elder care, mental health and women's empowerment. Coming here means being part of a mission that is nationally recognised and deeply human."
             </p>
-            <p>
-              Why? Because <strong>Aanandam changes you.</strong> When you sit beside an 80-year-old who has survived unimaginable hardship and still chooses to smile — something shifts. Your perspective expands. Your problems shrink. Your capacity for gratitude grows beyond anything you thought possible.
-            </p>
           </div>
         </motion.div>
 
-        {/* Who We Need Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={fadeInUp}
-        >
-          <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#F59E0B] mb-8">
-            Who We Need
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whoWeNeed.map((item, index) => (
-              <motion.div
-                key={index}
-                className={`relative bg-white p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border-t-4 ${item.borderColor} border-l border-r border-b border-gray-100 group cursor-pointer overflow-hidden`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                {/* The Sliding Dark Green Background */}
-                <div className="absolute bottom-0 left-0 w-full h-0 bg-[#0a231a] transition-all duration-500 ease-out group-hover:h-full z-0"></div>
-
-                {/* Content */}
-                <div className="relative z-10">
-                  <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 origin-left">{item.icon}</div>
-                  <h3 className="text-lg font-bold text-[#0a231a] group-hover:text-white transition-colors duration-300 mb-3">{item.title}</h3>
-                  <p className="text-gray-600 group-hover:text-white/90 leading-relaxed text-sm transition-colors duration-300">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* How to Volunteer Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={fadeInUp}
-        >
-          <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#0a231a] mb-8">
-            How to Volunteer
-          </h2>
-          <div className="space-y-4">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                className="flex items-start gap-5 border-b border-gray-200 pb-4 last:border-0 last:pb-0"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="w-8 h-8 flex-shrink-0 bg-[#F59E0B] text-white rounded-full flex items-center justify-center font-bold text-sm shadow-sm mt-0.5">
-                  {index + 1}
-                </div>
-                <p className="text-gray-700 leading-relaxed font-medium text-sm sm:text-base pt-1">
-                  {step}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Action Buttons */}
-        <motion.div
-          className="flex flex-col sm:flex-row flex-wrap items-center gap-4 pt-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <a href="#registration-form" onClick={(e) => {
-            e.preventDefault();
-            document.querySelector('#registration-form').scrollIntoView({ behavior: 'smooth' });
-          }} className="w-full sm:w-auto bg-[#C62828] hover:bg-[#B71C1C] text-white font-bold py-3 px-8 rounded-xl shadow-md transition transform hover:-translate-y-0.5 hover:shadow-lg text-sm text-center cursor-pointer">
-            Register as Volunteer
-          </a>
-          <a href="#registration-form" onClick={(e) => {
-            e.preventDefault();
-            document.querySelector('#registration-form').scrollIntoView({ behavior: 'smooth' });
-          }} className="w-full sm:w-auto bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold py-3 px-8 rounded-xl shadow-md transition transform hover:-translate-y-0.5 hover:shadow-lg text-sm text-center cursor-pointer">
-            Apply for Internship
-          </a>
-          <a href="#registration-form" onClick={(e) => {
-            e.preventDefault();
-            document.querySelector('#registration-form').scrollIntoView({ behavior: 'smooth' });
-          }} className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#0a231a] font-bold py-3 px-8 rounded-xl shadow-sm border-2 border-[#0a231a] transition transform hover:-translate-y-0.5 hover:shadow-md text-sm text-center cursor-pointer">
-            Plan a Corporate Volunteer Day
-          </a>
-        </motion.div>
-
-        {/* Registration Form Section */}
-        <motion.div
-          id="registration-form"
-          className="mt-20 bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Form Left Side - Info */}
-          <div className="bg-[#0a231a] w-full md:w-2/5 p-10 sm:p-12 text-white flex flex-col justify-center relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-[#FFE401]/10 blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 rounded-full bg-green-500/20 blur-3xl"></div>
-            
-            <div className="relative z-10">
-              <h3 className="font-serif font-black text-3xl sm:text-4xl text-[#FFE401] mb-6 leading-tight">
-                Ready to Make a Difference?
-              </h3>
-              <p className="text-white/80 leading-relaxed mb-8">
-                Whether you're looking to volunteer your time, apply for an internship, or organize a corporate visit, we would love to hear from you. Fill out the form and our team will get in touch shortly.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {cards.map((card, index) => (
+            <motion.div
+              key={index}
+              className="bg-white p-6 sm:p-8 rounded-xl border border-gray-200 border-t-[3px] border-t-[#2E7D32] shadow-sm hover:shadow-md transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="mb-4 text-3xl drop-shadow-sm">
+                {card.emoji}
+              </div>
+              <h3 className="text-[19px] font-bold text-[#0a231a] mb-3">{card.title}</h3>
+              <p className="text-gray-600 leading-relaxed text-[15px]">
+                {card.desc}
               </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Heart className="text-[#FFE401]" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white text-sm">Experience Joy</h4>
-                    <p className="text-white/60 text-sm">Create unforgettable memories</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <GraduationCap className="text-[#FFE401]" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white text-sm">Learn & Grow</h4>
-                    <p className="text-white/60 text-sm">Gain valuable life experience</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Who Can Apply Section */}
+        <motion.div
+          className="pt-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeInUp}
+        >
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl text-[#0a231a] mb-8">
+            Who Can Apply
+          </h2>
+          <div className="flex flex-wrap gap-3 sm:gap-4 mb-6">
+            {[
+              "School Students", "College Students", "Psychology", "Social Work", "MBA / Management",
+              "Medical Students", "Content Writers", "Photographers", "Videographers", "Graphic Designers",
+              "Corporate Teams", "Doctors / Nurses", "Yoga Teachers", "Musicians / Singers", "Senior Citizens",
+              "Anyone Willing"
+            ].map((role, index) => (
+              <span key={index} className="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-gray-700 text-[15px] shadow-sm hover:border-[#0a231a] hover:shadow-md transition-all cursor-default">
+                {role}
+              </span>
+            ))}
           </div>
+          <p className="text-gray-600 text-[15px] sm:text-base">
+            No special degree or experience needed for most roles. If you have a willing heart, there is a place for you here.
+          </p>
+        </motion.div>
 
-          {/* Form Right Side - Inputs */}
-          <div className="w-full md:w-3/5 p-10 sm:p-12">
-            <h3 className="text-2xl font-bold text-[#0a231a] mb-8">Submit Your Application</h3>
-            
-            <form className="space-y-6" onSubmit={(e) => { 
-              e.preventDefault(); 
-              Swal.fire({
-                title: 'Success!',
-                text: 'Your application has been submitted successfully. We will get in touch soon.',
-                icon: 'success',
-                confirmButtonColor: '#0a231a',
-                confirmButtonText: 'Great!'
-              });
-              e.target.reset();
-            }}>
+        {/* Apply in 2 Minutes Form Section */}
+        <motion.div
+          className="pt-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeInUp}
+        >
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl text-[#1B5E20] mb-3">
+            Apply in 2 Minutes
+          </h2>
+          <p className="text-gray-600 mb-8 text-[15px]">
+            Fill the form below and we'll reach out within 48 hours — usually much sooner.
+          </p>
+
+          <div className="bg-[#FFFCF5] border border-[#E5E0D0] rounded-[20px] p-6 sm:p-10 shadow-sm">
+            <form className="space-y-8" onSubmit={handleFormSubmit}>
               
+              {/* Row 1 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Full Name *</label>
-                  <input type="text" required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white" placeholder="John Doe" />
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 tracking-wider mb-2 uppercase">Name *</label>
+                  <input type="text" required placeholder="Your full name" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2E7D32] focus:ring-1 focus:ring-[#2E7D32] outline-none transition-all bg-white" />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Email Address *</label>
-                  <input type="email" required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white" placeholder="john@example.com" />
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 tracking-wider mb-2 uppercase">Age</label>
+                  <input type="number" placeholder="Age" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2E7D32] focus:ring-1 focus:ring-[#2E7D32] outline-none transition-all bg-white" />
                 </div>
               </div>
 
+              {/* Row 2 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Phone Number *</label>
-                  <input type="tel" required maxLength="10" minLength="10" pattern="[0-9]{10}" onInput={(e) => e.target.value = e.target.value.replace(/[^0-9]/g, '')} className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white" placeholder="10-digit Mobile Number" />
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 tracking-wider mb-2 uppercase">Whatsapp Number *</label>
+                  <input type="tel" required placeholder="+91 XXXXX XXXXX" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2E7D32] focus:ring-1 focus:ring-[#2E7D32] outline-none transition-all bg-white" />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Applying For *</label>
-                  <select required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white cursor-pointer text-gray-700">
-                    <option value="">Select an option</option>
-                    <option value="volunteer">Regular Volunteer</option>
-                    <option value="internship">Student Internship</option>
-                    <option value="corporate">Corporate Group Visit</option>
-                    <option value="medical">Medical / Health Camp</option>
-                  </select>
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 tracking-wider mb-2 uppercase">Email *</label>
+                  <input type="email" required placeholder="your@email.com" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2E7D32] focus:ring-1 focus:ring-[#2E7D32] outline-none transition-all bg-white" />
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Profession / Institute *</label>
-                <input type="text" required className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white" placeholder="e.g. Student at Delhi University, or IT Professional" />
+              {/* Row 3 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 tracking-wider mb-2 uppercase">City</label>
+                  <input type="text" placeholder="Your city" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2E7D32] focus:ring-1 focus:ring-[#2E7D32] outline-none transition-all bg-white" />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 tracking-wider mb-2 uppercase">College / Organisation</label>
+                  <input type="text" placeholder="Where you study or work" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2E7D32] focus:ring-1 focus:ring-[#2E7D32] outline-none transition-all bg-white" />
+                </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Message / Why do you want to join? (Optional)</label>
-                <textarea rows="4" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#0a231a] focus:ring-1 focus:ring-[#0a231a] outline-none transition-all bg-gray-50 focus:bg-white resize-none" placeholder="Tell us a little about yourself and how you'd like to help..."></textarea>
+              {/* Row 4 */}
+              <div>
+                <label className="block text-xs font-bold text-gray-700 tracking-wider mb-2 uppercase">Course / Designation</label>
+                <input type="text" placeholder="e.g. B.Sc. Psychology, HR Manager, Freelancer" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2E7D32] focus:ring-1 focus:ring-[#2E7D32] outline-none transition-all bg-white" />
               </div>
 
-              <button type="submit" className="w-full bg-[#FFE401] hover:bg-[#E6CD00] text-[#0a231a] font-black text-lg py-4 rounded-xl shadow-md transition transform hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 mt-4">
-                Submit Application
-              </button>
+              {/* Pills sections */}
+              <div className="space-y-8">
+                
+                {/* Apply As */}
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 tracking-wider mb-3 uppercase">I Am Applying As</label>
+                  <div className="flex flex-wrap gap-3">
+                    {["Volunteer", "Intern", "Corporate Volunteer", "Group", "NGO Partner"].map(item => (
+                      <button
+                        key={item}
+                        type="button"
+                        onClick={() => setApplyAs(item)}
+                        className={`px-5 py-2.5 rounded-full text-[14px] font-medium border transition-all ${
+                          applyAs === item 
+                            ? 'bg-[#E8F5E9] border-[#2E7D32] text-[#1B5E20]' 
+                            : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400'
+                        }`}
+                      >
+                        {item}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Duration */}
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 tracking-wider mb-3 uppercase">Duration</label>
+                  <div className="flex flex-wrap gap-3">
+                    {["1 Day", "1 Week", "1 Month", "3 Months", "6 Months", "Flexible"].map(item => (
+                      <button
+                        key={item}
+                        type="button"
+                        onClick={() => setDuration(item)}
+                        className={`px-5 py-2.5 rounded-full text-[14px] font-medium border transition-all ${
+                          duration === item 
+                            ? 'bg-[#E8F5E9] border-[#2E7D32] text-[#1B5E20]' 
+                            : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400'
+                        }`}
+                      >
+                        {item}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Contribute In */}
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 tracking-wider mb-3 uppercase">
+                    I Can Contribute In <span className="text-gray-400 font-normal normal-case">(select any)</span>
+                  </label>
+                  <div className="flex flex-wrap gap-3">
+                    {[
+                      "Elder Interaction", "Social Media", "Photography", "Videography", "Content Writing",
+                      "Fundraising", "Events", "CSR Coordination", "Graphic Design", "Accounts / HR",
+                      "Psychology Support", "Medical Support", "Yoga / Meditation", "Music / Bhajans", "Legal",
+                      "Web / SEO / AI", "Other"
+                    ].map(item => (
+                      <button
+                        key={item}
+                        type="button"
+                        onClick={() => toggleContribute(item)}
+                        className={`px-5 py-2.5 rounded-full text-[14px] font-medium border transition-all ${
+                          contribute.includes(item)
+                            ? 'bg-[#E8F5E9] border-[#2E7D32] text-[#1B5E20]' 
+                            : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400'
+                        }`}
+                      >
+                        {item}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Availability & Days */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 tracking-wider mb-3 uppercase">Availability</label>
+                    <div className="flex flex-wrap gap-3">
+                      {["Onsite", "Online", "Both"].map(item => (
+                        <button
+                          key={item}
+                          type="button"
+                          onClick={() => setAvailability(item)}
+                          className={`px-5 py-2.5 rounded-full text-[14px] font-medium border transition-all ${
+                            availability === item 
+                              ? 'bg-[#E8F5E9] border-[#2E7D32] text-[#1B5E20]' 
+                              : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400'
+                          }`}
+                        >
+                          {item}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 tracking-wider mb-3 uppercase">Days</label>
+                    <div className="flex flex-wrap gap-3">
+                      {["Weekdays", "Weekends", "Flexible"].map(item => (
+                        <button
+                          key={item}
+                          type="button"
+                          onClick={() => setDays(item)}
+                          className={`px-5 py-2.5 rounded-full text-[14px] font-medium border transition-all ${
+                            days === item 
+                              ? 'bg-[#E8F5E9] border-[#2E7D32] text-[#1B5E20]' 
+                              : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400'
+                          }`}
+                        >
+                          {item}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Textarea */}
+              <div>
+                <label className="block text-xs font-bold text-gray-700 tracking-wider mb-2 uppercase">
+                  Why do you want to join? <span className="text-gray-400 font-normal normal-case">(optional)</span>
+                </label>
+                <textarea 
+                  rows="4" 
+                  placeholder="A few words — what draws you here, what you hope to contribute or experience..." 
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2E7D32] focus:ring-1 focus:ring-[#2E7D32] outline-none transition-all bg-white resize-none"
+                ></textarea>
+              </div>
+
+              {/* Resume / Portfolio */}
+              <div>
+                <label className="block text-xs font-bold text-gray-700 tracking-wider mb-2 uppercase">
+                  Resume / Portfolio <span className="text-gray-400 font-normal normal-case">(optional)</span>
+                </label>
+                <input type="text" placeholder="Paste link or we can collect on WhatsApp" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2E7D32] focus:ring-1 focus:ring-[#2E7D32] outline-none transition-all bg-white" />
+              </div>
+
+              {/* Submit Button */}
+              <div className="pt-4 text-center">
+                <button type="submit" className="w-full bg-[#C62828] hover:bg-[#B71C1C] text-white font-bold py-4 rounded-xl shadow-md transition transform hover:-translate-y-0.5 hover:shadow-lg text-lg">
+                  Submit Application →
+                </button>
+                <p className="text-gray-500 text-xs mt-4">
+                  We respond within 48 hours. No fee. No conditions. Just show up.
+                </p>
+              </div>
 
             </form>
+          </div>
+        </motion.div>
+
+        {/* Internship Certificate Info */}
+        <motion.div
+          className="pt-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeInUp}
+        >
+          <div className="bg-[#E8F5E9] border border-[#2E7D32]/30 rounded-[12px] p-5 sm:p-6 shadow-sm">
+            <p className="text-[#1B5E20] text-[15px] sm:text-base leading-relaxed">
+              🎓 <span className="font-bold">Internship Certificate:</span> All interns completing their commitment receive a formal certificate from Humanify Foundation — signed by the founder's office — accepted by colleges and universities across Delhi NCR for NSS, NCC and internship-credit requirements.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Visit Us Section */}
+        <motion.div
+          className="pt-10 border-t border-gray-200 mt-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeInUp}
+        >
+          <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#1B5E20] mb-6">
+            Visit Us
+          </h2>
+          <div className="space-y-4 text-gray-700 text-[15px]">
+            <div className="flex items-start gap-3">
+              <span className="text-[#C62828] text-xl mt-0.5">📍</span>
+              <div>
+                <p>Aanandam Old Age Home, 513/11, Utsav Vihar, Karala Village, Delhi 110081</p>
+                <p className="text-gray-500">Near Rohini, Pitampura &amp; Kanjhawala | Opposite ISO Solid Gym</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 pt-2">
+              <span className="text-[#C62828] text-lg">📞</span>
+              <p>+91-9310105630 | +91-9891139833 <span className="text-gray-300 mx-2">|</span> ✉️ info@vridhashram.in</p>
+            </div>
+          </div>
+          <a href="tel:+919310105630" className="inline-block mt-8 bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold py-3 px-6 rounded-[8px] shadow-sm transition">
+            Get Directions
+          </a>
+        </motion.div>
+
+        {/* Hindi SEO Block */}
+        <motion.div
+          className="pt-12 mb-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeInUp}
+        >
+          <div className="bg-[#FFF4E6] border-l-4 border-[#E65100] p-6 sm:p-10 rounded-r-[16px] shadow-sm">
+            <div className="space-y-6 text-[#5D4037] text-[15.5px] italic leading-relaxed">
+              <p>
+                <span className="font-bold text-[#E65100] text-lg not-italic">हमारे साथ जुड़ें</span> — समाज सेवा, वृद्धजनों की देखभाल, सोशल मीडिया, फोटोग्राफी, इवेंट मैनेजमेंट, मनोविज्ञान, योग या मेडिकल सेवा में योगदान दें।
+              </p>
+              <p>
+                आनंदम् की स्थापना <span className="font-bold text-[#E65100] text-lg not-italic">श्री नीरज गेरा जी</span> ने की है — विश्व रिकॉर्ड धारक, NITI Aayog Mentor of Change, TEDx वक्ता।
+              </p>
+              <p>
+                <span className="font-bold text-[#E65100] text-lg not-italic">इंटर्नशिप सर्टिफिकेट</span> मिलता है — कॉलेज क्रेडिट और CV के लिए मान्य।<br/>
+                आपका थोड़ा सा समय किसी बुजुर्ग के चेहरे पर वो मुस्कान ला सकता है जो वर्षों से नहीं आई।
+              </p>
+            </div>
+            
+            <div className="mt-8 flex items-center gap-3 text-[#C62828] font-bold text-[17px]">
+              <span>📞</span>
+              <p>+91-9310105630 | +91-9891139833</p>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              {[
+                "वॉलंटियर वृद्धाश्रम दिल्ली", "NGO इंटर्नशिप दिल्ली", "समाज सेवा बुजुर्ग",
+                "NSS NCC वॉलंटियर", "इंटर्नशिप सर्टिफिकेट NGO", "रोहिणी पीतमपुरा वॉलंटियर"
+              ].map((tag, idx) => (
+                <span key={idx} className="bg-[#E65100] text-white text-[12.5px] font-bold px-4 py-1.5 rounded-full shadow-sm">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
 

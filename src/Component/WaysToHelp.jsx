@@ -11,7 +11,7 @@ export default function WaysToHelp() {
       title: "Support Us",
       desc: "₹500 feeds an elder for a day. ₹6,500 Sponsors an elder for an entire month. No amount is too small. Every rupee reaches them directly.",
       btnText: "Support Us Now",
-      btnLink: "/Support Us",
+      btnLink: "/donate",
       topColor: "bg-[#D32F2F]",
       btnStyle: "bg-[#D32F2F] text-white hover:bg-[#b71c1c] border-transparent shadow-md group-hover:border-white/30"
     },
@@ -21,7 +21,7 @@ export default function WaysToHelp() {
       title: "Support Us a Meal",
       desc: "Celebrate your birthday or anniversary by feeding our elders. From just ₹750, you can bring a warm meal — and a warm smile — to everyone at Aanandam.",
       btnText: "Choose a Meal",
-      btnLink: "/Support Us-a-meal",
+      btnLink: "/sponsor-a-meal",
       topColor: "bg-[#FDD835]",
       btnStyle: "bg-[#2E7D32] text-white hover:bg-[#1B5E20] border-transparent shadow-md group-hover:border-[#FDD835]/50"
     },
@@ -31,7 +31,7 @@ export default function WaysToHelp() {
       title: "Celebrate Here",
       desc: "Birthdays. Anniversaries. Promotions. Mark your special days here, surrounded by 30 grandparents who will bless you with all their heart. It will be the most meaningful day of your life.",
       btnText: "Book a Celebration",
-      btnLink: "/celebrate",
+      btnLink: "/celebrate-special-days",
       topColor: "bg-[#2E7D32]",
       btnStyle: "bg-transparent text-[#0a231a] hover:bg-[#0a231a] hover:text-[#FDD835] border-[#0a231a] group-hover:border-white group-hover:text-white hover:!bg-white hover:!text-[#0a231a]"
     },

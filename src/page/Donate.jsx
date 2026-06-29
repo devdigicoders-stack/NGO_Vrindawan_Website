@@ -27,16 +27,32 @@ function Donate() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-            {/* Image Side */}
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[400px] lg:h-[550px] group">
-              <img
-                src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1000"
-                alt="Elderly hands holding together"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
-              <div className="absolute bottom-8 left-8 right-8">
-                <p className="text-white font-serif italic text-xl lg:text-2xl leading-relaxed">"A single act of kindness can fill a lonely heart with hope."</p>
+            {/* QR Code Side */}
+            <div className="relative bg-white rounded-[2.5rem] p-8 sm:p-12 shadow-2xl border border-gold/20 flex flex-col items-center justify-center text-center h-full group overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-warm rounded-bl-full -z-10 transition-transform duration-700 group-hover:scale-110"></div>
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-warm rounded-tr-full -z-10 transition-transform duration-700 group-hover:scale-110"></div>
+              
+              <div className="mb-6">
+                <h3 className="font-serif font-black text-2xl lg:text-3xl text-primary mb-2">Scan & Donate</h3>
+                <p className="text-grey text-sm font-medium">100% Secure Payments via UPI apps</p>
+              </div>
+              
+              <div className="bg-white p-3 sm:p-4 rounded-3xl shadow-xl border-2 border-dashed border-accent mb-8 w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center relative transform transition-transform duration-500 hover:-translate-y-2">
+                <div className="absolute -inset-1 bg-gradient-to-r from-accent via-primary to-accent opacity-30 blur rounded-3xl -z-10"></div>
+                <img
+                  src="/fwd47photos/1001362344.jpeg"
+                  alt="Donation QR Code"
+                  className="w-full h-full object-contain rounded-2xl"
+                />
+              </div>
+
+              <div className="bg-warm px-6 py-4 rounded-2xl border border-gold/30 w-full max-w-sm shadow-sm flex flex-col items-center justify-center">
+                <p className="text-grey text-xs sm:text-sm font-bold uppercase tracking-wider mb-2">Or Direct Bank Transfer</p>
+                <div className="space-y-1">
+                  <p className="text-dark text-sm sm:text-base">A/c Name: <span className="font-bold">Humanify Foundation</span></p>
+                  <p className="text-dark text-sm sm:text-base">A/c No: <span className="font-bold">50200057291753</span></p>
+                  <p className="text-dark text-sm sm:text-base">IFSC: <span className="font-bold">HDFC0000284</span></p>
+                </div>
               </div>
             </div>
 

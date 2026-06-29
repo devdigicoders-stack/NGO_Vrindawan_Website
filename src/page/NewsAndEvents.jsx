@@ -9,7 +9,7 @@ function NewsAndEvents() {
   const articles = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80",
+      image: "/fwd47photos/13.jpg",
       date: "October 24, 2023",
       category: "Event",
       title: "Grand Diwali Celebration at Aanandam",
@@ -18,7 +18,7 @@ function NewsAndEvents() {
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1576765974102-b756026ecee3?auto=format&fit=crop&q=80",
+      image: "/fwd47photos/14.jpg",
       date: "September 10, 2023",
       category: "News",
       title: "Free Mega Health Camp Organized",
@@ -27,7 +27,7 @@ function NewsAndEvents() {
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80",
+      image: "/fwd47photos/15.jpg",
       date: "August 15, 2023",
       category: "Event",
       title: "Independence Day Flag Hoisting",
@@ -36,7 +36,7 @@ function NewsAndEvents() {
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80",
+      image: "/fwd47photos/16.jpg",
       date: "July 2, 2023",
       category: "News",
       title: "New Solar Panels Installed",
@@ -45,7 +45,7 @@ function NewsAndEvents() {
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1544027993-37db48d8e0e6?auto=format&fit=crop&q=80",
+      image: "/fwd47photos/17.jpg",
       date: "June 21, 2023",
       category: "Event",
       title: "International Yoga Day Session",
@@ -54,7 +54,7 @@ function NewsAndEvents() {
     },
     {
       id: 6,
-      image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&q=80",
+      image: "/fwd47photos/18.jpg",
       date: "May 14, 2023",
       category: "News",
       title: "Mother's Day Celebration",

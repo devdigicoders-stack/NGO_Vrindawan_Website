@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import service1 from '../assets/service_1.png';
-import service2 from '../assets/service_2.png';
-import service3 from '../assets/service_3.png';
+// Image imports removed to use public paths
 
 export default function ServicesSection() {
   // Default to the middle card (index 1) being active
@@ -18,7 +16,7 @@ export default function ServicesSection() {
       ),
       title: "Free Stay & Shelter",
       desc: "Providing a clean, safe, and comfortable living environment where elderly people can live with dignity and respect.",
-      img: service1
+      img: "/fwd47photos/10.jpg"
     },
     {
       id: 1,
@@ -29,7 +27,7 @@ export default function ServicesSection() {
       ),
       title: "Nutritious Meals",
       desc: "Delivering three fresh, highly nutritious, and satvik vegetarian meals daily to ensure optimal health and well-being.",
-      img: service2
+      img: "/fwd47photos/15.jpg"
     },
     {
       id: 2,
@@ -40,7 +38,7 @@ export default function ServicesSection() {
       ),
       title: "Yoga & Spiritual Care",
       desc: "Promoting physical and mental peace through daily yoga sessions, spiritual discourses, and joyful community activities.",
-      img: service3
+      img: "/fwd47photos/8.jpg"
     }
   ];
 

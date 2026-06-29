@@ -13,6 +13,7 @@ import FinalCTA from "../Component/FinalCTA";
 import SeoHindiSection from "../Component/SeoHindiSection";
 import CelebrateHomeSection from "../Component/CelebrateHomeSection";
 import CelebrationGallery from "../Component/CelebrationGallery";
+import ChooseHowToHelp from "../Component/ChooseHowToHelp";
 
 function Home() {
 
@@ -39,14 +40,14 @@ function Home() {
       {/* Features Grid */}
       <FeaturesGrid />
 
-      {/* Impact Numbers */}
-      <ImpactNumbers />
-
       {/* Elder Blessings Wall */}
       <ElderBlessings />
 
       {/* Ways To Help */}
       <WaysToHelp />
+
+      {/* Choose How to Help (New Section) */}
+      <ChooseHowToHelp />
 
       {/* Celebrate Special Days Section */}
       <CelebrateHomeSection />
@@ -58,6 +59,9 @@ function Home() {
       <SeoHindiSection />
 
       {/* 4. Founder Spotlight */}
+
+      {/* Impact Numbers */}
+      <ImpactNumbers />
 
       {/* Final CTA */}
       <FinalCTA />

@@ -38,6 +38,7 @@ import Media from "./page/Media";
 import Donate from "./page/Donate";
 import Contact from "./page/Contact";
 import SocialMediaTestimonials from "./page/SocialMediaTestimonials";
+import HindiPage from "./page/HindiPage";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
             <Route path="/about-aanandam" element={<About />} />
             <Route path="/why-aanandam" element={<WhyAanandam />} />
             <Route path="/about-founder" element={<Founder />} />
+            <Route path="/hindi" element={<HindiPage />} />
             <Route path="/about-niraj-gera" element={<AboutNirajGera />} />
             <Route path="/life-at-aanandam" element={<LifeAtAanandam />} />
             <Route path="/facilities" element={<Facilities />} />

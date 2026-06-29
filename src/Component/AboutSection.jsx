@@ -2,10 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-// Import images
-import aboutLarge from '../assets/about_large.png';
-import aboutSmall from '../assets/about_small.png';
-import aboutCard from '../assets/about_card.png';
+// Import images removed to use public paths
 
 export default function AboutSection() {
   return (
@@ -22,14 +19,14 @@ export default function AboutSection() {
               <div className="group absolute top-0 left-0 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden border-8 border-white shadow-2xl z-10 cursor-pointer">
                 {/* Center to Sides Hover Animation with Fade-out */}
                 <div className="absolute inset-0 bg-white/30 scale-x-0 opacity-100 group-hover:scale-x-100 group-hover:opacity-0 transition-all duration-1000 ease-out origin-center z-10 pointer-events-none"></div>
-                <img src={aboutLarge} alt="Elders smiling" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src="/fwd47photos/30.jpg" alt="Elders smiling" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
 
               {/* Small Circle */}
               <div className="group absolute bottom-0 right-[-10px] sm:right-[-30px] lg:right-[-40px] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[340px] lg:h-[340px] rounded-full overflow-hidden border-8 border-white shadow-2xl z-20 cursor-pointer">
                 {/* Center to Sides Hover Animation with Fade-out */}
                 <div className="absolute inset-0 bg-white/30 scale-x-0 opacity-100 group-hover:scale-x-100 group-hover:opacity-0 transition-all duration-1000 ease-out origin-center z-10 pointer-events-none"></div>
-                <img src={aboutSmall} alt="Volunteer helping elder" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src="/fwd47photos/31.jpg" alt="Volunteer helping elder" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
 
               {/* Floating Experience Badge */}
@@ -48,59 +45,35 @@ export default function AboutSection() {
           </div>
 
           {/* Right Side: Content */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             {/* Tag */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white rounded-full border border-gray-200 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#FDD835]"></span>
-              <span className="text-[13px] font-bold text-gray-700 uppercase tracking-wide">About Our NGO</span>
+            <div className="text-[13px] font-bold text-[#E5A937] uppercase tracking-[0.15em]">
+              How Aanandam Began
             </div>
 
-            {/* Heading & Paragraph */}
-            <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#0a231a] leading-[1.25] max-w-[90%]">
-              Every Elder Deserves a Family. Aanandam Is That Family.
+            {/* Heading & Paragraphs */}
+            <h2 className="font-serif font-bold text-2xl sm:text-3xl lg:text-[32px] text-[#1B5E20] leading-[1.3]">
+              It Started With a Stage. And a Dream.
             </h2>
-            <p className="text-gray-600 text-[16px] sm:text-[17px] leading-[1.7] font-medium">
-              In a country of 1.4 billion people, over 2 crore senior citizens live alone. Thousands are abandoned. Thousands more are homeless. Many have spent their lives raising families, building homes, and holding their world together — only to find themselves forgotten when they needed love the most.
-            </p>
-
-            {/* Info Card */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-8 shadow-[0_10px_40px_rgb(0,0,0,0.06)] border border-gray-100">
-              <div className="flex-1 space-y-4">
-                <div className="w-12 h-12 bg-[#FDD835] rounded-full flex items-center justify-center text-[#0a231a]">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
-                <h4 className="font-serif font-bold text-xl text-[#0a231a]">Empowering Lives</h4>
-                <div className="flex items-start gap-3 border-t border-gray-100 pt-4">
-                  <svg className="w-5 h-5 text-[#FDD835] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <p className="text-[15px] text-gray-500 leading-relaxed font-medium">
-                    We work closely with the community to identify real needs and provide immediate care.
-                  </p>
-                </div>
-              </div>
-              <div className="group relative w-full sm:w-56 h-48 sm:h-auto rounded-xl overflow-hidden shadow-sm flex-shrink-0 cursor-pointer">
-                {/* Center to Sides Hover Animation with Fade-out */}
-                <div className="absolute inset-0 bg-white/30 scale-x-0 opacity-100 group-hover:scale-x-100 group-hover:opacity-0 transition-all duration-1000 ease-out origin-center z-10 pointer-events-none"></div>
-                <img src={aboutCard} alt="Happy elders" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              </div>
+            
+            <div className="text-gray-700 text-[15px] sm:text-[16px] leading-[1.8] font-medium space-y-6 pt-2">
+              <p>
+                For years, our founder Niraj Gera visited old age homes across Delhi — not as an official, but as a friend. He would sit with elders, listen to their stories, and once a year, give them something rare: a stage. An event called <em className="text-gray-900 font-serif">Oldies Got Talent</em> — where residents sang, danced, recited poetry, walked the ramp — and received something they had forgotten they deserved: <strong className="text-gray-900">applause.</strong>
+              </p>
+              <p>
+                In the weeks of preparation, something changed. Elders who had grown quiet began to sing again. Those who shuffled slowly began to stand straight. That three-month journey of rehearsals, laughter and anticipation was medicine no prescription could provide.
+              </p>
+              <p>
+                <em className="text-gray-900 font-serif">That</em> is when Aanandam was born — not as a facility, but as a feeling. A home where that joy is not annual, but daily.
+              </p>
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-wrap items-center gap-8 pt-6">
-
-              <Link to="/video-gallery" className="inline-flex items-center gap-4 group">
-                <div className="w-12 h-12 bg-[#FDD835]/20 rounded-full flex items-center justify-center text-[#FDD835] group-hover:bg-[#FDD835] group-hover:text-[#0a231a] transition-all duration-300 shadow-sm">
-                  <svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <span className="font-bold text-[#0a231a] text-[15px] group-hover:underline decoration-2 underline-offset-4">Watch Our Video</span>
+            <div className="pt-6">
+              <Link to="/about-aanandam" className="inline-flex items-center justify-center bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold py-3.5 px-7 rounded shadow-md transition-colors text-[16px]">
+                Read the Full Story &rarr;
               </Link>
             </div>
-
           </div>
         </div>
       </div>

@@ -142,28 +142,28 @@ export default function DreamCampus() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
-              <img src="/20260308_170422.jpg" alt="Elders smiling" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+              <img src="/fwd47photos/1.jpg" alt="Elders smiling" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
-              <img src="/20260308_170446.jpg" alt="Elder care" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+              <img src="/fwd47photos/2.jpg" alt="Elder care" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
-              <img src="/20260308_170516.jpg" alt="Community gathering" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+              <img src="/fwd47photos/32.jpg" alt="Community gathering" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
-              <img src="/20260308_170544.jpg" alt="Happy elder" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+              <img src="/fwd47photos/31.jpg" alt="Happy elder" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
-              <img src="/20260308_170555.jpg" alt="Elders enjoying time" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+              <img src="/fwd47photos/17.jpg" alt="Elders enjoying time" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group">
-              <img src="/20260308_170623.jpg" alt="Elderly care center" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+              <img src="/fwd47photos/15.jpg" alt="Elderly care center" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group hidden md:block">
-              <img src="/20260308_171406.jpg" alt="Elders activities" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+              <img src="/fwd47photos/7.jpg" alt="Elders activities" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-sm group hidden lg:block">
-              <img src="/20260308_171445.jpg" alt="Aanandam Campus" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
+              <img src="/fwd47photos/8.jpg" alt="Aanandam Campus" className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-110" />
             </div>
           </div>
         </div>

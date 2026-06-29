@@ -6,18 +6,15 @@ const CelebrationGallery = ({ limit }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    "/20260308_170324.jpg",
-    "/20260308_170422.jpg",
-    "/20260308_170446.jpg",
-    "/20260308_170516.jpg",
-    "/20260308_170544.jpg",
-    "/20260308_170555.jpg",
-    "/20260304_145835.jpg",
-    "/20260304_150711.jpg",
-    "/20260304_151401.jpg",
-    "/20260304_150913.jpg",
-    "/20260319_130725.jpg",
-    "/20260319_130801.jpg"
+    "/fwd47photos/6.jpg",
+    "/fwd47photos/7.jpg",
+    "/fwd47photos/10.jpg",
+    "/fwd47photos/11.jpg",
+    "/fwd47photos/12.jpg",
+    "/fwd47photos/17.jpg",
+    "/fwd47photos/22.jpg",
+    "/fwd47photos/23.jpg",
+    "/fwd47photos/4.jpg"
   ];
 
   const displayImages = limit ? images.slice(0, limit) : images;

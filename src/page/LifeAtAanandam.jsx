@@ -7,12 +7,12 @@ function LifeAtAanandam() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    "/20260215_140949 (1).jpg",
-    "/20260215_152343.jpg",
-    "/20260304_134952.jpg",
-    "/20260304_135319.jpg",
-    "/20260304_145835.jpg",
-    "/20260304_150711.jpg"
+    "/fwd47photos/2.jpg",
+    "/fwd47photos/10.jpg",
+    "/fwd47photos/11.jpg",
+    "/fwd47photos/12.jpg",
+    "/fwd47photos/14.jpg",
+    "/fwd47photos/15.jpg"
   ];
 
   const providedFree = [

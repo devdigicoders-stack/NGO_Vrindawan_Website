@@ -69,7 +69,7 @@ function SponsorAnElder() {
             viewport={{ once: true }}
           >
             <img
-              src="https://images.unsplash.com/photo-1576765974102-b756026ecee3?auto=format&fit=crop&q=80"
+              src="/fwd47photos/46.jpg"
               alt="Elderly smiling"
               className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
             />

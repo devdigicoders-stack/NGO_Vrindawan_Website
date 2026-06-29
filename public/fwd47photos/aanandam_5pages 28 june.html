@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aanandam — 5 Page Content Blueprint | www.vridhashram.in</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Mukta:wght@300;400;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --saffron:#F5A623; --saffron-pale:#FFF8E7;
+  --green:#1B5E20; --mid-green:#2E7D32; --green-pale:#E8F5E9;
+  --red:#8B0000; --crimson:#C0392B;
+  --cream:#FFFDF4; --warm-white:#FAFAF5;
+  --dark:#0F1923; --charcoal:#2C3E50; --muted:#6B7280;
+  --gold:#C8A84B; --hindi-bg:#FFF3E0; --hindi-border:#FF8F00;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Mukta',sans-serif;background:var(--warm-white);color:var(--dark);line-height:1.7;font-size:15px;}
+
+/* ─── COVER ─── */
+.doc-cover{
+  background:linear-gradient(160deg,#071510 0%,#0F2D18 40%,#1A4A1A 70%,#7B5400 100%);
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;
+  padding:70px 40px;position:relative;overflow:hidden;
+}
+.doc-cover::before{
+  content:'आनंदम्';position:absolute;font-family:'Kalam',cursive;
+  font-size:320px;color:rgba(255,255,255,0.018);top:50%;left:50%;
+  transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;
+}
+.doc-cover-chip{
+  border:1px solid rgba(245,166,35,0.4);color:#F5A623;
+  padding:7px 24px;border-radius:40px;font-size:11px;letter-spacing:3px;
+  text-transform:uppercase;margin-bottom:32px;
+}
+.doc-cover h1{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,72px);
+  color:white;font-weight:900;line-height:1.05;margin-bottom:12px;}
+.doc-cover h1 em{color:#F5A623;font-style:normal;}
+.doc-cover .kalam{font-family:'Kalam',cursive;font-size:22px;color:rgba(255,200,80,0.85);margin-bottom:24px;}
+.doc-cover p{font-size:15px;color:rgba(255,255,255,0.65);max-width:640px;margin:0 auto 44px;line-height:1.9;}
+.doc-cover-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:800px;width:100%;}
+.dc-cell{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;padding:16px 10px;text-align:center;}
+.dc-cell .num{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;
+  color:var(--saffron);display:block;line-height:1;}
+.dc-cell .lbl{font-size:10px;color:rgba(255,255,255,0.5);text-transform:uppercase;
+  letter-spacing:1px;margin-top:5px;line-height:1.4;}
+
+/* ─── PAGE DIVIDERS ─── */
+.page-spine{height:6px;background:linear-gradient(90deg,var(--green),var(--saffron),var(--crimson));}
+.section-divider{height:1px;background:#E8E0CC;margin:0;}
+
+/* ─── PAGE HEADER BANNER ─── */
+.page-banner{padding:56px 60px;display:flex;align-items:center;gap:40px;color:white;}
+.page-banner.gb{background:linear-gradient(135deg,#071510 0%,var(--green) 100%);}
+.page-banner.sb{background:linear-gradient(135deg,#3D1A00 0%,#7B5400 100%);}
+.page-banner.rb{background:linear-gradient(135deg,#3D0000 0%,#8B0000 100%);}
+.page-banner.pb{background:linear-gradient(135deg,#0D1B3E 0%,#1A3A6E 100%);}
+.page-banner.hb-banner{background:linear-gradient(135deg,#1A0D00 0%,#5D2E0A 100%);}
+.pb-num{font-family:'Playfair Display',serif;font-size:90px;font-weight:900;
+  opacity:0.08;line-height:1;flex-shrink:0;width:110px;}
+.pb-content h2{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,38px);
+  font-weight:700;margin-bottom:6px;line-height:1.2;}
+.pb-content .kalam-sub{font-family:'Kalam',cursive;font-size:18px;
+  color:rgba(255,210,90,0.85);display:block;margin-bottom:8px;}
+.pb-content p{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:700px;}
+.pb-content .page-url{font-size:12px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);
+  padding:3px 12px;border-radius:4px;font-family:monospace;display:inline-block;margin-top:8px;}
+
+/* ─── SEO META BOX ─── */
+.seo{background:var(--green-pale);border-left:5px solid var(--mid-green);
+  padding:20px 28px;margin:28px 0;}
+.seo h4{font-size:10px;text-transform:uppercase;letter-spacing:2px;
+  color:var(--mid-green);margin-bottom:12px;font-weight:700;}
+.seo .mt{font-weight:700;font-size:14.5px;color:var(--dark);margin-bottom:5px;}
+.seo .md{font-size:13px;color:#333;line-height:1.6;margin-bottom:8px;}
+.seo .kw{font-size:12px;color:var(--mid-green);font-style:italic;line-height:1.9;}
+
+/* ─── CONTENT SECTIONS ─── */
+.pw{max-width:1080px;margin:0 auto;padding:0 44px;}
+.content-section{padding:48px 60px;background:var(--cream);}
+.content-section.alt{background:var(--warm-white);}
+
+.lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:2.5px;
+  color:var(--saffron);font-weight:700;margin-bottom:10px;
+  display:flex;align-items:center;gap:10px;}
+.lbl::after{content:'';flex:1;height:1px;background:#DDD8C0;}
+
+h3.ch{font-family:'Playfair Display',serif;font-size:26px;color:var(--green);
+  font-weight:700;margin-bottom:16px;line-height:1.3;}
+h3.ch.dark{color:var(--dark);}
+h3.ch.gold{color:var(--gold);}
+
+p.bt{font-size:15px;color:#333;line-height:1.85;margin-bottom:16px;}
+p.bt strong{color:var(--dark);font-weight:700;}
+p.bt em{font-style:italic;color:var(--charcoal);}
+
+.pullquote{
+  font-family:'Playfair Display',serif;font-size:21px;font-style:italic;
+  color:var(--green);border-left:5px solid var(--saffron);
+  padding:20px 28px;margin:28px 0;line-height:1.65;
+  background:rgba(245,166,35,0.06);border-radius:0 10px 10px 0;
+}
+.pullquote .attr{font-style:normal;font-size:13px;color:var(--muted);margin-top:8px;display:block;}
+
+/* ─── GRID ─── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:20px 0;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin:20px 0;}
+@media(max-width:768px){.two-col,.three-col{grid-template-columns:1fr;}}
+
+/* ─── CARDS ─── */
+.card{background:white;border-radius:12px;padding:26px;border:1px solid #E5DFCC;}
+.card.tg{border-top:4px solid var(--mid-green);}
+.card.ts{border-top:4px solid var(--saffron);}
+.card.tr{border-top:4px solid var(--crimson);}
+.card.td{border-top:4px solid var(--charcoal);}
+.card .icon{font-size:28px;margin-bottom:10px;display:block;}
+.card h4{font-family:'Playfair Display',serif;font-size:17px;margin-bottom:8px;}
+.card p{font-size:13.5px;color:#555;line-height:1.7;}
+
+/* ─── HIGHLIGHT BOXES ─── */
+.hl-green{background:linear-gradient(135deg,var(--green),#2E7D32);color:white;padding:30px 38px;border-radius:12px;margin:24px 0;}
+.hl-saffron{background:linear-gradient(135deg,#7B5400,#F5A623);color:white;padding:30px 38px;border-radius:12px;margin:24px 0;}
+.hl-dark{background:linear-gradient(135deg,#0F1923,#2C3E50);color:white;padding:30px 38px;border-radius:12px;margin:24px 0;}
+[class^="hl-"] h4{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:10px;}
+[class^="hl-"] p{font-size:14px;line-height:1.8;opacity:0.93;}
+
+/* ─── HINDI BLOCK ─── */
+.hblock{
+  background:var(--hindi-bg);border-left:5px solid var(--hindi-border);
+  border-radius:0 12px 12px 0;padding:22px 28px;margin:28px 0;position:relative;
+}
+.hblock::after{content:'हिंदी';position:absolute;top:12px;right:16px;
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,143,0,0.3);font-weight:700;}
+.hblock .ht{font-family:'Kalam',cursive;font-size:19px;font-weight:700;
+  color:#BF360C;margin-bottom:10px;line-height:1.5;}
+.hblock .hb{font-family:'Kalam',cursive;font-size:15.5px;color:#3E2723;line-height:2.1;}
+.hblock .hb strong{color:#BF360C;}
+.hpills{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;}
+.hpill{background:#E65100;color:white;font-size:11px;font-family:'Mukta',sans-serif;
+  padding:3px 11px;border-radius:20px;font-weight:700;}
+
+/* ─── CHECK LIST ─── */
+.cl{list-style:none;margin:12px 0;}
+.cl li{padding:6px 0 6px 26px;position:relative;font-size:15px;color:#333;line-height:1.7;}
+.cl li::before{content:'✓';position:absolute;left:0;color:var(--mid-green);font-weight:900;}
+
+/* ─── DONATION SECTION ─── */
+.don-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0;}
+@media(max-width:600px){.don-grid{grid-template-columns:1fr;}}
+.don-card{background:white;border-radius:14px;padding:28px;border:1px solid #E5DFCC;position:relative;}
+.don-card.featured{border:2px solid var(--saffron);background:var(--saffron-pale);}
+.don-card .dc-badge{position:absolute;top:-10px;left:24px;background:var(--saffron);
+  color:var(--dark);font-size:10px;font-weight:800;padding:3px 14px;border-radius:20px;
+  letter-spacing:1px;text-transform:uppercase;}
+.don-card .dc-amount{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;
+  color:var(--crimson);display:block;margin-bottom:4px;line-height:1;}
+.don-card h4{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);
+  margin-bottom:8px;}
+.don-card p{font-size:13.5px;color:#555;line-height:1.7;margin-bottom:14px;}
+.don-card .auto-note{background:var(--green-pale);border-radius:6px;padding:10px 14px;
+  font-size:12px;color:var(--green);line-height:1.6;margin-top:10px;}
+.don-btn{background:var(--crimson);color:white;padding:11px 24px;border-radius:6px;
+  font-size:13.5px;font-weight:700;display:inline-block;text-decoration:none;cursor:pointer;}
+.don-btn.green{background:var(--mid-green);}
+
+/* ─── FOUNDER ACHIEVEMENT ─── */
+.ach-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0;}
+@media(max-width:700px){.ach-strip{grid-template-columns:1fr 1fr;}}
+.ach{background:white;border-radius:10px;padding:18px;text-align:center;
+  border:1px solid #E5DFCC;border-top:3px solid var(--saffron);}
+.ach .an{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;
+  color:var(--crimson);display:block;line-height:1;}
+.ach .al{font-size:11.5px;color:#666;margin-top:4px;line-height:1.4;}
+
+/* ─── MISSION VISION ─── */
+.mv-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:20px 0;}
+@media(max-width:600px){.mv-row{grid-template-columns:1fr;}}
+.mv-block{padding:32px;}
+.mv-block.vision-bg{background:linear-gradient(135deg,var(--green),#2E7D32);color:white;}
+.mv-block.mission-bg{background:linear-gradient(135deg,#7B5400,#F5A623);color:white;}
+.mv-block h4{font-family:'Playfair Display',serif;font-size:14px;text-transform:uppercase;
+  letter-spacing:3px;opacity:0.7;margin-bottom:10px;}
+.mv-block h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:14px;line-height:1.4;}
+.mv-block ul{list-style:none;padding:0;}
+.mv-block ul li{font-size:14px;line-height:1.8;opacity:0.9;padding-left:18px;position:relative;}
+.mv-block ul li::before{content:'—';position:absolute;left:0;opacity:0.6;}
+
+/* ─── HOME PAGE HERO ─── */
+.home-hero{
+  background:linear-gradient(160deg,#071510 0%,#0F2D18 50%,#1A4A1A 100%);
+  padding:80px 60px;text-align:center;color:white;position:relative;overflow:hidden;
+}
+.home-hero::before{
+  content:'';position:absolute;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,166,35,0.1),transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+}
+.home-hero .eyebrow{font-family:'Kalam',cursive;font-size:18px;color:rgba(255,200,80,0.8);
+  margin-bottom:16px;display:block;}
+.home-hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5.5vw,60px);
+  font-weight:900;line-height:1.1;margin-bottom:18px;}
+.home-hero h1 em{color:var(--saffron);font-style:normal;}
+.home-hero .tagline{font-size:clamp(14px,2vw,17px);color:rgba(255,255,255,0.75);
+  max-width:620px;margin:0 auto 36px;line-height:1.85;}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--crimson);color:white;padding:14px 32px;border-radius:8px;
+  font-size:15px;font-weight:700;text-decoration:none;display:inline-block;}
+.btn-secondary{background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.35);
+  color:white;padding:14px 32px;border-radius:8px;font-size:15px;font-weight:600;
+  text-decoration:none;display:inline-block;}
+.trust-strip{
+  display:flex;gap:40px;justify-content:center;flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,0.12);margin-top:52px;padding-top:36px;
+}
+.trust-item{text-align:center;color:white;}
+.trust-item .ti-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;
+  color:var(--saffron);display:block;line-height:1;}
+.trust-item .ti-lbl{font-size:11px;text-transform:uppercase;letter-spacing:1px;
+  opacity:0.6;margin-top:4px;}
+
+/* ─── HOME STORY SECTION ─── */
+.story-section{display:grid;grid-template-columns:1fr 1.6fr;gap:0;min-height:480px;}
+@media(max-width:700px){.story-section{grid-template-columns:1fr;}}
+.story-img{background:linear-gradient(160deg,#E8F5E9,#C8E6C9);
+  display:flex;align-items:center;justify-content:center;padding:40px;}
+.story-img .photo-placeholder{
+  width:100%;max-width:360px;aspect-ratio:4/3;border-radius:12px;
+  background:linear-gradient(135deg,#A5D6A7,#66BB6A);
+  display:flex;align-items:center;justify-content:center;color:white;
+  font-size:13px;text-align:center;padding:20px;
+}
+.story-text{padding:52px 48px;background:var(--cream);}
+.story-text .eyebrow-sm{font-size:10.5px;text-transform:uppercase;letter-spacing:2.5px;
+  color:var(--saffron);font-weight:700;margin-bottom:12px;}
+
+/* ─── FOUNDER PHOTO SECTION ─── */
+.founder-split{display:grid;grid-template-columns:1.4fr 1fr;gap:0;}
+@media(max-width:700px){.founder-split{grid-template-columns:1fr;}}
+.founder-text{padding:52px 48px;background:var(--cream);}
+.founder-img{background:linear-gradient(160deg,#2C3E50,#0F1923);
+  display:flex;align-items:center;justify-content:center;padding:40px;}
+.founder-img .fp{
+  width:100%;max-width:300px;aspect-ratio:3/4;border-radius:12px;
+  background:linear-gradient(135deg,#37474F,#546E7A);
+  display:flex;align-items:center;justify-content:center;color:white;
+  font-size:13px;text-align:center;padding:20px;
+}
+
+/* ─── WHY AANANDAM GRID ─── */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:24px 0;}
+@media(max-width:700px){.why-grid{grid-template-columns:1fr;}}
+.why-card{background:white;border-radius:12px;padding:28px 24px;border:1px solid #E5DFCC;}
+.why-card .wc-icon{font-size:36px;margin-bottom:14px;display:block;}
+.why-card h4{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);margin-bottom:8px;}
+.why-card p{font-size:13.5px;color:#555;line-height:1.7;}
+.why-card .wc-kw{font-size:11px;color:var(--mid-green);font-weight:700;
+  text-transform:uppercase;letter-spacing:0.5px;margin-top:12px;}
+
+/* FOOTER NOTE */
+.doc-footer{background:#0F1923;color:rgba(255,255,255,0.6);text-align:center;
+  padding:48px 40px;font-size:13.5px;line-height:2.2;}
+.doc-footer strong{color:var(--saffron);}
+.doc-footer .tl{font-family:'Playfair Display',serif;font-style:italic;font-size:19px;
+  color:rgba(255,255,255,0.85);margin:16px 0;}
+</style>
+</head>
+<body>
+
+<!-- ════ COVER ════ -->
+<div class="doc-cover">
+  <div class="doc-cover-chip">5-Page Content Blueprint — www.vridhashram.in</div>
+  <h1>Aanandam <em>Vridhashram</em></h1>
+  <div class="kalam">आनंदम् — जहाँ हर बुजुर्ग को मिलता है अपना घर</div>
+  <p>Complete page-by-page content, layout, SEO metadata, donation framework, Hindi keyword sections — five pages, fully written, ready to hand to your developer.</p>
+  <div class="doc-cover-grid">
+    <div class="dc-cell"><span class="num">01</span><span class="lbl">Home Page</span></div>
+    <div class="dc-cell"><span class="num">02</span><span class="lbl">About Aanandam</span></div>
+    <div class="dc-cell"><span class="num">03</span><span class="lbl">About Founder</span></div>
+    <div class="dc-cell"><span class="num">04</span><span class="lbl">Why Aanandam</span></div>
+    <div class="dc-cell"><span class="num">05</span><span class="lbl">Hindi Page</span></div>
+  </div>
+</div>
+
+<div class="page-spine"></div>
+
+<!-- ════════════════════════════════
+     PAGE 01 — HOME
+════════════════════════════════ -->
+<div class="page-banner gb">
+  <div class="pb-num">01</div>
+  <div class="pb-content">
+    <span class="kalam-sub">होम पेज — पहली मुलाकात</span>
+    <h2>HOME PAGE</h2>
+    <p>The first thing every visitor sees. Emotionally immediate. Honest. Warm. Builds trust in 10 seconds and moves the right people to act — donate, visit, or admit an elder.</p>
+    <span class="page-url">/ (root homepage)</span>
+  </div>
+</div>
+
+<div class="content-section">
+<div class="pw">
+
+<div class="seo">
+  <h4>🔍 SEO Meta Tags</h4>
+  <div class="mt">Meta Title (59 chars): Aanandam Vridhashram — Free Old Age Home in Delhi | Humanify Foundation</div>
+  <div class="md">Meta Description: Aanandam Vridhashram is a free old age home in Karala, Delhi — near Rohini & Pitampura. No fees. No admission charge. Just warmth, dignity, yoga, bhajans and a family for every abandoned elder. Donate. Visit. Volunteer.</div>
+  <div class="kw">free old age home delhi, aanandam vridhashram, abandoned elder home delhi, old age home karala rohini, ngo old age home delhi NCR, no fee old age home, senior citizen shelter delhi, humanify foundation old age home, niraj gera old age home</div>
+</div>
+
+<!-- HOME HERO -->
+<div class="lbl">Hero Section — Full Viewport</div>
+<div class="home-hero">
+  <span class="eyebrow">Karala Village, Delhi — near Rohini & Pitampura</span>
+  <h1>A <em>Home</em> for Every<br>Forgotten Grandparent</h1>
+  <p class="tagline">Aanandam Vridhashram is a free old age home in Delhi where abandoned and homeless senior citizens find shelter, warmth, yoga, bhajans — and a family that does not leave.</p>
+  <div class="hero-ctas">
+    <a href="/donate" class="btn-primary">💛 Donate Now</a>
+    <a href="/admission" class="btn-secondary">Admit an Elder →</a>
+  </div>
+  <div class="trust-strip">
+    <div class="trust-item"><span class="ti-num">100%</span><span class="ti-lbl">Free of Charge</span></div>
+    <div class="trust-item"><span class="ti-num">30+</span><span class="ti-lbl">Elders in Our Care</span></div>
+    <div class="trust-item"><span class="ti-num">3+</span><span class="ti-lbl">Years of Service</span></div>
+    <div class="trust-item"><span class="ti-num">∞</span><span class="ti-lbl">Blessings Received</span></div>
+  </div>
+</div>
+<p style="font-size:12px;color:#999;margin-top:8px;text-align:right"><em>Developer note: Trust strip numbers should animate on scroll. Use CountUp.js.</em></p>
+
+<!-- STORY STRIP -->
+<div class="lbl" style="margin-top:40px">Section 2 — Origin Story Strip</div>
+<div class="story-section">
+  <div class="story-img">
+    <div class="photo-placeholder">📸 Elders sitting together in warm morning light — candid, natural</div>
+  </div>
+  <div class="story-text">
+    <div class="eyebrow-sm">How Aanandam Began</div>
+    <h3 class="ch" style="margin-bottom:14px">It Started With a Stage. And a Dream.</h3>
+    <p class="bt">For years, our founder Niraj Gera visited old age homes across Delhi — not as an official, but as a friend. He would sit with elders, listen to their stories, and once a year, give them something rare: a stage. An event called <em>Oldies Got Talent</em> — where residents sang, danced, recited poetry, walked the ramp — and received something they had forgotten they deserved: <strong>applause</strong>.</p>
+    <p class="bt">In the weeks of preparation, something changed. Elders who had grown quiet began to sing again. Those who shuffled slowly began to stand straight. That three-month journey of rehearsals, laughter and anticipation was medicine no prescription could provide.</p>
+    <p class="bt"><em>That</em> is when Aanandam was born — not as a facility, but as a feeling. A home where that joy is not annual, but daily.</p>
+    <a href="/about-aanandam" class="don-btn green" style="margin-top:6px">Read the Full Story →</a>
+  </div>
+</div>
+
+<!-- WHAT WE OFFER -->
+<div class="lbl" style="margin-top:40px">Section 3 — What Aanandam Offers</div>
+<h3 class="ch dark">Not Just Shelter. A Life Worth Living.</h3>
+<div class="three-col">
+  <div class="card tg"><span class="icon">🏠</span><h4>A Real Home</h4><p>No admission charge. No monthly fee. Clean room, mattress, essentials — and the warmth of a community that is genuinely glad you are here.</p></div>
+  <div class="card ts"><span class="icon">🍛</span><h4>Daily Nourishment</h4><p>Three freshly cooked meals every day, plus morning and evening tea with biscuits. Seasonal, wholesome, made with care.</p></div>
+  <div class="card tg"><span class="icon">🧘</span><h4>Yoga & Wellbeing</h4><p>Regular yoga sessions, happiness programmes and spiritual discussions — because the mind and soul need care as much as the body.</p></div>
+  <div class="card ts"><span class="icon">🎵</span><h4>Bhajans & Togetherness</h4><p>Evening bhajans, satsang and community gathering — the kind of human connection that transforms a building into a home.</p></div>
+  <div class="card tg"><span class="icon">🎉</span><h4>Celebrations</h4><p>Every festival, every birthday — celebrated with full heart. Holi, Diwali, Navratri, Eid and the simple joys of Tuesday afternoons.</p></div>
+  <div class="card ts"><span class="icon">🩺</span><h4>Health Support</h4><p>Regular health camps through our volunteer doctor network. Medical guidance available — because prevention matters as much as treatment.</p></div>
+</div>
+
+<!-- DONATION SECTION -->
+<div class="lbl" style="margin-top:40px">Section 4 — Donation Framework</div>
+<h3 class="ch dark">Choose How You Want to Help</h3>
+<p class="bt">Every rupee reaches an elder directly. Pick the way that feels right to you — a one-time gesture, a meaningful celebration, or a quiet ongoing promise.</p>
+
+<div class="don-grid">
+  <div class="don-card">
+    <span class="dc-amount">Any ₹</span>
+    <h4>One-Time Donation</h4>
+    <p>Give whatever your heart allows — ₹100 or ₹1,00,000. Every amount matters. Every amount reaches someone who needs it.</p>
+    <span class="don-btn">Donate Now</span>
+  </div>
+  <div class="don-card featured">
+    <span class="dc-badge">Most Loved</span>
+    <span class="dc-amount">₹3,100</span>
+    <h4>Sponsor a Meal</h4>
+    <p>Sponsor one full lunch or dinner for all our residents — on your birthday, anniversary, or any day you want to mark with meaning. Your name is announced at the meal.</p>
+    <span class="don-btn">Sponsor a Meal</span>
+  </div>
+  <div class="don-card">
+    <span class="dc-amount">₹6,500<span style="font-size:14px;font-weight:400;color:#888">/month</span></span>
+    <h4>Support an Elder</h4>
+    <p>Cover the complete monthly care of one elder — food, shelter, clothing, health support and activities. You receive a photo update every month.</p>
+    <div class="auto-note">
+      ⚡ <strong>Set up once, help every month automatically.</strong> After clicking below, choose "Monthly" on the payment page — your bank or UPI will auto-debit on the same date each month. No reminders needed. Cancel anytime.
+    </div>
+    <span class="don-btn" style="margin-top:14px">Sponsor Monthly</span>
+  </div>
+  <div class="don-card">
+    <span class="dc-amount">Any ₹<span style="font-size:14px;font-weight:400;color:#888">/month</span></span>
+    <h4>Monthly Giving</h4>
+    <p>Choose any fixed amount and set it as a recurring monthly gift. Even ₹500 a month feeds an elder every day. A small habit with a large heart.</p>
+    <div class="auto-note">
+      ⚡ <strong>Works like a SIP — once set, it runs itself.</strong> Select "Recurring" on checkout, confirm once, and your chosen amount is deducted automatically every month through your UPI or card. We send a WhatsApp receipt each time.
+    </div>
+    <span class="don-btn" style="margin-top:14px">Start Monthly Giving</span>
+  </div>
+</div>
+
+<div class="hl-dark" style="margin-top:8px">
+  <h4>80G Tax Benefit Available</h4>
+  <p>Donations to Humanify Foundation qualify for 80G income tax deduction. An official receipt is issued for every donation. Share your PAN number at checkout to receive your certificate. <em>Do good. Save tax. Change a life.</em></p>
+</div>
+
+<!-- HINDI BLOCK — HOME -->
+<div class="hblock" style="margin-top:32px">
+  <div class="ht">आनंदम् वृद्धाश्रम — दिल्ली का निःशुल्क वृद्धाश्रम</div>
+  <div class="hb">
+    <strong>क्या आप दिल्ली में किसी बुजुर्ग के लिए मुफ्त वृद्धाश्रम ढूंढ रहे हैं?</strong><br><br>
+    आनंदम् वृद्धाश्रम — करला गाँव, रोहिणी और पीतमपुरा के पास, दिल्ली — एक ऐसा घर है जहाँ परित्यक्त, उपेक्षित और बेघर बुजुर्गों को मिलता है:<br>
+    🏠 रहने की जगह &nbsp;|&nbsp; 🍛 तीन वक़्त का खाना &nbsp;|&nbsp; ☕ सुबह-शाम चाय &nbsp;|&nbsp; 🧘 योग व ध्यान &nbsp;|&nbsp; 🎵 भजन व सत्संग &nbsp;|&nbsp; ❤️ परिवार का प्यार<br><br>
+    <strong>कोई प्रवेश शुल्क नहीं। कोई मासिक किराया नहीं।</strong> सब कुछ आपके दान से चलता है।<br><br>
+    📞 <strong>+91-9310105630</strong> &nbsp;|&nbsp; 🌐 www.vridhashram.in
+  </div>
+  <div class="hpills">
+    <span class="hpill">निःशुल्क वृद्धाश्रम दिल्ली</span>
+    <span class="hpill">मुफ्त बुजुर्ग आश्रम</span>
+    <span class="hpill">वृद्धाश्रम रोहिणी</span>
+    <span class="hpill">परित्यक्त बुजुर्ग दिल्ली</span>
+    <span class="hpill">वृद्धाश्रम करला दिल्ली</span>
+    <span class="hpill">बुजुर्गों का घर दिल्ली</span>
+    <span class="hpill">दान वृद्धाश्रम</span>
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="page-spine"></div>
+
+<!-- ════════════════════════════════
+     PAGE 02 — ABOUT AANANDAM
+════════════════════════════════ -->
+<div class="page-banner sb">
+  <div class="pb-num">02</div>
+  <div class="pb-content">
+    <span class="kalam-sub">आनंदम् की कहानी</span>
+    <h2>ABOUT AANANDAM OLD AGE HOME</h2>
+    <p>With Mission, Vision & the full origin story — written to move hearts, build trust, and explain why Aanandam is unlike any other old age home in Delhi.</p>
+    <span class="page-url">/about-aanandam</span>
+  </div>
+</div>
+
+<div class="content-section">
+<div class="pw">
+
+<div class="seo">
+  <h4>🔍 SEO Meta Tags</h4>
+  <div class="mt">Meta Title: About Aanandam Vridhashram — Free Old Age Home in Delhi | Mission, Vision & Story</div>
+  <div class="md">Meta Description: Learn the story of Aanandam Vridhashram — a free old age home in Karala, Delhi founded by Niraj Gera of Humanify Foundation. Our mission is dignity, joy and genuine community for every abandoned elder. No fees. Just love.</div>
+  <div class="kw">about aanandam vridhashram, free old age home delhi story, humanify foundation old age home, niraj gera aanandam, oldies got talent delhi, old age home mission vision delhi, ngo elderly care delhi, aanandam history, free senior shelter karala delhi</div>
+</div>
+
+<div class="lbl">Origin Story</div>
+<h3 class="ch">It Began on a Stage — And Grew Into a Home</h3>
+
+<p class="bt">For several years before Aanandam existed, our founder Niraj Gera would do something unusual. He would walk into old age homes across Delhi — not with forms or inspections, but with music, energy and a camera. He would sit beside elders who hadn't been visited in months, listen to their stories, and then ask them something nobody had asked in a long time: <em>"What are you good at?"</em></p>
+
+<p class="bt">The answers were extraordinary. A man who had spent 40 years as a classical singer. A woman who had danced at weddings across Rajasthan. A retired teacher who still composed poetry in his room every morning. A former tailor who could sew anything from memory. All of them living in silence — their talents folded away like old letters, unseen.</p>
+
+<p class="bt">Niraj's response was to create <strong>Oldies Got Talent</strong> — an annual event where residents from old age homes across Delhi were given a real stage, a real audience, and a real performance. Singers sang. Dancers danced. Poets recited. One grandmotherly woman in her eighties walked the ramp to a standing ovation she will carry to her last day.</p>
+
+<div class="pullquote">"But what moved me most wasn't the performance. It was the three months before it — the weeks of rehearsal, the anticipation, the laughter in practice sessions, the way residents who had stopped caring about tomorrow suddenly had something to wake up for. <em>That</em> was the real medicine."<span class="attr">— Niraj Gera, Founder, Humanify Foundation</span></div>
+
+<p class="bt">Niraj began to imagine something: <strong>a home where that feeling wasn't annual, but daily.</strong> Where yoga began each morning not as exercise but as intention. Where bhajans rose each evening not as routine but as belonging. Where residents didn't just eat and sleep — but sang, laughed, rehearsed, created, contributed, and mattered.</p>
+
+<p class="bt">In 2021, that imagination became <strong>Aanandam Vridhashram</strong>.</p>
+<p class="bt">Located in Karala Village, near Rohini, Delhi — Aanandam is a 100% free old age home for abandoned, neglected and homeless senior citizens, built around one belief: that the last chapter of a person's life deserves to be the most dignified, most joyful, most meaningful of all.</p>
+
+<div class="section-divider"></div>
+
+<!-- MISSION VISION -->
+<div class="lbl" style="margin-top:32px">Mission & Vision</div>
+<div class="mv-row">
+  <div class="mv-block vision-bg">
+    <h4>Our Vision</h4>
+    <h3>A home where no elder feels forgotten, unloved, or without purpose.</h3>
+    <p style="font-size:14px;opacity:0.88;line-height:1.8;margin-top:8px">We are working toward becoming one of India's most joyful, most trusted and most deeply human elder care sanctuaries — where peace, dignity and joy are not goals, but daily realities.</p>
+  </div>
+  <div class="mv-block mission-bg">
+    <h4>Our Mission</h4>
+    <h3>To give every elder a home, a voice, a community and a reason to smile.</h3>
+    <ul style="margin-top:8px">
+      <li>Provide free shelter, nourishment and care</li>
+      <li>Restore dignity through respect and genuine attention</li>
+      <li>Nurture mental and emotional wellbeing daily</li>
+      <li>Build a community where elders belong, contribute and are celebrated</li>
+      <li>Grow into a model that other communities can replicate</li>
+    </ul>
+  </div>
+</div>
+
+<!-- WHAT MAKES AANANDAM DIFFERENT -->
+<div class="lbl" style="margin-top:36px">What Makes Aanandam Different</div>
+<h3 class="ch dark">The Focus Is Not Just Care — It Is Joy</h3>
+<p class="bt">Most old age homes focus on the basics — shelter, meals, medicine. Aanandam does all of that. But we were founded by a Happiness and Mental Health practitioner who has spent two decades studying what makes human beings genuinely flourish at every age. That perspective changes everything.</p>
+
+<div class="three-col">
+  <div class="card tg">
+    <span class="icon">🧘</span>
+    <h4>Yoga & Happiness Sessions</h4>
+    <p>Regular yoga sessions and happiness programmes led by our team — because a still mind and a joyful spirit are the foundation of physical health at any age.</p>
+  </div>
+  <div class="card ts">
+    <span class="icon">🎵</span>
+    <h4>Bhajans, Music & Spiritual Life</h4>
+    <p>Daily bhajan sessions, spiritual discussions and music — not as activity slots, but as the rhythm of life here. This is the heartbeat of Aanandam.</p>
+  </div>
+  <div class="card tg">
+    <span class="icon">🎭</span>
+    <h4>Talent, Creativity & Expression</h4>
+    <p>Born from Oldies Got Talent — residents are encouraged to sing, tell stories, share skills and remain creative contributors. Not residents. Artists.</p>
+  </div>
+</div>
+
+<div class="hl-green" style="margin-top:28px">
+  <h4>On Our Approach to Care — An Honest Note</h4>
+  <p>We are a community-funded, community-powered home. Our medical support currently operates through regular volunteer health camps and doctor visits. For hospitalisation or specialist care, we rely on government facilities and our growing network of medical volunteers. We do not over-promise — because the elders who trust us deserve honesty.<br><br>
+  We are actively seeking hospital and diagnostic partners (X-ray, pathology, physiotherapy) to bring better healthcare to our residents. If your institution can help — <strong>please reach out to us.</strong></p>
+</div>
+
+<!-- HINDI BLOCK -->
+<div class="hblock">
+  <div class="ht">आनंदम् की कहानी — एक सपने से बना घर</div>
+  <div class="hb">
+    <strong>आनंदम् वृद्धाश्रम की शुरुआत एक मंच से हुई।</strong><br><br>
+    हमारे संस्थापक निराज गेरा जी दिल्ली के विभिन्न वृद्धाश्रमों में जाकर बुजुर्गों से मिलते थे। हर साल वे एक कार्यक्रम आयोजित करते — <strong>"Oldies Got Talent"</strong> — जहाँ बुजुर्ग गाते, नाचते, कविता सुनाते और रैम्प वॉक करते। तीन महीने की तैयारी में जो बदलाव आता था — वह किसी दवाई से नहीं आ सकता था।<br><br>
+    उसी पल निराज जी ने सोचा: <strong>"एक ऐसा घर हो जहाँ यह खुशी हर रोज़ मिले।"</strong><br><br>
+    और इस तरह जन्म हुआ <strong>आनंदम् वृद्धाश्रम</strong> का — करला गाँव, रोहिणी के पास, दिल्ली में।<br><br>
+    यहाँ <strong>कोई प्रवेश शुल्क नहीं, कोई मासिक किराया नहीं।</strong> सिर्फ प्यार, सम्मान और एक ऐसा परिवार जो छोड़कर नहीं जाता।
+  </div>
+  <div class="hpills">
+    <span class="hpill">आनंदम् वृद्धाश्रम के बारे में</span>
+    <span class="hpill">दिल्ली वृद्धाश्रम कहानी</span>
+    <span class="hpill">Oldies Got Talent</span>
+    <span class="hpill">निराज गेरा वृद्धाश्रम</span>
+    <span class="hpill">मानवीय फाउंडेशन</span>
+    <span class="hpill">बुजुर्गों के लिए खुशियाँ</span>
+    <span class="hpill">योग ध्यान वृद्धाश्रम</span>
+    <span class="hpill">भजन सत्संग वृद्ध आश्रम</span>
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="page-spine"></div>
+
+<!-- ════════════════════════════════
+     PAGE 03 — ABOUT FOUNDER
+════════════════════════════════ -->
+<div class="page-banner rb">
+  <div class="pb-num">03</div>
+  <div class="pb-content">
+    <span class="kalam-sub">संस्थापक — निराज गेरा</span>
+    <h2>ABOUT THE FOUNDER — NIRAJ GERA</h2>
+    <p>The strongest credibility signal on the entire website. Written to command respect from donors, institutions, media and CSR partners — while remaining warm, honest and human.</p>
+    <span class="page-url">/about-founder</span>
+  </div>
+</div>
+
+<div class="content-section">
+<div class="pw">
+
+<div class="seo">
+  <h4>🔍 SEO Meta Tags</h4>
+  <div class="mt">Meta Title: Niraj Gera — Founder & Chairman, Aanandam Vridhashram & Humanify Foundation | Delhi</div>
+  <div class="md">Meet Niraj Gera — social activist, World Record Holder, NITI Aayog Mentor of Change, TEDx Speaker, international photographer and founder of Aanandam Free Old Age Home and Humanify Foundation, Delhi.</div>
+  <div class="kw">niraj gera humanify foundation, niraj gera aanandam, social activist delhi, NITI Aayog mentor of change, world record holder women health sessions, TEDx speaker delhi, niraj gera photographer, happiness coach delhi, oldies got talent founder</div>
+</div>
+
+<div class="founder-split">
+  <div class="founder-text">
+    <div class="lbl">The Man Behind the Mission</div>
+    <h3 class="ch">Niraj Gera — He Didn't Build an Institution. He Built a Family.</h3>
+    <p class="bt">Some people work for a cause. Others <em>are</em> the cause — so completely and consistently that their life itself becomes the argument for why the work matters. Niraj Gera is the second kind.</p>
+    <p class="bt">For over <strong>18 years</strong>, Niraj Gera has been one of Delhi's — and India's — most quietly relentless social activists. Not loud. Not self-promoting. Just present, wherever people are forgotten, with a camera, a microphone, a meditation technique and an unshakeable conviction that every human being deserves to be seen.</p>
+    <p class="bt">He is the Founder & Chairman of <strong>Humanify Foundation</strong>, the creator of <strong>Aanandam Vridhashram</strong>, a certified <strong>Happiness and Mental Health coach</strong>, a <strong>senior faculty member of The Art of Living Organisation</strong> (active in 180+ countries), a <strong>TEDx speaker</strong>, an internationally awarded <strong>social documentary photographer</strong>, a <strong>poet</strong> — and a NITI Aayog <strong>Mentor of Change</strong>.</p>
+  </div>
+  <div class="founder-img">
+    <div class="fp">📸 Niraj Gera Ji — professional portrait, warm expression. Alternate: candid shot with elders at Aanandam.</div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS STRIP -->
+<div class="lbl" style="margin-top:36px">Credentials & Achievements</div>
+<div class="ach-strip">
+  <div class="ach"><span class="an">🏆</span><span class="al">Official World Record — Highest Number of Women's Health Sessions</span></div>
+  <div class="ach"><span class="an">🇮🇳</span><span class="al">Mentor of Change — NITI Aayog, Government of India</span></div>
+  <div class="ach"><span class="an">🎤</span><span class="al">4 TEDx Talks — GGSIPU, FIIB & others</span></div>
+  <div class="ach"><span class="an">🌍</span><span class="al">BBC, Daily Mail, Times of India, Hindustan Times & more</span></div>
+  <div class="ach"><span class="an">📸</span><span class="al">Royal Photographic Society Gold Medal, UK (2018)</span></div>
+  <div class="ach"><span class="an">🏅</span><span class="al">Humanitarian of the Year — National Icon Award</span></div>
+  <div class="ach"><span class="an">🩸</span><span class="al">MHM Champion Award by Padmashri Damodaran Ji</span></div>
+  <div class="ach"><span class="an">📖</span><span class="al">Wikipedia Page: en.wikipedia.org/wiki/Niraj_Gera</span></div>
+</div>
+
+<!-- WHAT HE BRINGS TO AANANDAM -->
+<div class="lbl" style="margin-top:32px">Why His Background Matters for Aanandam</div>
+<h3 class="ch dark">A Happiness Coach Running an Old Age Home — That Changes Everything</h3>
+<p class="bt">Most elder care facilities are run by administrators, doctors or social workers — and that is valuable. Aanandam is run by a <strong>Happiness and Mental Health practitioner</strong> who has spent nearly two decades studying and practicing what makes human beings genuinely flourish. That difference is visible in every aspect of life at Aanandam.</p>
+
+<div class="two-col">
+  <div class="card tg">
+    <span class="icon">🧘</span>
+    <h4>The Happiness & Wellbeing Focus</h4>
+    <p>Niraj Gera's training as a certified Happiness coach, Life coach and senior Art of Living faculty means Aanandam's approach to elder wellbeing goes far beyond physical care. Yoga sessions, happiness programmes, spiritual discussions and music therapy are woven into daily life here — not as activities but as philosophy.</p>
+  </div>
+  <div class="card ts">
+    <span class="icon">📸</span>
+    <h4>The Photographer's Eye for Human Dignity</h4>
+    <p>His internationally awarded photo series — <em>Abandoned Souls</em> (old age home residents), <em>Immortal Love</em> (elderly couples), <em>Sacred Stains</em> (menstruation), <em>Sacred Transformations</em> (acid attack survivors) — show a man who doesn't just see suffering but insists on seeing the dignity inside it. That is the lens through which Aanandam was built.</p>
+  </div>
+  <div class="card tg">
+    <span class="icon">🎤</span>
+    <h4>The Motivational Speaker's Gift</h4>
+    <p>600+ sessions at IIT Delhi, Lal Bahadur Shastri National Academy of Administration (LBSNAA), Army Public School, Air Force School, Amity University, Kendriya Vidyalayas, and on platforms like TEDx and AIESEC — Niraj Gera knows how to move people. Aanandam's growing community of donors, volunteers and supporters is partly that same gift at work.</p>
+  </div>
+  <div class="card ts">
+    <span class="icon">🇮🇳</span>
+    <h4>Government & Policy Engagement</h4>
+    <p>As a NITI Aayog Mentor of Change, Niraj has personally met the Prime Minister's Office, Union Health Ministers, and Niti Aayog leadership to advocate for menstrual health policy and elder care. Aanandam's future growth — seeking government land, institutional support and policy partnerships — is directly served by these connections.</p>
+  </div>
+</div>
+
+<div class="pullquote">"I didn't start Aanandam to run an old age home. I started it because I saw what happens when an elder has something to look forward to — and I knew that feeling should not depend on an annual event. It should be the fabric of every single day."<span class="attr">— Niraj Gera, Founder & Chairman, Humanify Foundation</span></div>
+
+<!-- KEY ENDORSEMENTS -->
+<div class="lbl" style="margin-top:28px">Trusted By India's Most Respected Voices</div>
+<div class="two-col">
+  <div class="card td">
+    <p style="font-size:13.5px;color:#333;font-style:italic;line-height:1.7">"Niraj is doing great work for raising awareness regarding the myths and taboos related to periods. My best wishes and complete support."</p>
+    <p style="font-size:12px;color:var(--muted);margin-top:8px;font-weight:700">— Asha Devi, Mother of Nirbhaya</p>
+  </div>
+  <div class="card td">
+    <p style="font-size:13.5px;color:#333;font-style:italic;line-height:1.7">"Niraj ji is an inspirational speaker in true sense. He is a great source of motivation. I will always be available for all the service projects he undertakes."</p>
+    <p style="font-size:12px;color:var(--muted);margin-top:8px;font-weight:700">— Dr. Ravi Shankar, Professor, IIT Delhi</p>
+  </div>
+</div>
+
+<!-- HINDI BLOCK -->
+<div class="hblock">
+  <div class="ht">निराज गेरा — एक इंसान जिसने ज़िंदगी को सेवा में बदला</div>
+  <div class="hb">
+    <strong>निराज गेरा जी</strong> — मानवीय फाउंडेशन के संस्थापक और आनंदम् वृद्धाश्रम के अध्यक्ष।<br><br>
+    🏆 <strong>विश्व रिकॉर्ड धारक</strong> — सर्वाधिक महिला स्वास्थ्य सत्र आयोजित करने में<br>
+    🇮🇳 <strong>NITI Aayog "Mentor of Change"</strong> — भारत सरकार द्वारा मान्यता प्राप्त<br>
+    🎤 <strong>4 TEDx वक्ता</strong> | 📸 <strong>अंतरराष्ट्रीय फोटोग्राफर</strong> | 🧘 <strong>Art of Living वरिष्ठ प्रशिक्षक</strong><br>
+    🏅 <strong>Humanitarian of the Year Award</strong> | 🌍 <strong>BBC, Times of India, Hindustan Times में कवरेज</strong><br><br>
+    निराज जी एक <strong>Happiness Coach</strong> हैं — इसलिए आनंदम् सिर्फ आश्रय नहीं, बल्कि <strong>खुशी का घर</strong> है।
+  </div>
+  <div class="hpills">
+    <span class="hpill">निराज गेरा समाजसेवी</span>
+    <span class="hpill">विश्व रिकॉर्ड धारक</span>
+    <span class="hpill">NITI Aayog Mentor</span>
+    <span class="hpill">TEDx वक्ता दिल्ली</span>
+    <span class="hpill">हैप्पीनेस कोच दिल्ली</span>
+    <span class="hpill">मानवीय फाउंडेशन अध्यक्ष</span>
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="page-spine"></div>
+
+<!-- ════════════════════════════════
+     PAGE 04 — WHY AANANDAM
+════════════════════════════════ -->
+<div class="page-banner pb">
+  <div class="pb-num">04</div>
+  <div class="pb-content">
+    <span class="kalam-sub">आनंदम् क्यों — यहाँ क्या अलग है</span>
+    <h2>WHY AANANDAM</h2>
+    <p>Answers the decision-maker's question — a family considering admission, a donor deciding between NGOs, a CSR manager evaluating partners. Clear, credible, keyword-rich.</p>
+    <span class="page-url">/why-aanandam</span>
+  </div>
+</div>
+
+<div class="content-section">
+<div class="pw">
+
+<div class="seo">
+  <h4>🔍 SEO Meta Tags</h4>
+  <div class="mt">Meta Title: Why Aanandam Vridhashram — What Makes Our Free Old Age Home Different | Delhi</div>
+  <div class="md">Why choose Aanandam Vridhashram in Delhi? No fees, no monthly charges, run by a Happiness coach, yoga sessions, bhajans, elder outings to Vrindavan, HelpAge India association, Dr. Kiran Bedi visit, Amul CSR — trust built through genuine care.</div>
+  <div class="kw">why aanandam old age home, best free old age home delhi, difference in old age home delhi, free ngo old age home comparison, HelpAge India partner delhi, Amul CSR old age home, Dr Kiran Bedi old age home visit, happiness focused elder care, trusted old age home delhi NCR</div>
+</div>
+
+<h3 class="ch">Because Where You Place Your Trust — Or Your Parent — Matters.</h3>
+<p class="bt">There are many old age homes in Delhi. Some charge ₹15,000 a month. Some charge ₹50,000. Government facilities are overcrowded. And the few truly free ones are often under-resourced, under-staffed and under-loved.</p>
+<p class="bt">Aanandam is none of these things. It is something rarer: a home run by people who genuinely care, founded on a philosophy of joy, trusted by some of India's most respected institutions and individuals — and completely free.</p>
+<p class="bt">Here is why families, donors and organisations choose Aanandam:</p>
+
+<div class="why-grid">
+  <div class="why-card">
+    <span class="wc-icon">💰</span>
+    <h4>No Fees — Ever</h4>
+    <p>No admission charge. No monthly fee. No deposit. No "suggested donation" for staying. Aanandam is 100% free for every resident, funded entirely through community generosity.</p>
+    <span class="wc-kw">free old age home delhi • no fee senior shelter</span>
+  </div>
+  <div class="why-card">
+    <span class="wc-icon">🧘</span>
+    <h4>Joy Is the Philosophy</h4>
+    <p>Founded by a Happiness coach — not an administrator. Yoga sessions, happiness programmes, bhajans and spiritual discussions are the daily rhythm here, not occasional extras.</p>
+    <span class="wc-kw">happiness focused elder care • yoga old age home delhi</span>
+  </div>
+  <div class="why-card">
+    <span class="wc-icon">🎤</span>
+    <h4>A Stage, Not Just a Bed</h4>
+    <p>Born from Oldies Got Talent — Aanandam residents are encouraged to sing, create, contribute. Elders here are not waiting for time to pass. They are living.</p>
+    <span class="wc-kw">oldies got talent • creative elder care • active senior home</span>
+  </div>
+  <div class="why-card">
+    <span class="wc-icon">🤝</span>
+    <h4>Trusted by India's Best</h4>
+    <p>Amul, Axis Max Life, Yes Madam, HelpAge India, and Dr. Kiran Bedi Ji have all visited Aanandam. Their presence is not endorsement through words — it is endorsement through action.</p>
+    <span class="wc-kw">HelpAge India partner • Amul CSR • Dr Kiran Bedi</span>
+  </div>
+  <div class="why-card">
+    <span class="wc-icon">🕉️</span>
+    <h4>Outings & Spiritual Connection</h4>
+    <p>Residents are taken on outbound visits — Vrindavan, temples, parks, cultural events. Because life for our elders does not end at the gate of Aanandam.</p>
+    <span class="wc-kw">vrindavan trip old age home • elder outing delhi</span>
+  </div>
+  <div class="why-card">
+    <span class="wc-icon">❤️</span>
+    <h4>A Community, Not an Institution</h4>
+    <p>Thirty elders who eat together, pray together, celebrate together, grieve together. Aanandam feels less like a facility and more like the joint family that modern India is losing.</p>
+    <span class="wc-kw">community elder care • joint family old age home</span>
+  </div>
+</div>
+
+<!-- ADMISSION HONEST NOTE -->
+<div class="lbl" style="margin-top:36px">Admission — Honest & Transparent</div>
+<h3 class="ch dark">We Are Honest About What We Offer</h3>
+<p class="bt">Trust is built not just by what you promise — but by what you are willing to honestly not promise. Here is Aanandam's honest admission note, because families deserve clarity:</p>
+
+<div class="two-col">
+  <div class="card tg">
+    <h4>✅ Who We Are Well-Equipped For</h4>
+    <ul class="cl">
+      <li>Senior citizens aged 60+ who are physically independent or semi-dependent</li>
+      <li>Abandoned, neglected or homeless elders with no family support</li>
+      <li>Elders who can participate in the community's daily rhythm</li>
+      <li>Those referred by social workers, hospitals, police or concerned individuals</li>
+      <li>Elders with no documents — need alone is our only criterion</li>
+    </ul>
+  </div>
+  <div class="card ts">
+    <h4>📋 Our Honest Current Limitations</h4>
+    <p style="font-size:14px;color:#444;line-height:1.8"><strong>Intensive personal care:</strong> At this stage of our journey, we are not yet resourced to provide round-the-clock personal attendant care for fully bedridden residents or those requiring intensive supervision due to advanced dementia or similar conditions. We are working to build this capacity and welcome partners who can help us get there.</p>
+    <p style="font-size:14px;color:#444;line-height:1.8;margin-top:10px"><strong>Medical facilities:</strong> Our healthcare support currently works through regular volunteer doctor camps and health check-ups. For hospitalisation and specialist diagnosis, we work with government facilities. We are actively seeking partnerships with hospitals, pathology labs and diagnostic centres to improve this. <em>If your medical institution can help — we would love to hear from you.</em></p>
+  </div>
+</div>
+
+<!-- HINDI BLOCK -->
+<div class="hblock">
+  <div class="ht">आनंदम् क्यों चुनें — क्या है यहाँ खास</div>
+  <div class="hb">
+    <strong>दिल्ली में आनंदम् वृद्धाश्रम क्यों बेहतर है?</strong><br><br>
+    ✅ <strong>कोई शुल्क नहीं</strong> — न प्रवेश, न मासिक किराया<br>
+    🧘 <strong>खुशी और मानसिक स्वास्थ्य पर ध्यान</strong> — योग, ध्यान, भजन हर रोज़<br>
+    🎤 <strong>Oldies Got Talent की विरासत</strong> — यहाँ बुजुर्ग सिर्फ रहते नहीं, जीते हैं<br>
+    🤝 <strong>HelpAge India, अमूल, Yes Madam, Dr. किरण बेदी जी</strong> — सभी ने हमें देखा और सराहा<br>
+    🕉️ <strong>वृंदावन और मंदिर यात्राएँ</strong> — बुजुर्गों की आत्मा को भी पोषण मिलता है<br><br>
+    <strong>अभी संपर्क करें: +91-9310105630</strong>
+  </div>
+  <div class="hpills">
+    <span class="hpill">आनंदम् क्यों</span>
+    <span class="hpill">सर्वश्रेष्ठ वृद्धाश्रम दिल्ली</span>
+    <span class="hpill">निःशुल्क बुजुर्ग देखभाल</span>
+    <span class="hpill">HelpAge India साझेदार</span>
+    <span class="hpill">वृंदावन यात्रा बुजुर्ग</span>
+    <span class="hpill">Oldies Got Talent दिल्ली</span>
+    <span class="hpill">विश्वसनीय वृद्धाश्रम दिल्ली</span>
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="page-spine"></div>
+
+<!-- ════════════════════════════════
+     PAGE 05 — HINDI VERSION
+════════════════════════════════ -->
+<div class="page-banner hb-banner">
+  <div class="pb-num">05</div>
+  <div class="pb-content">
+    <span class="kalam-sub">हिंदी पेज — पूरी जानकारी हिंदी में</span>
+    <h2>HINDI PAGE — निःशुल्क वृद्धाश्रम दिल्ली</h2>
+    <p>A dedicated Hindi-language SEO page targeting the highest-volume Hindi search queries — written entirely in Hindi, for the family that searches in their mother tongue.</p>
+    <span class="page-url">/nishulk-vridhashram-delhi-hindi</span>
+  </div>
+</div>
+
+<div class="content-section">
+<div class="pw">
+
+<div class="seo">
+  <h4>🔍 SEO Meta Tags — Hindi Page</h4>
+  <div class="mt">Meta Title: निःशुल्क वृद्धाश्रम दिल्ली | आनंदम् — करला, रोहिणी के पास | Humanify Foundation</div>
+  <div class="md">आनंदम् वृद्धाश्रम दिल्ली के करला में एक 100% निःशुल्क वृद्धाश्रम है — परित्यक्त और बेसहारा बुजुर्गों के लिए। कोई प्रवेश शुल्क नहीं, कोई मासिक किराया नहीं। फोन: 9310105630</div>
+  <div class="kw">निःशुल्क वृद्धाश्रम दिल्ली, मुफ्त वृद्धाश्रम, वृद्धाश्रम रोहिणी, परित्यक्त बुजुर्ग दिल्ली, माँ बाप के लिए घर दिल्ली, बुजुर्गों का आश्रम, वृद्ध आश्रम करला, बेसहारा बुजुर्ग सहायता, वृद्धाश्रम में प्रवेश दिल्ली, बुजुर्ग देखभाल दिल्ली, आनंदम् वृद्धाश्रम</div>
+</div>
+
+<!-- FULL HINDI CONTENT -->
+<div class="hblock" style="margin:0 0 24px 0">
+  <div class="ht" style="font-size:24px">दिल्ली में निःशुल्क वृद्धाश्रम की तलाश है?</div>
+  <div class="hb" style="font-size:17px">
+    <strong>आनंदम् वृद्धाश्रम</strong> — करला गाँव, रोहिणी और पीतमपुरा के पास, दिल्ली — एक ऐसा घर है जहाँ परित्यक्त, उपेक्षित और बेघर बुजुर्गों को मिलता है प्यार, सम्मान और एक सच्चा परिवार।<br><br>
+    <strong>100% निःशुल्क। कोई प्रवेश शुल्क नहीं। कोई मासिक किराया नहीं।</strong>
+  </div>
+</div>
+
+<h3 class="ch" style="font-family:'Kalam',cursive;color:var(--green)">आनंदम् में क्या मिलता है — बिल्कुल मुफ्त?</h3>
+
+<div class="three-col" style="margin-top:16px">
+  <div class="card tg"><span class="icon" style="font-family:'Kalam',cursive;font-size:20px">🏠 रहना</span><p style="font-family:'Kalam',cursive;font-size:15px;color:#444">साफ कमरा, बिस्तर, गद्दा और जरूरी सामान — बिल्कुल मुफ्त</p></div>
+  <div class="card ts"><span class="icon" style="font-family:'Kalam',cursive;font-size:20px">🍛 खाना</span><p style="font-family:'Kalam',cursive;font-size:15px;color:#444">तीन वक्त का ताज़ा भोजन + सुबह-शाम चाय और बिस्किट/रस्क</p></div>
+  <div class="card tg"><span class="icon" style="font-family:'Kalam',cursive;font-size:20px">🧘 योग</span><p style="font-family:'Kalam',cursive;font-size:15px;color:#444">नियमित योग सत्र, ध्यान और खुशी के कार्यक्रम</p></div>
+  <div class="card ts"><span class="icon" style="font-family:'Kalam',cursive;font-size:20px">🎵 भजन</span><p style="font-family:'Kalam',cursive;font-size:15px;color:#444">रोज़ाना भजन, सत्संग और आध्यात्मिक चर्चाएँ</p></div>
+  <div class="card tg"><span class="icon" style="font-family:'Kalam',cursive;font-size:20px">🎉 त्योहार</span><p style="font-family:'Kalam',cursive;font-size:15px;color:#444">होली, दीवाली, नवरात्रि, जन्मदिन — हर उत्सव पूरे दिल से</p></div>
+  <div class="card ts"><span class="icon" style="font-family:'Kalam',cursive;font-size:20px">🕉️ यात्राएँ</span><p style="font-family:'Kalam',cursive;font-size:15px;color:#444">वृंदावन, मंदिर और बाहरी यात्राएँ — क्योंकि जीवन चलता रहता है</p></div>
+</div>
+
+<div class="hblock" style="margin-top:28px">
+  <div class="ht">कौन आ सकता है आनंदम् में?</div>
+  <div class="hb">
+    ✅ 60 वर्ष या उससे अधिक आयु के बुजुर्ग<br>
+    ✅ जो परिवार द्वारा छोड़ दिए गए हों या उपेक्षित हों<br>
+    ✅ बेघर बुजुर्ग या आर्थिक रूप से कमज़ोर वरिष्ठ नागरिक<br>
+    ✅ जिनके पास आधार कार्ड नहीं है — <strong>तब भी हम मना नहीं करेंगे</strong><br>
+    ✅ जो समाजसेवी, पुलिस, अस्पताल या किसी शुभचिंतक द्वारा भेजे गए हों<br><br>
+    <strong>📌 एक बात:</strong> अभी हम पूरी तरह बिस्तर पर रहने वाले या गहन देखभाल की जरूरत वाले बुजुर्गों को प्रवेश देने में सक्षम नहीं हैं। हम इस दिशा में काम कर रहे हैं।
+  </div>
+  <div class="hpills">
+    <span class="hpill">वृद्धाश्रम में प्रवेश</span>
+    <span class="hpill">60 वर्ष बुजुर्ग आश्रम</span>
+    <span class="hpill">परित्यक्त बुजुर्ग दिल्ली</span>
+    <span class="hpill">बेघर वृद्ध दिल्ली</span>
+    <span class="hpill">माँ बाप के लिए आश्रम</span>
+  </div>
+</div>
+
+<div class="hblock" style="margin-top:20px">
+  <div class="ht">आनंदम् की कहानी — Oldies Got Talent से जन्मा एक सपना</div>
+  <div class="hb">
+    हमारे संस्थापक <strong>निराज गेरा जी</strong> कई वर्षों तक दिल्ली के विभिन्न वृद्धाश्रमों में जाते थे और हर साल एक कार्यक्रम आयोजित करते — <strong>"Oldies Got Talent"</strong>। इसमें बुजुर्ग गाते, नाचते, कविता सुनाते और रैम्प वॉक करते।<br><br>
+    तीन महीने की तैयारी में जो बदलाव आता था — वह किसी दवाई से नहीं आ सकता था। बुजुर्गों के चेहरे पर जो खुशी होती थी — उसे देखकर निराज जी ने सोचा:<br><br>
+    <strong>"क्यों न ऐसा घर बनाया जाए जहाँ यह खुशी हर रोज़ हो?"</strong><br><br>
+    और इस तरह <strong>आनंदम् वृद्धाश्रम</strong> का जन्म हुआ।
+  </div>
+</div>
+
+<div class="hblock" style="margin-top:20px">
+  <div class="ht">दान करें — एक बुजुर्ग की मुस्कान का कारण बनें</div>
+  <div class="hb">
+    💛 <strong>एकमुश्त दान</strong> — जितना दिल चाहे<br>
+    🍛 <strong>भोजन प्रायोजित करें</strong> — ₹3,100 में सभी निवासियों का एक दोपहर या रात का खाना<br>
+    👴 <strong>एक बुजुर्ग को सहारा दें</strong> — ₹6,500/माह में एक बुजुर्ग की पूरी देखभाल<br>
+    📅 <strong>मासिक दान</strong> — कोई भी निश्चित राशि, हर महीने अपने आप कटेगी<br><br>
+    <strong>80G टैक्स छूट उपलब्ध है।</strong><br><br>
+    📞 <strong>+91-9310105630</strong> &nbsp;|&nbsp; 🌐 www.vridhashram.in<br>
+    📍 513/11, उत्सव विहार, करला गाँव, रोहिणी सेक्टर-38 के सामने, दिल्ली 110081
+  </div>
+  <div class="hpills">
+    <span class="hpill">वृद्धाश्रम में दान दिल्ली</span>
+    <span class="hpill">बुजुर्ग भोजन प्रायोजन</span>
+    <span class="hpill">₹6500 एक बुजुर्ग</span>
+    <span class="hpill">मासिक दान NGO</span>
+    <span class="hpill">80G टैक्स छूट दान</span>
+    <span class="hpill">वृद्धाश्रम में दान कैसे करें</span>
+    <span class="hpill">UPI दान वृद्धाश्रम</span>
+    <span class="hpill">vridhashram.in</span>
+    <span class="hpill">आनंदम् वृद्धाश्रम दिल्ली</span>
+    <span class="hpill">निःशुल्क वृद्धाश्रम</span>
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="page-spine"></div>
+
+<!-- ════ DONATION AUTO-DEBIT FRAMEWORK ════ -->
+<div class="content-section alt">
+<div class="pw">
+<div class="lbl">Developer Note — Auto-Recurring Donation Framework</div>
+<h3 class="ch dark">Making Monthly Donations Happen Automatically</h3>
+<p class="bt">The key to sustainable monthly giving is friction-free setup. Here is the complete technical and copy framework to make recurring donations work without reminders:</p>
+
+<div class="two-col">
+  <div class="card td">
+    <h4>🔧 Technical Setup (for developer)</h4>
+    <ul class="cl" style="font-size:14px">
+      <li><strong>Razorpay Recurring:</strong> Integrate Razorpay's Subscription API. It handles UPI AutoPay (via UPI mandate), card auto-debit (via recurring card setup), and net banking ECS. The donor sets up once — Razorpay auto-charges on the same date every month.</li>
+      <li><strong>UPI AutoPay:</strong> Donor approves a mandate on any UPI app (GPay, PhonePe, Paytm) — charges happen silently on the 1st of each month (or chosen date). No OTP needed for subsequent charges below ₹15,000.</li>
+      <li><strong>WhatsApp Receipt:</strong> Integrate Razorpay webhook → WhatsApp API (via Interakt or Wati) to auto-send a receipt on every successful charge. Donor gets proof without chasing you.</li>
+      <li><strong>Failure handling:</strong> If a charge fails (low balance etc.), Razorpay retries automatically 3× before marking as failed and notifying the donor via email/SMS.</li>
+      <li><strong>Cancel anytime:</strong> Donor can cancel from their UPI app or Razorpay dashboard. Prominently state this — it actually increases sign-up rates.</li>
+    </ul>
+  </div>
+  <div class="card ts">
+    <h4>✍️ Copy Framework — "Set Once, Give Forever"</h4>
+    <p style="font-size:13.5px;color:#444;line-height:1.8"><strong>Heading:</strong> Set Up Monthly Giving — Once. Done.<br><br>
+    <strong>Sub-heading:</strong> Like a SIP for your soul.<br><br>
+    <strong>Body copy:</strong> "Choose your amount. Click once. Confirm your UPI mandate or card auto-pay. That's it. Every month on the same date, your contribution reaches Aanandam automatically — no reminder from us, no action needed from you.<br><br>
+    You'll receive a WhatsApp receipt each time. And if you ever want to pause or stop, it takes 30 seconds in your UPI app.<br><br>
+    Because the best kind of giving is the kind that becomes part of your life without you having to think about it every month."<br><br>
+    <strong>CTA button:</strong> "Set Up My Monthly Gift"<br>
+    <strong>Below button (tiny text):</strong> Secured by Razorpay. Cancel anytime from your UPI app.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <strong>www.vridhashram.in — 5-Page Content Blueprint</strong><br>
+  Home | About Aanandam | About Founder | Why Aanandam | Hindi Page<br>
+  Aanandam Vridhashram, 513/11, Karala Village, near Rohini Sec-38, Delhi 110081<br><br>
+  <div class="tl">"आनंदम् — जहाँ हर भूले-बिसरे बुजुर्ग को मिलता है अपना घर"</div>
+  📞 +91-9310105630 &nbsp;|&nbsp; 📸 @aanandamoldagehome &nbsp;|&nbsp; 🌐 www.vridhashram.in &nbsp;|&nbsp; www.humanify.in
+</div>
+
+</body>
+</html>

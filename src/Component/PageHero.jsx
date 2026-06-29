@@ -3,12 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import HeroBackground3D from './HeroBackground3D';
 
-import bg1 from '../assets/old_age_1.png';
-import bg2 from '../assets/old_age_2.png';
-import bg3 from '../assets/old_age_3.png';
-import bg4 from '../assets/old_age_4.png';
-
-const images = [bg1, bg2, bg3, bg4];
+// Image imports removed to use public paths
+const images = ["/fwd47photos/11.jpg", "/fwd47photos/13.jpg", "/fwd47photos/14.jpg", "/fwd47photos/16.jpg"];
 
 function PageHero({ title, description, hideBreadcrumb = false }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,8 +26,11 @@ function PageHero({ title, description, hideBreadcrumb = false }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.5 }}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${images[currentIndex]})` }} 
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{ 
+            backgroundImage: `url(${images[currentIndex]})`,
+            backgroundPosition: images[currentIndex].includes('14.jpg') ? 'top' : 'center'
+          }} 
         />
       </AnimatePresence>
 

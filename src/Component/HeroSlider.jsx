@@ -1,41 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import heroBg1 from '../assets/hero_bg.png';
-import heroBg2 from '../assets/impact_1.png';
-import heroBg3 from '../assets/impact_2.png';
-import heroBg4 from '../assets/service_1.png';
-import HeroBackground3D from './HeroBackground3D';
 
-const slides = [
-  {
-    image: heroBg1,
-    tag: "100% Free • 100% Love • 100% Dignity",
-    title: "Aanandam — खुशियों का घर",
-    subtitle: "India's Happiest Free Old Age Home | Karala, Delhi",
-    desc: '"Some people call it an old age home. We call it Khushiyon Ka Ghar — a place where every elder finds what they lost: a family, a voice, a home, and a reason to smile again."'
-  },
-  {
-    image: heroBg2,
-    tag: "Compassion in Action",
-    title: "Empowering Our Elders",
-    subtitle: "Providing Medical Care and Emotional Support",
-    desc: '"Our mission goes beyond shelter. We ensure every resident receives regular health checkups, nutritious meals, and the emotional care they deserve."'
-  },
-  {
-    image: heroBg3,
-    tag: "Join Our Mission",
-    title: "You Can Make a Difference",
-    subtitle: "Volunteer, Support Us, and Spread Smiles",
-    desc: '"Your small contribution can light up an elder’s day. Celebrate your special days with them or volunteer your time to bring joy into their lives."'
-  },
-  {
-    image: heroBg4,
-    tag: "A Community of Love",
-    title: "Celebrating Life Everyday",
-    subtitle: "Activities, Yoga, and Cultural Events",
-    desc: '"At Aanandam, life never stops. From morning yoga to evening bhajans, we create an environment full of life, laughter, and spiritual peace."'
-  }
+const AnimatedCounter = ({ end, suffix = "" }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / 2000, 1); // 2 second duration
+        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        setCount(Math.floor(easeProgress * end));
+        if (progress < 1) window.requestAnimationFrame(step);
+      };
+      window.requestAnimationFrame(step);
+    }
+  }, [isInView, end]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+};
+
+const backgroundImages = [
+  "/fwd47photos/2.jpg",
+  "/fwd47photos/4.jpg",
+  "/fwd47photos/6.jpg",
+  "/fwd47photos/9.jpg"
 ];
 
 export default function HeroSlider() {
@@ -43,13 +36,13 @@ export default function HeroSlider() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 4000);
+      setCurrentIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="relative w-full h-[90vh] min-h-[600px] overflow-hidden bg-[#0a231a]">
+    <div className="relative w-full h-[90vh] min-h-[700px] flex flex-col justify-between overflow-hidden bg-black">
       {/* Background Image Slider */}
       <AnimatePresence>
         <motion.div
@@ -59,65 +52,89 @@ export default function HeroSlider() {
           exit={{ opacity: 0 }}
           transition={{ duration: 1.5 }}
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${slides[currentIndex].image})` }}
+          style={{ backgroundImage: `url(${backgroundImages[currentIndex]})` }}
         />
       </AnimatePresence>
 
-      {/* 3D Background Animation */}
-      <HeroBackground3D />
+      {/* Neutral Dark Gradient Overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80 pointer-events-none z-0"></div>
 
-      {/* Gradient Overlay for better text readability on both mobile and desktop */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a231a] via-[#0a231a]/70 sm:via-[#0a231a]/60 to-[#0a231a]/20 sm:to-transparent pointer-events-none"></div>
+      {/* Main Hero Content */}
+      <div className="relative z-10 flex-grow flex flex-col items-center justify-center px-4 sm:px-8 text-center pt-24 pb-8">
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-[#E5A937] italic font-serif text-sm sm:text-base md:text-lg mb-6 tracking-wide"
+        >
+          Karala Village, Delhi — near Rohini & Pitampura
+        </motion.p>
+        
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.2] text-white max-w-[700px] mx-auto mb-8 tracking-tight"
+        >
+          A <span className="text-[#E5A937]">Home</span> for Every <br className="hidden md:block" /> Forgotten Grandparent
+        </motion.h1>
 
-      {/* Hero Content Overlay */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center px-4 sm:px-8 pt-10">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`text-${currentIndex}`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="text-center max-w-5xl mx-auto"
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-gray-200 text-sm sm:text-[15px] md:text-base leading-[1.8] max-w-3xl mx-auto mb-12 font-medium"
+        >
+          Aanandam Vridhashram is a free old age home in Delhi where abandoned and homeless senior citizens find shelter, warmth, yoga, bhajans — and a family that does not leave.
+        </motion.p>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-5 justify-center items-center w-full sm:w-auto"
+        >
+          <Link
+            to="/donate"
+            className="w-full sm:w-auto px-10 py-4 bg-[#C63D2F] hover:bg-[#A83225] text-white font-bold rounded-lg shadow-lg transition-colors text-[17px] flex items-center justify-center gap-2"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="inline-block bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#FDD835] mb-6 shadow-xl"
-            >
-              {slides[currentIndex].tag}
-            </motion.div>
-
-            <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl leading-tight text-white mb-4 drop-shadow-2xl">
-              {slides[currentIndex].title}
-            </h1>
-
-            <h2 className="font-kalam text-lg sm:text-2xl text-[#FDD835] mb-6 drop-shadow-md">
-              {slides[currentIndex].subtitle}
-            </h2>
-
-            <p className="text-sm sm:text-lg text-white/90 leading-relaxed mb-10 max-w-2xl mx-auto drop-shadow-md font-medium">
-              {slides[currentIndex].desc}
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <Link
-                to="/Support Us"
-                className="w-full sm:w-auto px-8 py-3.5 bg-[#FDD835] hover:bg-white text-[#0a231a] font-bold rounded-sm shadow-lg transition duration-300 transform hover:-translate-y-1 text-center text-[15px]"
-              >
-                Support Us / Support Us Now
-              </Link>
-              <Link
-                to="/contact"
-                className="w-full sm:w-auto px-8 py-3.5 bg-transparent border-2 border-white/30 hover:bg-white/10 text-white font-bold rounded-sm shadow-lg transition duration-300 transform hover:-translate-y-1 text-center text-[15px]"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+            <span className="text-[#FDD835]">💛</span> Donate Now
+          </Link>
+          <Link
+            to="/admission"
+            className="w-full sm:w-auto px-10 py-4 bg-transparent border border-gray-400 hover:bg-white/5 text-white font-bold rounded-lg transition-colors text-[17px] flex items-center justify-center"
+          >
+            Admit an Elder &rarr;
+          </Link>
+        </motion.div>
       </div>
+
+      {/* Bottom Stats Section */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="relative z-10 w-full border-t border-white/10 py-12"
+      >
+        <div className="max-w-[1100px] mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-4 text-center">
+          <div className="flex flex-col items-center">
+            <span className="font-serif font-bold text-3xl sm:text-4xl text-[#E5A937] mb-2"><AnimatedCounter end={100} suffix="%" /></span>
+            <span className="text-gray-400 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase">Free of Charge</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-serif font-bold text-3xl sm:text-4xl text-[#E5A937] mb-2"><AnimatedCounter end={30} suffix="+" /></span>
+            <span className="text-gray-400 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase">Elders in our Care</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-serif font-bold text-3xl sm:text-4xl text-[#E5A937] mb-2"><AnimatedCounter end={3} suffix="+" /></span>
+            <span className="text-gray-400 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase">Years of Service</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-serif font-bold text-3xl sm:text-4xl text-[#E5A937] mb-2">∞</span>
+            <span className="text-gray-400 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase">Blessings Received</span>
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 }
