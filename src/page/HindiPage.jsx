@@ -17,7 +17,7 @@ export default function HindiPage() {
         {/* Content */}
         <div className="relative z-10 px-4 sm:px-8 max-w-4xl mx-auto">
           <motion.p
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -20 }}    
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="text-[#FDD835] font-bold tracking-[0.2em] uppercase text-[12px] sm:text-[13px] mb-4"
@@ -76,21 +76,24 @@ export default function HindiPage() {
       </section>
 
       {/* ===== PAGE CONTENT ===== */}
-      <div className="max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-12">
-        
-        {/* Section 1: Intro */}
-        <div className="bg-[#FFF4E6] border-l-[6px] border-[#E65100] rounded-r-2xl p-8 sm:p-10 shadow-sm relative">
+
+      {/* Section 1: Intro — Full Width */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-0">
+        <div className="bg-[#FFF4E6] border-l-[6px] border-[#E65100] rounded-r-2xl p-10 sm:p-14 shadow-sm relative">
           <span className="absolute top-6 right-6 text-[#E65100]/60 text-[12px] font-bold">हिंदी</span>
-          <h1 className="text-[#E65100] font-bold text-2xl sm:text-3xl mb-4 font-serif italic">
+          <h1 className="text-[#E65100] font-bold text-2xl sm:text-3xl lg:text-4xl mb-5 font-serif italic">
             दिल्ली में निःशुल्क वृद्धाश्रम की तलाश है?
           </h1>
-          <p className="text-[#0a231a] text-[16px] sm:text-[17px] leading-relaxed mb-6 font-medium italic">
+          <p className="text-[#0a231a] text-[16px] sm:text-[17px] lg:text-[18px] leading-relaxed mb-6 font-medium italic max-w-5xl">
             <span className="text-[#b71c1c] font-bold">आनंदम् वृद्धाश्रम</span> — करला गाँव, रोहिणी और पीतमपुरा के पास, दिल्ली — एक ऐसा घर है जहाँ परित्यक्त, उपेक्षित और बेघर बुजुर्गों को मिलता है प्यार, सम्मान और एक सच्चा परिवार।
           </p>
-          <p className="text-[#b71c1c] font-bold text-[17px] sm:text-[19px] italic">
+          <p className="text-[#b71c1c] font-bold text-[17px] sm:text-[20px] italic">
             100% निःशुल्क। कोई प्रवेश शुल्क नहीं। कोई मासिक किराया नहीं।
           </p>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Section 2: Kya milta hai */}
         <div>

@@ -91,6 +91,9 @@ function Navbar() {
 
               {involvedDropdown && (
                 <div className="absolute top-16 left-0 w-60 bg-white rounded shadow-lg py-2 z-50 animate-fade-in border-t-4 border-green-800">
+                  <Link to="/ways-to-get-involved" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
+                    Ways to Get Involved
+                  </Link>
                   <Link to="/admission" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
                     Admission
                   </Link>
