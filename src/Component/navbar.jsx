@@ -250,7 +250,7 @@ function Navbar() {
               <svg className={`w-4 h-4 transform transition-transform ${mobileSection === 'about' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
 
-            <div className={`space-y-1 pl-4 overflow-hidden transition-all duration-300 ${mobileSection === 'about' ? 'max-h-64 pb-3' : 'max-h-0'}`}>
+            <div className={`space-y-1 pl-4 overflow-hidden transition-all duration-300 ${mobileSection === 'about' ? 'max-h-[500px] pb-3' : 'max-h-0'}`}>
               <Link to="/about-aanandam" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">About Aanandam</Link>
               <Link to="/why-aanandam" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Why Aanandam</Link>
               <Link to="/about-founder" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Founder of Aanandam</Link>
@@ -274,7 +274,8 @@ function Navbar() {
               <svg className={`w-4 h-4 transform transition-transform ${mobileSection === 'involved' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
 
-            <div className={`space-y-1 pl-4 overflow-hidden transition-all duration-300 ${mobileSection === 'involved' ? 'max-h-64 pb-3' : 'max-h-0'}`}>
+            <div className={`space-y-1 pl-4 overflow-hidden transition-all duration-300 ${mobileSection === 'involved' ? 'max-h-[300px] pb-3' : 'max-h-0'}`}>
+              <Link to="/ways-to-get-involved" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Ways to Get Involved</Link>
               <Link to="/admission" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Admission Rules</Link>
               <Link to="/volunteer" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Volunteer With Us</Link>
               <Link to="/celebrate-with-elders" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Celebrate With Elders</Link>
