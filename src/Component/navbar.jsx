@@ -124,8 +124,14 @@ function Navbar() {
 
               {supportUsDropdown && (
                 <div className="absolute top-16 left-0 w-60 bg-white rounded shadow-lg py-2 z-50 animate-fade-in border-t-4 border-green-800">
+                  <Link to="/support-us" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
+                    Support Us (Special Days)
+                  </Link>
                   <Link to="/donate" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
                     Support Us Now
+                  </Link>
+                  <Link to="/ways-to-support" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
+                    Ways to Support
                   </Link>
                   <Link to="/sponsor-a-meal" className="block px-4 py-2.5 text-[14px] font-bold text-green-700 hover:bg-[#FFE401] hover:text-green-900">
                     Support Us A Meal
@@ -294,7 +300,9 @@ function Navbar() {
             </button>
 
             <div className={`space-y-1 pl-4 overflow-hidden transition-all duration-300 ${mobileSection === 'Support Us' ? 'max-h-64 pb-3' : 'max-h-0'}`}>
+              <Link to="/support-us" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Support Us (Special Days)</Link>
               <Link to="/donate" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Support Us Now</Link>
+              <Link to="/ways-to-support" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Ways to Support</Link>
               <Link to="/sponsor-a-meal" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Support Us A Meal</Link>
               <Link to="/sponsor-an-elder" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">Support Us An Elder</Link>
               <Link to="/csr-partnerships" onClick={() => setIsOpen(false)} className="block py-2 text-[15px] font-medium text-green-800 hover:text-green-900">CSR Partnerships</Link>

@@ -40,6 +40,9 @@ import Contact from "./page/Contact";
 import SocialMediaTestimonials from "./page/SocialMediaTestimonials";
 import HindiPage from "./page/HindiPage";
 import WaysToGetInvolved from "./page/WaysToGetInvolved";
+import SupportUs from "./page/SupportUs";
+import WaysToSupport from "./page/WaysToSupport";
+
 
 function App() {
   return (
@@ -82,6 +85,8 @@ function App() {
             <Route path="/news-media-coverage" element={<Media />} />
             <Route path="/social-media-testimonials" element={<SocialMediaTestimonials />} />
             <Route path="/donate" element={<Donate />} />
+            <Route path="/support-us" element={<SupportUs />} />
+            <Route path="/ways-to-support" element={<WaysToSupport />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

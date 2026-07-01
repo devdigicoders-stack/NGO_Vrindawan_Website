@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 const footerLink = ({ to, label, orange = false }) => (
   <li>
     <Link
-      to={to}
+      to={to} 
       className={`transition-colors flex items-center gap-2 ${
         orange
           ? "text-orange-400 hover:text-orange-300"
           : "hover:text-[#FDD835]"
       }`}
     >
-      <span
+      <span  
         className={`w-1 h-1 rounded-full flex-shrink-0 ${
           orange ? "bg-orange-400" : "bg-[#FDD835]"
         }`}
@@ -97,9 +97,11 @@ export default function Footer() {
 
             <h4 className="font-bold text-white text-base mt-8 mb-5 pb-2 border-b border-white/10">Support Us</h4>
             <ul className="space-y-2.5 text-[14px] flex flex-col items-center sm:items-start">
+              <li><Link to="/support-us" className="hover:text-[#FDD835] transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#FDD835] rounded-full flex-shrink-0"></span>Support Us (Special Days)</Link></li>
               <li><Link to="/donate" className="hover:text-[#FDD835] transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#FDD835] rounded-full flex-shrink-0"></span>Support Us Now</Link></li>
-              <li><Link to="/sponsor-a-meal" className="hover:text-[#FDD835] transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#FDD835] rounded-full flex-shrink-0"></span>Sponsor A Meal</Link></li>
-              <li><Link to="/sponsor-an-elder" className="hover:text-[#FDD835] transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#FDD835] rounded-full flex-shrink-0"></span>Sponsor An Elder</Link></li>
+              <li><Link to="/ways-to-support" className="hover:text-[#FDD835] transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#FDD835] rounded-full flex-shrink-0"></span>Ways to Support</Link></li>
+              <li><Link to="/sponsor-a-meal" className="hover:text-[#FDD835] transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#FDD835] rounded-full flex-shrink-0"></span>Support Us A Meal</Link></li>
+              <li><Link to="/sponsor-an-elder" className="hover:text-[#FDD835] transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#FDD835] rounded-full flex-shrink-0"></span>Support Us An Elder</Link></li>
               <li><Link to="/csr-partnerships" className="hover:text-[#FDD835] transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#FDD835] rounded-full flex-shrink-0"></span>CSR Partnerships</Link></li>
             </ul>
           </div>
